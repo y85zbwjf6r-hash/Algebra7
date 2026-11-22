@@ -1,0 +1,956 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2457e8">
+  <meta name="description" content="7-сынып алгебрасын қазақ тілінде үйрен. Қысқа сабақтар, 18 интерактивті тапсырма, автоматты тексеру. Тіркелусіз, тегін қолданыңыз.">
+  <title>Алгебра 7 — түсініп үйрен</title>
+  
+  <style>:root{--blue:#2457e8;--blue-dark:#1743bf;--ink:#182944;--muted:#67758b;--line:#e5eaf2;--surface:#fff;--bg:#f7f9fc;--green:#13715a;--radius:18px;font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:var(--ink);font-size:16px;font-synthesis:none}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);line-height:1.6}
+button,input{font:inherit}
+button,a,input,summary{-webkit-tap-highlight-color:transparent}
+button,a,summary{touch-action:manipulation}
+button{cursor:pointer}
+a{color:inherit;text-decoration:none}
+button{color:inherit}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{line-height:1.25;letter-spacing:-.025em}
+h1{font-size:2.35rem;font-weight:750}
+h2{font-size:1.45rem;font-weight:700}
+h3{font-size:1.05rem;font-weight:680}
+p{line-height:1.75}
+input{min-width:0}
+button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid #507fff;outline-offset:4px}
+[hidden]{display:none!important}
+.icon{width:22px;height:22px;flex-shrink:0;vertical-align:middle}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip-link{position:fixed;top:-100px;left:24px;z-index:100;background:var(--ink);color:white;padding:12px 20px;border-radius:12px}
+.skip-link:focus{top:16px}
+.sidebar{position:fixed;top:0;bottom:0;left:0;width:242px;background:var(--surface);border-right:1px solid var(--line);display:flex;flex-direction:column;padding:32px 20px 22px;z-index:40;overflow-y:auto}
+.brand{display:flex;gap:11px;align-items:center;font-size:1.6rem;font-weight:760;letter-spacing:-.045em;padding:0 9px;margin-bottom:53px;line-height:1.15}
+.brand-symbol{width:43px;height:47px;display:grid;place-items:center;border-radius:12px;background:var(--blue);font-family:Georgia,serif;font-size:2.15rem;color:white;box-shadow:0 5px 12px #2457e821}
+.brand-grade{display:block;font-size:.8rem;font-weight:500;color:var(--muted);letter-spacing:.025em;margin-top:6px}
+.nav-label{font-size:.7rem;letter-spacing:.12em;font-weight:650;color:#8b96a8;padding:0 14px;margin-bottom:13px}
+.nav-link{display:flex;align-items:center;gap:13px;padding:12px 14px;border-radius:10px;font-size:.94rem;font-weight:550;color:#66738a;margin-bottom:6px;transition:background .15s,color .15s}
+.nav-link:hover{background:#f3f6fc;color:var(--ink)}
+.nav-link.active{background:#eaf0ff;color:var(--blue);font-weight:650}
+.nav-link.active .icon{stroke-width:2}
+.sidebar-progress{margin:36px 12px 27px;padding:17px 0 19px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.progress-heading{display:flex;justify-content:space-between;align-items:center;font-size:.82rem;margin-bottom:11px;gap:20px}
+.progress-heading strong{font-size:.82rem;color:var(--blue);letter-spacing:.02em}
+.progress-track{height:5px;border-radius:10px;background:#edf0f7;overflow:hidden}
+.progress-track span{display:block;height:100%;border-radius:inherit;background:var(--blue);transition:width .35s}
+.sidebar-progress p{font-size:.73rem;color:#8994a6;margin-top:10px}
+.secondary-nav{margin-top:auto}
+.teacher-signature{display:flex;gap:10px;align-items:center;padding:22px 5px 0;margin-top:21px;border-top:1px solid var(--line)}
+.avatar{width:36px;height:36px;display:grid;place-items:center;background:#eef0f6;border:1px solid #e3e7ef;color:#637088;border-radius:50%;font-size:.71rem;letter-spacing:.04em}
+.teacher-signature strong{display:block;font-size:.79rem;font-weight:650}
+.teacher-signature small{font-size:.7rem;color:var(--muted)}
+.workspace{margin-left:242px;min-height:100vh;display:flex;flex-direction:column}
+.topbar{height:83px;display:flex;align-items:center;justify-content:space-between;padding:0 44px;border-bottom:1px solid var(--line);background:#ffffffd9;gap:12px}
+.topbar-left,.topbar-right{display:flex;align-items:center;gap:18px}
+.breadcrumb{font-size:.8rem;color:#8993a3}
+.breadcrumb span{padding:0 12px;color:#c1c8d4}
+.breadcrumb strong{color:#4d5c74;font-weight:550}
+.open-badge{display:flex;gap:7px;align-items:center;font-size:.75rem;color:#5e6d82}
+.open-badge .icon{width:17px;height:17px;color:#239a78}
+.help-button{display:grid;place-items:center;color:#8793a7;padding-left:16px;border-left:1px solid var(--line)}
+.help-button .icon{width:20px;height:20px}
+.mobile-menu{display:none!important}
+.icon-button{border:0;background:none;display:grid;place-items:center;width:38px;height:38px;border-radius:9px}
+.icon-button:hover{background:#edf2ff}
+main{padding:36px 44px 44px;max-width:1500px;width:100%;margin:0 auto;outline:none}
+.hero{position:relative;background:#eaf0ff;border:1px solid #e0e8fd;border-radius:22px;min-height:350px;display:grid;grid-template-columns:1.15fr 1fr;gap:10px;overflow:hidden;padding:39px 36px 32px}
+.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(#cddaf050 1px,transparent 1px),linear-gradient(90deg,#cddaf050 1px,transparent 1px);background-size:30px 30px;mask-image:linear-gradient(100deg,transparent 35%,#000 100%);pointer-events:none}
+.hero-copy{position:relative;z-index:1}
+.eyebrow{display:flex;align-items:center;gap:7px;font-size:.65rem;letter-spacing:.11em;font-weight:650;color:#4667a2}
+.eyebrow>span{height:5px;width:5px;background:#4f78dc;border-radius:50%}
+.hero h1{font-size:clamp(2.2rem,3.3vw,3.4rem);letter-spacing:-.045em;line-height:1.15;margin:18px 0 16px}
+.hero h1 em{font-style:normal;color:var(--blue)}
+.hero-copy>p{color:#687b9c;font-size:.88rem;line-height:1.8;max-width:360px}
+.hero-actions{display:flex;gap:11px;margin:24px 0 20px;flex-wrap:wrap}
+.button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:11px 18px;border-radius:9px;border:1px solid transparent;font-size:.84rem;font-weight:620;line-height:1.4;text-align:center;transition:background .15s,box-shadow .15s,transform .15s}
+.button .icon{width:18px;height:18px}
+.button:hover{transform:translateY(-1px)}
+.button:active{transform:translateY(0)}
+.button.primary{background:var(--blue);color:#fff;box-shadow:0 3px 7px #2457e817}
+.button.primary:hover{background:var(--blue-dark);box-shadow:0 5px 12px #2457e82a}
+.button.light{background:#ffffffc7;border-color:#d5dff3;color:#47638f}
+.button.light:hover{background:#fff}
+.button.secondary{background:#fff;border-color:#dce4f0;color:#34517d}
+.button.secondary:hover{background:#f3f6fc}
+.button.ghost{background:transparent;border-color:transparent;color:#667992}
+.button.ghost:hover{background:#edf2fa;color:#254c90}
+.hero-note{display:flex;align-items:center;gap:7px;font-size:.67rem;color:#7b8dad;white-space:nowrap}
+.hero-note .icon{width:13px;height:13px;color:#5e80bd}
+.hero-note>span{color:#b3c1d8;padding:0 1px}
+.hero-art{position:relative;align-self:center;padding:32px 0 32px 16px;transform:rotate(-3deg);margin:0 -8px 0 8px;min-width:0}
+.graph-card{background:#fffffff2;border:1px solid #dce4f6;border-radius:14px;box-shadow:0 18px 35px #1c3a7021;padding:15px 13px 2px}
+.graph-card-header{display:flex;align-items:center;gap:6px;font-size:.6rem;color:#8b99ad;padding:0 0 0 4px;white-space:nowrap}
+.graph-dot{height:5px;width:5px;border-radius:50%;background:#51ba98}
+.graph-equation{margin-left:auto;border:1px solid #e3e9f7;border-radius:5px;padding:3px 6px;color:#426dd1;font-size:.63rem}
+.function-graph{width:100%;height:auto;display:block;overflow:visible}
+.grid-line{stroke:#eaf0f8;stroke-width:1}
+.axis-line{stroke:#b5c1d6;stroke-width:1.2}
+.axis-label{font-family:Arial,sans-serif;font-size:11px;fill:#8b99b2}
+.graph-line{stroke:#3a71e7;stroke-width:3;fill:none;stroke-linecap:round}
+.graph-point{fill:#fff;stroke:#3a71e7;stroke-width:2.5}
+.floating-formula{position:absolute;z-index:2;font-family:Georgia,"Times New Roman",serif;background:white;border:1px solid #e2e8f5;box-shadow:0 7px 19px #24497912;border-radius:11px;white-space:nowrap;color:#3b527a}
+.top-formula{top:11px;right:11px;transform:rotate(9deg);font-size:1rem;padding:10px 16px}
+.bottom-formula{bottom:13px;left:3px;transform:rotate(6deg);font-size:.88rem;padding:11px 15px;display:flex;gap:9px;align-items:center}
+.formula-check{border-radius:50%;background:#def7ec;color:#239778;display:grid;place-items:center;width:22px;height:22px;font:600 .8rem Arial}
+.overview-stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:22px;border:1px solid var(--line);border-radius:14px;background:white}
+.overview-stats>div{display:flex;gap:13px;align-items:center;padding:21px 20px;position:relative;min-width:0}
+.overview-stats>div+div:before{content:"";position:absolute;left:0;top:23px;bottom:23px;width:1px;background:var(--line)}
+.overview-stats .icon{color:#7890b5;background:#f2f6fc;box-sizing:content-box;border-radius:11px;padding:10px;width:21px;height:21px}
+.overview-stats strong{display:block;font-size:1.25rem;letter-spacing:-.035em;line-height:1.25}
+.overview-stats>div:last-child strong{font-size:.9rem;letter-spacing:-.02em}
+.overview-stats small{font-size:.66rem;color:#7a879b;line-height:1.45;display:block;margin-top:6px}
+.stat-denominator{font-size:.83rem;color:#95a0b3;margin-left:2px;font-weight:500}
+.section{margin-top:38px}
+.section-heading{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:20px}
+.overline{display:block;font-size:.65rem;letter-spacing:.12em;font-weight:650;color:#8a98ae;margin-bottom:8px}
+.section-heading h2{font-size:1.45rem}
+.text-link{color:#5373a9;font-size:.8rem;font-weight:580}
+.text-link:hover{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
+.topic-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.topic-card{display:flex;flex-direction:column;border:1px solid var(--line);background:var(--surface);border-radius:15px;padding:21px 21px 17px;transition:border .2s,box-shadow .2s,transform .2s;min-width:0}
+.topic-card:hover{border-color:#bbcbed;box-shadow:0 9px 22px #254c9010;transform:translateY(-3px)}
+.topic-card-top{display:flex;justify-content:space-between;align-items:center;gap:9px;margin-bottom:18px}
+.topic-icon{height:46px;width:46px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;font-family:Georgia,"Times New Roman",serif;font-weight:550;font-style:italic;font-size:1.42rem;line-height:1}
+.topic-icon.blue{background:#eaf0ff;color:#4470da}
+.topic-icon.violet{background:#f0eafb;color:#8b68cf}
+.topic-icon.teal{background:#e1f5ef;color:#269479;font-size:1.9rem}
+.topic-icon.orange{background:#fff1df;color:#cb924b;font-style:normal;font-family:Arial;font-size:1.65rem}
+.topic-icon.pink{background:#fbe9ef;color:#c16d8e;font-size:.83rem}
+.topic-icon.green{background:#e9f3e5;color:#6b9c54;font-size:1.2rem}
+.topic-duration{font-size:.67rem;display:flex;gap:4px;align-items:center;color:#93a0b4;white-space:nowrap}
+.topic-duration .icon{width:13px;height:13px}
+.status-tag{font-size:.63rem;display:flex;gap:3px;align-items:center;color:#21886e}
+.status-tag .icon{width:13px;height:13px}
+.topic-card h3{font-size:.99rem;line-height:1.4;min-height:2.8em;margin-bottom:9px}
+.topic-card>p{font-size:.78rem;color:#8290a5;line-height:1.7;margin-bottom:14px;flex:1}
+.topic-meta{display:flex;gap:12px;font-size:.65rem;color:#99a4b5}
+.topic-meta span+span:before{content:"·";position:relative;left:-6px}
+.card-bottom{display:flex;justify-content:space-between;align-items:center;margin:16px 0 10px;padding-top:13px;border-top:1px solid #edf0f5;font-size:.72rem;font-weight:550;color:#5374ab}
+.card-count{font-size:.65rem;font-weight:500;color:#99a4b7}
+.topic-card .progress-track{height:3px}
+.learning-note{margin-top:28px;background:#edf5f3;border:1px solid #e1ede9;display:flex;gap:15px;padding:22px 25px;border-radius:14px}
+.learning-note>.icon{color:#4b9a82;width:24px;height:24px;margin-top:1px}
+.learning-note h3{color:#447e6d;font-size:.88rem;margin-bottom:5px}
+.learning-note p{font-size:.77rem;color:#80998f}
+.footer{display:flex;justify-content:space-between;gap:16px;padding:21px 44px;border-top:1px solid var(--line);font-size:.66rem;color:#98a3b4;margin-top:auto}
+.footer a:hover{color:var(--blue)}
+.footer-dot{padding:0 7px;color:#b4bdca}
+.continue-card{display:flex;gap:15px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:21px 24px;margin-top:22px}
+.continue-icon{background:#edf2ff;color:var(--blue);border-radius:12px;padding:10px;display:flex}
+.continue-card h3{font-size:.95rem;margin-bottom:5px}
+.continue-card p{font-size:.8rem;color:var(--muted)}
+.continue-card .button{margin-left:auto;flex-shrink:0}
+.page-heading{margin:8px 0 30px;max-width:760px}
+.page-heading h1{margin:9px 0 13px}
+.page-heading>p{font-size:.95rem;color:var(--muted)}
+.muted{color:var(--muted);font-size:.82rem}
+.small-text{font-size:.78rem;color:var(--muted);line-height:1.7}
+.topics-toolbar{display:flex;justify-content:space-between;align-items:center;gap:20px;margin:25px 0 22px}
+.search{display:flex;align-items:center;gap:8px;background:white;border:1px solid var(--line);border-radius:9px;padding:0 12px;max-width:300px}
+.search .icon{width:18px;height:18px;color:#8d9ab0}
+.search input{border:0;background:transparent;width:210px;height:42px;outline:none;font-size:.82rem}
+.search:focus-within{outline:2px solid #8eacff;outline-offset:2px}
+.empty-search{background:white;border:1px solid var(--line);padding:40px;border-radius:14px;text-align:center;font-size:.9rem;color:var(--muted)}
+.practice-banner{background:#edf1fd;border:1px solid #dfe7fb;border-radius:16px;padding:24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.practice-banner>div{display:flex;gap:15px;align-items:center}
+.practice-banner>div>.icon{height:29px;width:29px;color:#6686d6}
+.practice-banner h3{margin-bottom:6px}
+.practice-banner p{font-size:.84rem;color:#7186a7}
+.practice-banner .button{flex-shrink:0}
+.back-link{font-size:.8rem;color:#7487a4;display:inline-block;margin-bottom:25px}
+.back-link:hover{color:var(--blue);text-decoration:underline}
+.lesson-heading{display:flex;align-items:center;gap:19px;margin:4px 0 30px}
+.lesson-heading .topic-icon{width:60px;height:60px;border-radius:16px;font-size:1.8rem}
+.lesson-heading .topic-icon.pink{font-size:1rem}
+.lesson-heading h1{font-size:2rem}
+.lesson-layout{display:grid;grid-template-columns:minmax(0,1fr) 265px;gap:26px;align-items:start}
+.lesson-body{min-width:0}
+.goal-box{display:flex;gap:15px;padding:20px 22px;background:#eaf0ff;border:1px solid #dfe7fd;border-radius:14px;margin-bottom:23px}
+.goal-box>.icon{color:var(--blue);margin-top:1px}
+.goal-box strong{font-size:.88rem;color:#3c5d95}
+.goal-box p{font-size:.87rem;color:#5f789f;margin-top:4px}
+.content-card{background:white;border:1px solid var(--line);border-radius:16px;padding:28px;margin-bottom:28px}
+.content-card>h2{font-size:1.25rem;margin:8px 0 24px}
+.theory-paragraph+.theory-paragraph{margin-top:22px;padding-top:21px;border-top:1px solid #edf0f5}
+.theory-paragraph h3{font-size:.96rem;margin-bottom:9px}
+.theory-paragraph p{color:#697c96;font-size:.9rem;line-height:1.9}
+.examples-section{margin-bottom:25px}
+.examples-section .section-heading h2{font-size:1.25rem}
+.example-card{background:white;border:1px solid var(--line);border-radius:14px;padding:24px 26px;margin-bottom:15px}
+.example-label{font-size:.62rem;color:#7b96c2;font-weight:650;letter-spacing:.1em;display:block;margin-bottom:8px}
+.example-card h3{font-size:.98rem}
+.math-expression{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;line-height:1.8;letter-spacing:.01em;color:#315489;background:#f1f5fc;border-radius:9px;padding:13px 17px;margin:16px 0 14px;overflow-wrap:anywhere}
+.example-card ol{margin:0;padding-left:19px;color:#7b8ba2;font-size:.83rem;line-height:1.9}
+.example-card li{padding-left:4px;margin-top:4px}
+.mistake-note{display:flex;gap:13px;padding:20px 22px;background:#fff7e9;border:1px solid #f5e9ce;border-radius:13px;margin-bottom:27px}
+.mistake-note>.icon{color:#b88c3a}
+.mistake-note strong{font-size:.84rem;color:#937530}
+.mistake-note p{font-size:.83rem;color:#9a8a69;margin-top:4px}
+.lesson-aside{position:sticky;top:24px}
+.lesson-checklist{border:1px solid var(--line);background:white;padding:24px 21px;border-radius:15px}
+.lesson-checklist h3{margin-bottom:20px}
+.lesson-checklist>div:not(.progress-track):not(.progress-heading){display:flex;align-items:center;gap:10px;font-size:.8rem;color:#7b8ca6;margin-bottom:17px}
+.lesson-checklist>div>.icon{width:18px;height:18px;color:#839aca}
+.lesson-checklist hr{border:0;border-top:1px solid var(--line);margin:22px 0}
+.lesson-checklist .button{width:100%;margin-top:20px;font-size:.77rem;padding:11px}
+.lesson-checklist .button.ghost{margin-top:8px;font-size:.73rem}
+.quiet-note{display:flex;gap:8px;padding:18px 10px;font-size:.73rem;color:#94a0b3;line-height:1.7}
+.quiet-note .icon{width:16px;height:16px;margin-top:3px}
+.lesson-bottom{text-align:center;background:#eaf0ff;border:1px solid #dfe7fd;border-radius:15px;padding:29px 20px}
+.lesson-bottom h2{font-size:1.28rem}
+.lesson-bottom p{font-size:.87rem;color:#7690b7;margin:9px 0 20px}
+.graph-explorer .section-heading{margin-bottom:10px}
+.graph-explorer h2{font-size:1.25rem}
+.explorer-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:16px;align-items:center}
+.graph-controls .math-expression{font-size:1.2rem;margin:0 0 17px}
+.graph-controls label{font-size:.73rem;color:#73829a;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.graph-controls label strong{color:#466cb4;font-weight:600}
+.graph-controls input{width:100%;accent-color:var(--blue);margin:12px 0 21px;min-height:22px}
+.graph-controls input:last-of-type{margin-bottom:12px}
+.graph-controls .small-text{font-size:.73rem}
+.graph-values{font-size:.7rem;color:#6d85ab;display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.graph-values span{background:#f3f6fc;padding:4px 7px;border-radius:4px}
+.tag{border:1px solid #e1e7f3;background:#f5f7fc;color:#6d82a5;font-size:.69rem;padding:4px 10px;border-radius:6px;display:inline-block;font-weight:550}
+.practice-shell{max-width:850px;margin:0 auto}
+.practice-header{display:flex;justify-content:space-between;align-items:start;gap:15px}
+.practice-header .tag{max-width:55%;text-align:right}
+.practice-title{display:flex;justify-content:space-between;align-items:end;gap:20px;margin:8px 0 25px}
+.practice-title h1{font-size:2.1rem}
+.question-pager{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:25px}
+.question-step{display:grid;place-items:center;min-width:36px;height:36px;border-radius:9px;background:white;border:1px solid var(--line);color:#8c9bb1;font-size:.8rem}
+.question-step:hover{border-color:#b3c7f3}
+.question-step.current{background:var(--blue);color:white;border-color:var(--blue);box-shadow:0 3px 9px #2457e82b}
+.question-step.done:not(.current){background:#eaf7f0;border-color:#cfeadd;color:#298b67}
+.question-step.tried:not(.current){background:#fff4e2;border-color:#f0dfbd;color:#b18538}
+.question-step .icon{width:17px;height:17px}
+.question-card{background:white;border:1px solid var(--line);border-radius:20px;padding:34px 36px}
+.question-meta{display:flex;gap:14px;align-items:center;font-size:.72rem;color:#8c9ab0;margin-bottom:22px;flex-wrap:wrap}
+.question-meta>span:first-child{color:#6686c0}
+.question-meta>span+span:before{content:"·";margin-right:14px;color:#bcc7d8}
+.question-card h2{font-size:1.35rem;line-height:1.6;letter-spacing:-.015em;margin-bottom:26px}
+.task-formula{margin-top:-10px;margin-bottom:26px;padding:18px 22px;font-size:1.6rem}
+.choice-grid{margin:0;padding:0;border:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.choice{display:flex;gap:13px;align-items:center;position:relative;min-height:69px;border:1px solid #e0e6f0;border-radius:11px;padding:14px 16px;font-size:1.05rem;cursor:pointer;transition:border .15s,background .15s}
+.choice input{position:absolute;opacity:0;width:1px;height:1px}
+.choice:hover{background:#f6f8ff;border-color:#bbccef}
+.choice:focus-within{outline:3px solid #507fff;outline-offset:3px}
+.choice.selected{background:#edf2ff;border:2px solid var(--blue);padding:13px 15px;color:#2457c4}
+.option-letter{width:29px;height:29px;display:grid;place-items:center;border-radius:7px;background:#f1f4f9;color:#8a9ab2;font-size:.73rem;flex-shrink:0}
+.choice.selected .option-letter{background:var(--blue);color:white}
+.answer-actions{display:flex;gap:10px;margin-top:30px;flex-wrap:wrap}
+.answer-input{width:100%;background:#fff;border:1px solid #d8e1ef;border-radius:10px;padding:13px 15px;color:var(--ink);font-size:1rem;min-height:51px}
+.answer-input:focus{border-color:#819fea}
+.answer-input::placeholder{color:#a3aec0;font-size:.86rem}
+.numeric-input{max-width:330px;font-size:1.25rem}
+.answer-label{display:block;font-size:.8rem;font-weight:550;color:#69809f;margin-bottom:9px}
+.input-help{font-size:.74rem;color:#93a1b6;margin-top:10px}
+.field-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:17px}
+.field-error{border-color:#d6aa6b;background:#fffbf3}
+.hint-box{display:flex;gap:12px;padding:17px 18px;margin-top:22px;background:#fff8e8;border:1px solid #f4e7c8;border-radius:11px;color:#9b7b34}
+.hint-box .icon{margin-top:3px;width:20px;height:20px}
+.hint-box p{font-size:.85rem}
+.feedback{display:flex;gap:14px;padding:20px 22px;border:1px solid;border-radius:12px;margin-top:24px;outline:none}
+.feedback>.icon{width:24px;height:24px;margin-top:1px}
+.feedback strong{display:block;font-size:.96rem;margin-bottom:7px}
+.feedback p{font-size:.86rem;line-height:1.8}
+.feedback.correct{background:#edf8f1;border-color:#cce9d6;color:#37805d}
+.feedback.incorrect{background:#fff7e9;border-color:#efdfbe;color:#98753a}
+.feedback.invalid{background:#f4f6fd;border-color:#dfe5f8;color:#687da4}
+.correct-answer{display:block;margin-top:10px;font-size:.82rem;font-weight:600}
+.question-navigation{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-top:23px}
+.practice-footnote{display:flex;justify-content:center;gap:6px;align-items:center;font-size:.72rem;color:#98a5b9;text-align:center;margin-top:24px}
+.practice-footnote .icon{width:14px;height:14px}
+.empty-state{text-align:center;background:#fff;border:1px solid var(--line);border-radius:18px;padding:55px 30px}
+.empty-illustration{display:grid;place-items:center;width:78px;height:78px;background:#edf2ff;border:1px solid #e0e8fc;border-radius:24px;margin:0 auto 25px;color:#7899e4;transform:rotate(-5deg)}
+.empty-illustration>.icon{width:36px;height:36px;transform:rotate(5deg)}
+.empty-state h2{font-size:1.4rem;margin-bottom:13px}
+.empty-state p{max-width:450px;color:var(--muted);font-size:.9rem;margin:0 auto 26px}
+.result-summary{display:flex;gap:28px;align-items:center;border:1px solid var(--line);background:white;padding:30px;border-radius:18px}
+.completion-ring{width:118px;height:118px;flex-shrink:0;border-radius:50%;padding:8px;background:conic-gradient(var(--blue) calc(var(--completion)*1%),#edf1fa 0)}
+.completion-ring>div{width:100%;height:100%;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex-direction:column}
+.completion-ring strong{font-size:1.8rem;color:#315aa6;letter-spacing:-.06em;line-height:1.2}
+.completion-ring span{font-size:.65rem;color:#91a0b6;margin-top:4px}
+.summary-copy{flex:1}
+.summary-copy h2{font-size:1.35rem;margin-bottom:10px}
+.summary-copy p{font-size:.8rem;color:#8494ab;max-width:320px}
+.summary-metrics{display:flex;gap:28px}
+.summary-metrics>div{max-width:105px}
+.summary-metrics strong{display:block;font-size:1.55rem;letter-spacing:-.04em;color:#45699e}
+.summary-metrics span{font-size:.68rem;line-height:1.65;color:#93a0b5;display:block;margin-top:5px}
+.results-list{border:1px solid var(--line);border-radius:15px;background:white;overflow:hidden}
+.result-row{display:flex;align-items:center;gap:25px;padding:20px 25px}
+.result-row+.result-row{border-top:1px solid #edf0f7}
+.result-topic{display:flex;gap:14px;align-items:center;flex:1;min-width:0}
+.result-topic .topic-icon{width:40px;height:40px;font-size:1.25rem;border-radius:10px}
+.result-topic .topic-icon.pink{font-size:.7rem}
+.result-topic h3{font-size:.9rem;margin-bottom:5px}
+.result-topic .small-text{font-size:.69rem}
+.result-progress{width:130px}
+.result-row .button{font-size:.75rem}
+.review-list{border:1px solid var(--line);background:white;border-radius:15px;overflow:hidden}
+.review-list>a{display:flex;gap:14px;padding:19px 24px;align-items:center}
+.review-list>a+a{border-top:1px solid var(--line)}
+.review-list>a:hover{background:#fafbff}
+.review-icon{color:#bf9855;background:#fff6e7;border-radius:9px;padding:8px;display:flex;flex-shrink:0}
+.review-list strong{display:block;font-size:.84rem;font-weight:550;line-height:1.7}
+.review-list> a>div>span{font-size:.7rem;color:#95a0b2;display:block;margin-top:5px}
+.review-list .text-link{margin-left:auto;flex-shrink:0}
+.data-tools{margin-top:29px;border-top:1px solid var(--line);padding:25px 0 0}
+.data-tools h3{font-size:.9rem}
+.data-tools p{font-size:.77rem;color:#92a0b3;margin-top:7px;max-width:650px}
+.data-actions{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+.data-actions .button{font-size:.75rem}
+.teacher-intro{display:flex;gap:18px;background:#eaf1ff;padding:26px;border:1px solid #dfe8fd;border-radius:15px;margin-bottom:25px}
+.teacher-intro>.icon{width:29px;height:29px;color:#5d80c5}
+.teacher-intro h3{font-size:1rem;margin-bottom:9px}
+.teacher-intro p{font-size:.85rem;color:#7286a8}
+.teacher-materials{display:grid;gap:20px}
+.teacher-card{background:white;border:1px solid var(--line);border-radius:16px;padding:25px 28px}
+.teacher-card-heading{display:flex;gap:17px}
+.teacher-card-heading h2{font-size:1.15rem;margin:3px 0 9px}
+.teacher-card-heading p{font-size:.84rem;color:#8393aa}
+.teacher-card-actions{display:flex;flex-wrap:wrap;gap:9px;margin:22px 0 20px}
+.teacher-card-actions .button{font-size:.75rem}
+details>summary{cursor:pointer;list-style:none;position:relative;padding-right:30px}
+details>summary:after{content:"+";position:absolute;right:2px;top:0;font-size:1.2rem;line-height:1.5;color:#8da0bc;font-weight:400}
+details[open]>summary:after{content:"−"}
+summary::-webkit-details-marker{display:none}
+.teacher-card details{border-top:1px solid var(--line);padding-top:15px;font-size:.82rem;color:#7489ac}
+.teacher-answers{padding-left:20px;margin:20px 0 0}
+.teacher-answers li{padding-left:5px;margin:15px 0 0;border-top:1px solid #eef1f7;padding-top:15px;color:#536d92}
+.teacher-answers p{font-size:.83rem;margin:0 0 7px}
+.teacher-answers strong{font-size:.8rem;color:#38745f}
+.teacher-answers .small-text{font-size:.78rem;margin-top:6px;color:#8c9aaf}
+.inline-math{display:block;font-family:Georgia,serif;font-size:1.1rem;margin:9px 0}
+.portable-card{display:flex;align-items:start;gap:23px;background:#eaf0ff;border:1px solid #dfe7fb;border-radius:18px;padding:32px;margin-top:30px}
+.portable-icon{background:white;color:#4975d4;padding:14px;border-radius:14px;display:flex}
+.portable-icon .icon{width:28px;height:28px}
+.portable-card h2{margin-bottom:13px;font-size:1.3rem}
+.portable-card p{font-size:.85rem;color:#758bb0;max-width:600px}
+.portable-card .button{margin-top:20px}
+.help-layout{display:grid;grid-template-columns:1fr 265px;gap:27px;align-items:start}
+.faq{border:1px solid var(--line);border-radius:16px;background:white;padding:0 25px}
+.faq details{padding:21px 0}
+.faq details+details{border-top:1px solid var(--line)}
+.faq summary{font-size:.93rem;font-weight:600;color:#536c92}
+.faq p{font-size:.86rem;color:#8292ab;margin-top:14px;padding-right:20px}
+.help-aside{padding:27px 25px;background:white;border:1px solid var(--line);border-radius:15px}
+.help-aside h2{margin:18px 0;font-size:1.3rem}
+.help-aside p{font-size:.82rem;color:#8a9ab1;margin:17px 0}
+.help-aside strong{font-weight:550;color:#647d9f}
+.help-aside .button{margin-top:5px;font-size:.78rem}
+.toast{position:fixed;bottom:27px;left:calc(50% + 121px);transform:translate(-50%,15px);max-width:min(90vw,560px);background:#203553;box-shadow:0 5px 22px #1829442b;color:white;font-size:.84rem;padding:13px 22px;border-radius:11px;z-index:100;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+.toast.visible{opacity:1;transform:translate(-50%,0)}
+.modal-overlay{position:fixed;inset:0;background:#182a4766;backdrop-filter:blur(4px);display:grid;place-items:center;padding:25px;z-index:90}
+.modal{background:white;border:1px solid #e0e6f1;border-radius:19px;padding:32px;max-width:470px;width:100%;box-shadow:0 20px 70px #14244133}
+.modal-icon{display:grid;place-items:center;background:#edf2fd;color:#6c8fcf;width:45px;height:45px;border-radius:12px;margin-bottom:20px}
+.modal h2{font-size:1.35rem;margin-bottom:14px}
+.modal p{font-size:.89rem;color:#7e90aa}
+.modal-actions{display:flex;justify-content:end;gap:10px;margin-top:26px;flex-wrap:wrap}
+.modal>.answer-input{margin:20px 0}
+.storage-notice{display:flex;align-items:center;gap:10px;background:#fff5e2;border:1px solid #f2e3c6;color:#9a7a37;padding:12px 16px;border-radius:10px;margin-bottom:25px;font-size:.8rem}
+.mobile-scrim{display:none}
+#print-area{display:none}
+.noscript{padding:40px}
+@media(min-width:1550px){main{padding-top:43px}.hero{min-height:390px;padding:45px}.hero-art{padding-right:20px}.hero h1{font-size:3.5rem}}
+@media(max-width:1200px){.sidebar{width:215px;padding-left:15px;padding-right:15px}.workspace{margin-left:215px}.brand{font-size:1.4rem}.topbar{padding:0 30px}main{padding:30px}.hero{padding:30px 26px}.hero-art{padding-left:0;margin-left:0}.hero-copy>p{max-width:300px;font-size:.82rem}.hero h1{font-size:2.65rem}.hero-note{font-size:.58rem;gap:5px}.hero-actions{gap:8px}.hero-actions .button{font-size:.74rem;padding:10px 13px}.hero-note>span{padding:0}.overview-stats>div{padding:19px 14px;gap:10px}.overview-stats .icon{padding:8px;width:18px;height:18px}.overview-stats strong{font-size:1.2rem}.overview-stats>div:last-child strong{font-size:.78rem}.overview-stats small{font-size:.61rem}.topic-card{padding:18px 17px 15px}.topic-duration{font-size:.6rem}.topic-card h3{font-size:.94rem}.topic-card>p{font-size:.74rem}.topic-meta{font-size:.61rem;gap:9px}.footer{padding:20px 30px}.toast{left:calc(50% + 107px)}.lesson-layout{grid-template-columns:minmax(0,1fr) 225px;gap:20px}.lesson-checklist{padding:22px 16px}.lesson-checklist>div:not(.progress-track):not(.progress-heading){font-size:.72rem;gap:7px}.lesson-checklist .button{font-size:.7rem}.content-card{padding:25px 23px}.explorer-grid{grid-template-columns:1fr}.graph-controls .math-expression{margin-top:0}.summary-metrics{gap:15px}.result-summary{padding:25px;gap:22px}.summary-copy h2{font-size:1.2rem}.summary-metrics>div{max-width:82px}.help-layout{grid-template-columns:1fr 230px}}
+@media(max-width:1000px){.hero{grid-template-columns:1fr .8fr;gap:15px}.hero h1{font-size:2.3rem}.hero-copy>p{font-size:.79rem}.graph-card{padding:12px 6px 0}.graph-card-header{font-size:.49rem;gap:4px}.graph-equation{font-size:.5rem;padding:2px 4px}.top-formula{font-size:.82rem;padding:8px 11px;right:-2px}.bottom-formula{font-size:.7rem;padding:9px 11px;left:-7px;bottom:14px;gap:6px}.formula-check{width:18px;height:18px;font-size:.65rem}.hero-note{flex-wrap:wrap;white-space:normal;max-width:280px}.overview-stats{grid-template-columns:repeat(2,1fr)}.overview-stats>div{padding:20px 24px}.overview-stats>div:nth-child(3),.overview-stats>div:nth-child(4){border-top:1px solid var(--line)}.overview-stats>div:nth-child(3):before{display:none}.overview-stats strong{font-size:1.35rem}.overview-stats>div:last-child strong{font-size:.9rem}.overview-stats small{font-size:.7rem}.overview-stats .icon{width:23px;height:23px;padding:10px}.topic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.topic-card h3{min-height:2.8em}.topic-duration{font-size:.67rem}.topic-card>p{font-size:.78rem}.topic-meta{font-size:.65rem}.lesson-layout{grid-template-columns:1fr}.lesson-aside{position:static}.lesson-checklist{display:none}.quiet-note{padding-bottom:0}.lesson-heading h1{font-size:1.8rem}.explorer-grid{grid-template-columns:1fr 1fr}.result-summary{flex-wrap:wrap}.summary-metrics{border-top:1px solid var(--line);width:100%;padding:20px 0 0;gap:40px}.summary-metrics>div{max-width:160px}.result-progress{width:80px}.help-layout{grid-template-columns:1fr}.help-aside{display:none}}
+@media(max-width:760px){.sidebar{transform:translateX(-100%);transition:transform .25s;width:250px;padding:26px 20px;box-shadow:none}.sidebar.open{transform:translateX(0);box-shadow:15px 0 60px #14244122}.workspace{margin-left:0}.mobile-scrim.visible{display:block;position:fixed;inset:0;background:#18294466;z-index:35;backdrop-filter:blur(2px)}.mobile-menu{display:grid!important}.topbar{height:67px;padding:0 20px;position:sticky;top:0;z-index:25;backdrop-filter:blur(12px)}.topbar-left{gap:9px}.breadcrumb{font-size:.72rem}.breadcrumb>span{padding:0 7px}.topbar-right{gap:12px}.help-button{padding-left:12px}.open-badge{font-size:.68rem;gap:5px}.open-badge .icon{height:15px;width:15px}main{padding:25px 22px 35px}.hero{padding:31px 26px;min-height:330px;grid-template-columns:1.1fr 1fr;gap:12px}.hero h1{font-size:2.55rem}.hero-copy>p{font-size:.83rem}.hero-actions .button{font-size:.75rem;min-height:42px}.hero-actions{margin:23px 0 18px}.hero-note{font-size:.6rem}.hero-art{margin-right:0}.graph-card-header{font-size:.55rem}.graph-equation{display:none}.top-formula{font-size:.9rem;padding:8px 12px;top:13px}.bottom-formula{font-size:.76rem;left:-8px}.overview-stats{margin-top:18px}.topic-grid{gap:15px}.topic-card{padding:21px 20px 17px}.topic-card h3{font-size:1.02rem}.topic-card>p{font-size:.82rem}.topic-meta{font-size:.7rem}.card-bottom{font-size:.78rem}.topic-duration{font-size:.7rem}.section{margin-top:30px}.section-heading h2{font-size:1.35rem}.overline{font-size:.62rem}.text-link{font-size:.75rem}.learning-note{padding:21px}.learning-note h3{font-size:.9rem}.learning-note p{font-size:.8rem}.footer{padding:20px 22px;font-size:.64rem;flex-wrap:wrap;gap:7px}.toast{left:50%}.page-heading h1{font-size:2rem}.page-heading>p{font-size:.9rem}.page-heading{margin-top:5px}.lesson-heading h1{font-size:1.7rem}.practice-title h1{font-size:1.9rem}.question-card{padding:29px 26px}.question-card h2{font-size:1.22rem}.question-meta{font-size:.71rem}.summary-copy h2{font-size:1.2rem}.summary-copy p{font-size:.8rem}.teacher-card{padding:24px}.teacher-card-heading h2{font-size:1.1rem}.portable-card{padding:27px;gap:18px}.portable-card p{font-size:.82rem}.result-row{padding:20px;gap:15px}.result-progress{width:80px}}
+@media(max-width:520px){.topbar{padding:0 14px}.breadcrumb{font-size:.7rem;max-width:190px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}.breadcrumb>span{padding:0 5px}.topbar-right{gap:8px}.help-button{display:none}.open-badge{font-size:.65rem}.topbar-left{gap:5px}main{padding:20px 16px 30px}.hero{display:block;min-height:0;padding:30px 25px 22px;border-radius:17px}.hero h1{font-size:2.65rem;line-height:1.13;margin-top:19px}.eyebrow{font-size:.6rem;letter-spacing:.1em}.hero-copy>p{font-size:.83rem;max-width:300px;line-height:1.85}.hero-actions{margin:23px 0 17px;gap:8px}.hero-actions .button{font-size:.73rem;padding:12px 13px}.hero-note{font-size:.57rem;max-width:100%;gap:5px}.hero-art{padding:31px 22px 24px;margin:12px 7px 0;max-width:360px;transform:rotate(-3deg)}.graph-card{padding:12px 12px 0}.graph-card-header{font-size:.56rem}.graph-equation{display:inline;font-size:.6rem}.top-formula{right:5px;top:9px;font-size:.85rem}.bottom-formula{bottom:7px;left:4px;font-size:.76rem}.hero-art .function-graph{max-height:190px}.overview-stats{border-radius:13px}.overview-stats>div{padding:18px 14px;gap:9px}.overview-stats .icon{width:18px;height:18px;padding:8px;border-radius:9px}.overview-stats strong{font-size:1.25rem}.overview-stats>div:last-child strong{font-size:.78rem}.overview-stats small{font-size:.61rem}.stat-denominator{font-size:.72rem}.overview-stats>div+div:before{top:20px;bottom:20px}.section-heading{align-items:end;gap:10px;margin-bottom:17px}.section-heading h2{font-size:1.2rem;max-width:230px}.section-heading .text-link{font-size:.66rem;flex-shrink:0;max-width:100px;text-align:right}.overline{font-size:.58rem;margin-bottom:7px}.topic-grid{grid-template-columns:1fr;gap:14px}.topic-card{padding:21px 22px 17px}.topic-card-top{margin-bottom:14px}.topic-card h3{min-height:0;font-size:1.05rem;margin-bottom:10px}.topic-card>p{max-width:320px;font-size:.82rem;margin-bottom:14px}.topic-meta{font-size:.68rem}.topic-duration{font-size:.7rem}.card-bottom{margin-top:13px;padding-top:13px;font-size:.77rem}.card-count{font-size:.7rem}.topic-icon{height:44px;width:44px}.learning-note{padding:20px 18px;gap:12px}.learning-note p{font-size:.77rem}.footer{padding:20px 18px;font-size:.61rem;gap:6px;display:block}.footer>a{display:block;margin-top:6px}.continue-card{flex-wrap:wrap;padding:19px;gap:12px}.continue-card>div{flex:1}.continue-card h3{font-size:.86rem}.continue-card p{font-size:.76rem}.continue-card .button{width:100%;margin-left:0}.continue-icon{padding:8px}.page-heading h1{font-size:1.85rem}.page-heading>p{font-size:.85rem}.page-heading{margin-bottom:25px}.topics-toolbar{gap:10px;margin-bottom:17px}.topics-toolbar>.muted{font-size:.72rem}.search{max-width:205px;padding:0 10px;gap:6px}.search input{width:145px;font-size:.75rem;height:40px}.search .icon{width:15px;height:15px}.practice-banner{padding:22px;display:block}.practice-banner>div{gap:12px}.practice-banner h3{font-size:1rem}.practice-banner p{font-size:.81rem}.practice-banner .button{margin-top:17px;width:100%}.back-link{font-size:.73rem;margin-bottom:23px}.lesson-heading{gap:13px;margin-bottom:23px;align-items:start}.lesson-heading h1{font-size:1.55rem;line-height:1.3;overflow-wrap:break-word}.lesson-heading .topic-icon{height:48px;width:48px;border-radius:12px;font-size:1.45rem;margin-top:3px}.lesson-heading .topic-icon.pink{font-size:.8rem}.lesson-heading .overline{font-size:.55rem}.goal-box{padding:18px 17px;gap:11px;margin-bottom:18px}.goal-box strong{font-size:.84rem}.goal-box p{font-size:.81rem}.goal-box>.icon{width:20px;height:20px}.content-card{padding:23px 21px;border-radius:13px;margin-bottom:23px}.content-card>h2{font-size:1.12rem}.theory-paragraph p{font-size:.86rem}.theory-paragraph h3{font-size:.93rem}.example-card{padding:22px 21px}.example-card h3{font-size:.93rem;line-height:1.4}.math-expression{font-size:1.15rem;padding:12px 14px;line-height:1.9}.example-card ol{font-size:.8rem}.mistake-note{padding:18px 17px;gap:11px}.mistake-note p{font-size:.8rem}.explorer-grid{grid-template-columns:1fr;gap:10px}.graph-explorer>.section-heading{align-items:center}.graph-explorer h2{font-size:1.12rem}.graph-controls label{font-size:.78rem}.graph-controls .small-text{font-size:.76rem}.graph-values{font-size:.73rem}.practice-header{display:block}.practice-header .back-link{display:block;margin-bottom:14px}.practice-header .tag{max-width:100%;font-size:.65rem;text-align:left;margin-bottom:20px}.practice-title{align-items:start;margin:0 0 22px}.practice-title h1{font-size:1.7rem}.practice-title>.muted{font-size:.71rem;white-space:nowrap;margin-top:23px}.question-pager{gap:7px;margin-bottom:20px}.question-step{min-width:34px;height:34px;font-size:.77rem}.question-card{padding:24px 21px;border-radius:15px}.question-card h2{font-size:1.15rem;line-height:1.7;margin-bottom:23px}.question-meta{font-size:.63rem;gap:9px;margin-bottom:18px}.question-meta>span+span:before{margin-right:9px}.choice-grid{grid-template-columns:1fr;gap:10px}.choice{min-height:59px;font-size:1rem;padding:12px 14px}.choice.selected{padding:11px 13px}.option-letter{width:27px;height:27px}.answer-actions{gap:8px;margin-top:24px}.answer-actions .button{font-size:.77rem;padding:12px 14px}.answer-actions .button.ghost{padding-left:10px;padding-right:10px}.answer-label{font-size:.78rem}.numeric-input{max-width:100%}.input-help{font-size:.69rem}.field-grid{grid-template-columns:1fr;gap:17px}.field-grid .answer-input{max-width:100%}.task-formula{font-size:1.25rem;padding:15px;margin-bottom:22px}.hint-box,.feedback{padding:17px 15px;gap:10px}.hint-box p,.feedback p{font-size:.8rem}.feedback strong{font-size:.87rem;line-height:1.5}.feedback>.icon{width:21px;height:21px}.correct-answer{font-size:.78rem}.question-navigation{gap:10px;align-items:center}.question-navigation .button{font-size:.71rem;padding:11px 12px}.question-navigation>.text-link{font-size:.72rem}.practice-footnote{font-size:.66rem;align-items:start;padding:0 10px}.practice-footnote>.icon{margin-top:4px}.result-summary{padding:24px 21px;gap:17px;border-radius:15px}.completion-ring{width:91px;height:91px;padding:7px}.completion-ring strong{font-size:1.45rem}.completion-ring span{font-size:.56rem}.summary-copy{min-width:130px}.summary-copy h2{font-size:1rem}.summary-copy p{font-size:.71rem}.summary-copy .overline{font-size:.5rem}.summary-metrics{padding-top:16px;gap:35px}.summary-metrics strong{font-size:1.4rem}.summary-metrics span{font-size:.67rem}.result-row{padding:17px 16px;gap:10px;flex-wrap:wrap}.result-topic{flex-basis:75%}.result-topic h3{font-size:.82rem;line-height:1.45}.result-topic .small-text{font-size:.66rem}.result-topic .topic-icon{width:36px;height:36px;border-radius:9px;font-size:1.1rem}.result-topic .topic-icon.pink{font-size:.62rem}.result-topic .topic-icon.teal{font-size:1.5rem}.result-progress{display:none}.result-row .button{font-size:.68rem;padding:9px 5px;min-height:35px;margin-left:auto}.review-list>a{padding:17px 16px;gap:11px}.review-list strong{font-size:.76rem}.review-list .text-link{display:none}.review-list> a>div>span{font-size:.64rem}.review-icon{padding:7px}.review-icon>.icon{height:18px;width:18px}.data-tools p{font-size:.73rem}.data-actions{gap:8px}.data-actions .button{font-size:.69rem;padding:10px 12px}.data-actions .button .icon{height:16px;width:16px}.empty-state{padding:38px 23px}.empty-state h2{font-size:1.25rem}.empty-state p{font-size:.84rem}.teacher-intro{padding:21px 18px;gap:12px}.teacher-intro>.icon{width:24px;height:24px}.teacher-intro h3{font-size:.91rem;line-height:1.5}.teacher-intro p{font-size:.78rem}.teacher-card{padding:23px 20px;border-radius:14px}.teacher-card-heading{gap:12px}.teacher-card-heading .topic-icon{height:39px;width:39px;font-size:1.2rem}.teacher-card-heading .topic-icon.pink{font-size:.7rem}.teacher-card-heading h2{font-size:1rem;line-height:1.4;margin-top:0}.teacher-card-heading p{font-size:.77rem}.teacher-card-actions{gap:7px;margin:19px 0 17px}.teacher-card-actions .button{font-size:.68rem;padding:10px 11px;min-height:40px}.teacher-card-actions .button>.icon{width:16px;height:16px}.teacher-card details{font-size:.76rem}.teacher-answers p{font-size:.79rem}.teacher-answers .small-text{font-size:.75rem}.portable-card{display:block;padding:24px}.portable-icon{width:50px;height:50px;justify-content:center;align-items:center;padding:12px;margin-bottom:20px}.portable-card h2{font-size:1.2rem}.portable-card p{font-size:.8rem}.portable-card .button{font-size:.78rem;width:100%;padding:12px}.faq{padding:0 20px;border-radius:14px}.faq details{padding:20px 0}.faq summary{font-size:.87rem;line-height:1.6}.faq p{font-size:.82rem;padding-right:5px}.modal-overlay{padding:20px}.modal{padding:27px 24px}.modal h2{font-size:1.25rem}.modal p{font-size:.84rem}.modal-actions{gap:8px}.modal-actions .button{font-size:.77rem;padding:11px 13px}.storage-notice{font-size:.73rem;align-items:start;padding:13px}.storage-notice .icon{height:18px;width:18px;margin-top:2px}.toast{font-size:.77rem;bottom:20px;padding:13px 18px;width:max-content;max-width:90vw}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+.button{font-size:.875rem!important}
+.topic-card>p,.learning-note p,.goal-box p,.theory-paragraph p,.example-card ol,.mistake-note p,.hint-box p,.feedback p,.page-heading>p,.teacher-intro p,.teacher-card-heading p,.teacher-answers p,.teacher-answers .small-text,.portable-card p,.faq p,.help-aside p,.data-tools p,.summary-copy p,.empty-state p,.practice-banner p,.graph-controls .small-text,.continue-card p{font-size:.9rem}
+.answer-label,.progress-heading,.faq summary,.teacher-card details{font-size:.875rem}
+.overline,.eyebrow,.hero-note,.nav-label,.topic-duration,.topic-meta,.card-count,.status-tag,.tag,.example-label,.overview-stats small,.footer,.sidebar-progress p,.teacher-signature small,.graph-controls label,.graph-values,.question-meta,.practice-footnote,.summary-metrics span,.summary-copy .overline,.completion-ring span,.result-topic .small-text,.review-list> a>div>span,.input-help,.open-badge,.breadcrumb,.quiet-note{font-size:.75rem}
+.hero-note{flex-wrap:wrap;white-space:normal;line-height:1.7}
+.graph-explorer .axis-label{font-size:16px}
+.graph-controls label{font-size:.875rem}
+@media(max-width:520px){.hero-actions .button{font-size:.8rem!important}.question-navigation .button{font-size:.8rem!important}.teacher-card-actions .button{font-size:.8rem!important}.data-actions .button{font-size:.8rem!important}.topbar .breadcrumb{font-size:.75rem;max-width:175px}.hero-note{font-size:.75rem;gap:5px}.overview-stats>div:last-child strong{font-size:.85rem}.overview-stats>div{align-items:start}.hero-art{margin-top:18px}.result-topic h3{font-size:.9rem}.result-topic{flex-basis:70%}.result-row{gap:8px}.result-row .button{font-size:.8rem!important}.question-meta{gap:8px}.question-meta>span+span:before{margin-right:8px}}
+@media print{body{background:white;color:#000;font-size:11pt;line-height:1.6}#app,#toast,.modal-overlay,.skip-link{display:none!important}#print-area{display:block;margin:0;padding:0}#print-area h1{font-size:21pt;margin:25px 0 16px}#print-area h2{font-size:15pt;margin:21px 0 12px}#print-area p{font-size:10.5pt;line-height:1.7;margin:9px 0}.print-header{display:flex;justify-content:space-between;border-bottom:1px solid #aaa;padding-bottom:12px;font-size:10pt}.print-task{break-inside:avoid;margin:20px 0}.writing-space{height:40px;border-bottom:1px solid #ccc;margin:12px 0 20px}@page{size:A4;margin:17mm}}
+</style>
+  <script>window.ALGEBRA_OFFLINE=true;</script><script>window.ALGEBRA_CONTENT = {
+  version:1,
+  topics:[
+    {
+      id:"powers", title:"Бүтін көрсеткішті дәреже", short:"Дәреже және оның қасиеттері", icon:"power", color:"blue",
+      description:"Дәреженің мағынасын түсін. Көрсеткіштермен амалдарды меңгер.",
+      goal:"Натурал көрсеткішті дәрежені есептеу және негіздері бірдей дәрежелердің көбейтіндісін табу.",
+      minutes:10,
+      theory:[
+        {title:"Дәреже нені білдіреді?",text:"aⁿ — a санын өзіне n рет көбейту. Мұндағы a — негіз, n — көрсеткіш. Мысалы, 2³ = 2 · 2 · 2 = 8."},
+        {title:"Негіздері бірдей болса",text:"Көбейткенде көрсеткіштер қосылады: aᵐ · aⁿ = aᵐ⁺ⁿ. Дәрежені дәрежеге шығарғанда көрсеткіштер көбейтіледі: (aᵐ)ⁿ = aᵐⁿ."},
+        {title:"Нөлдік және теріс көрсеткіш",text:"a ≠ 0 болғанда a⁰ = 1, ал a⁻ⁿ = 1/aⁿ. Мысалы, 2⁻² = 1/4. Теріс көрсеткіш жауаптың міндетті түрде теріс болатынын білдірмейді."}
+      ],
+      examples:[
+        {title:"Санның дәрежесін есептеу",expression:"3³ = 3 · 3 · 3 = 27",steps:["Негіз — 3, көрсеткіш — 3.","Үш бірдей көбейткішті көбейтеміз: 3 · 3 = 9, 9 · 3 = 27."]},
+        {title:"Қасиетті қолдану",expression:"x² · x⁴ = x²⁺⁴ = x⁶",steps:["Екі дәреженің негізі бірдей: x.","Көрсеткіштерді қосамыз: 2 + 4 = 6."]}
+      ],
+      mistake:"2³ = 6 емес. Көрсеткішке көбейтпейміз: 2 санын үш рет көбейтеміз.",
+      tasks:[
+        {id:"powers-1",version:1,type:"choice",level:"Базалық",question:"2³ мәнін таңдаңыз.",options:[{id:"a",text:"6"},{id:"b",text:"8"},{id:"c",text:"9"},{id:"d",text:"16"}],answer:"b",displayAnswer:"8",hint:"2³ дегеніміз — үш 2-нің көбейтіндісі.",explanation:"2³ = 2 · 2 · 2 = 8. Дәреже көрсеткіші көбейткіштің неше рет алынғанын көрсетеді."},
+        {id:"powers-2",version:1,type:"number",level:"Базалық",question:"3² мәнін енгізіңіз.",answer:"9",displayAnswer:"9",hint:"3 санын өзіне көбейтіңіз.",explanation:"3² = 3 · 3 = 9. Квадратқа шығару — санды 2-ге көбейту емес."},
+        {id:"powers-3",version:1,type:"fields",level:"Қолдану",question:"Жетіспейтін көрсеткішті толтырыңыз.",formula:"a² · a³ = aⁿ",fields:[{label:"n көрсеткіші"}],answer:["5"],displayAnswer:"n = 5",hint:"Негіздері бірдей дәрежелер көбейтілгенде көрсеткіштері қосылады.",explanation:"a² · a³ = a²⁺³ = a⁵. Сондықтан n = 5."}
+      ]
+    },
+    {
+      id:"polynomials",title:"Көпмүшелер",short:"Өрнектерді ықшамдау",icon:"polynomial",color:"violet",
+      description:"Ұқсас мүшелерді біріктір. Жақшаны ашып, өрнекті ықшамда.",
+      goal:"Бірмүшенің дәрежесі мен коэффициентін анықтау және көпмүшені бірмүшеге көбейту.",
+      minutes:12,
+      theory:[
+        {title:"Бірмүше және оның дәрежесі",text:"Бірмүше — сандар мен айнымалылар дәрежелерінің көбейтіндісі. 4x³y² бірмүшесінің коэффициенті 4, дәрежесі 3 + 2 = 5."},
+        {title:"Ұқсас мүшелер",text:"Айнымалы бөліктері бірдей мүшелер ұқсас болады. Олардың коэффициенттері қосылады: 3x + 2x = 5x. Ал 3x пен 2x² ұқсас емес."},
+        {title:"Жақшаны ашу",text:"Бірмүшені жақшадағы әр мүшеге көбейтеміз: a(b + c) = ab + ac. Теріс таңба болса, әр көбейтіндінің таңбасына назар аударыңыз."}
+      ],
+      examples:[
+        {title:"Ұқсас мүшелерді біріктіру",expression:"4x + 3 − x + 2 = 3x + 5",steps:["Айнымалысы бар мүшелер: 4x − x = 3x.","Тұрақты сандар: 3 + 2 = 5."]},
+        {title:"Көпмүшені бірмүшеге көбейту",expression:"3x(x + 2) = 3x² + 6x",steps:["3x · x = 3x².","3x · 2 = 6x. Екі нәтижені қосамыз."]}
+      ],
+      mistake:"2(x + 3) өрнегі 2x + 3 болмайды. 2 санын жақшадағы екі мүшеге де көбейтіңіз.",
+      tasks:[
+        {id:"polynomials-1",version:1,type:"choice",level:"Базалық",question:"4x³y² бірмүшесінің дәрежесі неге тең?",options:[{id:"a",text:"3"},{id:"b",text:"4"},{id:"c",text:"5"},{id:"d",text:"6"}],answer:"c",displayAnswer:"5",hint:"Айнымалылардың көрсеткіштерін қосыңыз.",explanation:"Бірмүшенің дәрежесі — айнымалылар көрсеткіштерінің қосындысы: 3 + 2 = 5. Коэффициент 4 қосылмайды."},
+        {id:"polynomials-2",version:1,type:"number",level:"Базалық",question:"3x + 2x − 4 өрнегін ықшамдағанда x-тің коэффициенті қандай?",answer:"5",displayAnswer:"5",hint:"3x пен 2x — ұқсас мүшелер.",explanation:"3x + 2x − 4 = 5x − 4. x-тің коэффициенті 5-ке тең."},
+        {id:"polynomials-3",version:1,type:"fields",level:"Қолдану",question:"Жақшаны ашып, коэффициенттерді толтырыңыз.",formula:"2x(x + 3) = ax² + bx",fields:[{label:"a коэффициенті"},{label:"b коэффициенті"}],answer:["2","6"],displayAnswer:"a = 2, b = 6",hint:"2x-ті x-ке де, 3-ке де көбейтіңіз.",explanation:"2x · x + 2x · 3 = 2x² + 6x. Сондықтан a = 2 және b = 6."}
+      ]
+    },
+    {
+      id:"functions",title:"Функция және оның графигі",short:"Функциялар мен графиктер",icon:"graph",color:"teal",
+      description:"Айнымалылар байланысын көр. Формуладан кесте мен графикке өт.",
+      goal:"Сызықтық функцияның мәнін есептеу, нүктенің графикке тиістілігін анықтау және мәндер кестесін толтыру.",
+      minutes:12,
+      theory:[
+        {title:"Функция ұғымы",text:"Функцияда x-тің әрбір рұқсат етілген мәніне y-тің бір ғана мәні сәйкес келеді. Мысалы, y = 2x + 1 формуласында x = 3 болса, y = 7."},
+        {title:"Сызықтық функция",text:"y = kx + b функциясының графигі — түзу. k түзудің көлбеулігін анықтайды, b — түзудің y осімен қиылысу ординатасы."},
+        {title:"Графиктегі нүкте",text:"Нүктенің x координатасын формулаға қойыңыз. Есептелген y нүктенің y координатасына тең болса, нүкте графикке тиісті."}
+      ],
+      examples:[
+        {title:"Функцияның мәнін табу",expression:"y = 2x − 3, x = 4 ⇒ y = 5",steps:["x орнына 4 санын қоямыз: y = 2 · 4 − 3.","Алдымен көбейтеміз, содан кейін азайтамыз: 8 − 3 = 5."]},
+        {title:"Нүктені тексеру",expression:"(2; 5) нүктесі y = 2x + 1 графигіне тиісті",steps:["x = 2 мәнін қоямыз: 2 · 2 + 1 = 5.","Нәтиже нүктенің екінші координатасына тең."]}
+      ],
+      mistake:"Нүкте (x; y) ретімен жазылады. Координаталардың орнын ауыстырмаңыз.",
+      tasks:[
+        {id:"functions-1",version:1,type:"choice",level:"Базалық",question:"Қай нүкте y = 2x + 1 графигіне тиісті?",options:[{id:"a",text:"(1; 2)"},{id:"b",text:"(2; 5)"},{id:"c",text:"(0; 0)"},{id:"d",text:"(−1; 1)"}],answer:"b",displayAnswer:"(2; 5)",hint:"Әр нүктенің бірінші координатасын x орнына қойыңыз.",explanation:"x = 2 болса, y = 2 · 2 + 1 = 5. Сондықтан (2; 5) нүктесі осы графикте жатады."},
+        {id:"functions-2",version:1,type:"number",level:"Базалық",question:"y = 3x − 2 функциясында x = 4 болса, y неге тең?",answer:"10",displayAnswer:"10",hint:"x орнына 4 қойып, алдымен көбейтуді орындаңыз.",explanation:"y = 3 · 4 − 2 = 12 − 2 = 10."},
+        {id:"functions-3",version:1,type:"fields",level:"Қолдану",question:"y = 2x + 1 функциясының кестесін толтырыңыз.",fields:[{label:"x = −1 болғандағы y"},{label:"x = 0 болғандағы y"},{label:"x = 2 болғандағы y"}],answer:["-1","1","5"],displayAnswer:"−1; 1; 5",hint:"Әр x мәнін 2x + 1 формуласына жеке қойыңыз.",explanation:"x = −1: y = −2 + 1 = −1. x = 0: y = 1. x = 2: y = 4 + 1 = 5."}
+      ]
+    },
+    {
+      id:"statistics",title:"Статистика элементтері",short:"Деректер мен жиілік",icon:"chart",color:"orange",
+      description:"Деректерді ретте. Абсолюттік және салыстырмалы жиілікті тап.",
+      goal:"Деректегі мәннің абсолюттік және салыстырмалы жиілігін табу, жиілік кестесін толтыру.",
+      minutes:10,
+      theory:[
+        {title:"Деректерді зерттеу",text:"Статистика деректерді жинауға, реттеуге және түсіндіруге көмектеседі. Өсу ретімен жазылған деректер вариациялық қатар құрайды."},
+        {title:"Абсолюттік жиілік",text:"Белгілі бір мәннің неше рет кездесетінін көрсетеді. Мысалы, 2, 3, 2, 4, 2 қатарында 2 саны үш рет кездеседі: жиілігі — 3."},
+        {title:"Салыстырмалы жиілік",text:"Абсолюттік жиілікті барлық бақылау санына бөлеміз: w = n/N. Барлық салыстырмалы жиіліктердің қосындысы 1-ге тең."}
+      ],
+      examples:[
+        {title:"Жиілікті санау",expression:"1, 2, 1, 3, 2 ⇒ n(1) = 2",steps:["Деректерде 1 саны екі рет жазылған.","Барлығы бес бақылау бар."]},
+        {title:"Салыстырмалы жиілік",expression:"n = 2, N = 5 ⇒ w = 2/5 = 0,4 = 40%",steps:["Мәннің жиілігін барлық бақылау санына бөлеміз: 2/5.","Пайызбен көрсету үшін 100%-ға көбейтеміз."]}
+      ],
+      mistake:"Жиілік пен мәнді шатастырмаңыз. Мысалы, 7 саны екі рет кездессе, оның жиілігі 7 емес, 2 болады.",
+      tasks:[
+        {id:"statistics-1",version:1,type:"choice",level:"Базалық",question:"2, 3, 2, 4, 2, 3 деректерінде 2 санының абсолюттік жиілігі қандай?",options:[{id:"a",text:"1"},{id:"b",text:"2"},{id:"c",text:"3"},{id:"d",text:"6"}],answer:"c",displayAnswer:"3",hint:"2 саны неше рет кездесетінін санаңыз.",explanation:"2 саны бірінші, үшінші және бесінші орындарда кездеседі. Абсолюттік жиілігі — 3."},
+        {id:"statistics-2",version:1,type:"number",level:"Базалық",question:"10 оқушының үшеуі шахмат ойнайды. Олардың салыстырмалы жиілігін бөлшекпен немесе ондық санмен жазыңыз.",answer:"3/10",displayAnswer:"3/10 = 0,3",hint:"Шахмат ойнайтын оқушылар санын барлық оқушы санына бөліңіз.",explanation:"Салыстырмалы жиілік w = 3/10 = 0,3. Бұл — 30%."},
+        {id:"statistics-3",version:1,type:"fields",level:"Қолдану",question:"1, 2, 1, 3, 2, 1 қатары үшін жиілік кестесін толтырыңыз.",fields:[{label:"1 санының жиілігі"},{label:"2 санының жиілігі"},{label:"3 санының жиілігі"}],answer:["3","2","1"],displayAnswer:"3; 2; 1",hint:"Әр мәннің кездесу санын бөлек санаңыз. Жиіліктердің қосындысы 6 болуы керек.",explanation:"1 саны үш рет, 2 саны екі рет, 3 саны бір рет кездеседі. Тексеру: 3 + 2 + 1 = 6."}
+      ]
+    },
+    {
+      id:"identities",title:"Қысқаша көбейту формулалары",short:"Формулаларды қолдану",icon:"formula",color:"pink",
+      description:"Қосындының квадратын аш. Квадраттар айырмасын қолдан.",
+      goal:"Қосындының квадраты мен квадраттар айырмасы формулаларын тану және есептерде қолдану.",
+      minutes:12,
+      theory:[
+        {title:"Қосындының квадраты",text:"(a + b)² = a² + 2ab + b². Екі мүшенің квадраттарына олардың екі еселенген көбейтіндісін қосамыз."},
+        {title:"Айырманың квадраты",text:"(a − b)² = a² − 2ab + b². Соңғы мүше оң болады, өйткені (−b)² = b²."},
+        {title:"Квадраттар айырмасы",text:"a² − b² = (a − b)(a + b). Бұл формуланы өрнекті көбейткіштерге жіктеуге және ыңғайлы есептеуге қолданамыз."}
+      ],
+      examples:[
+        {title:"Қосындының квадратын ашу",expression:"(x + 2)² = x² + 4x + 4",steps:["a = x, b = 2 деп аламыз.","Ортаңғы мүше: 2 · x · 2 = 4x. Соңғы мүше: 2² = 4."]},
+        {title:"Ыңғайлы есептеу",expression:"13² − 7² = (13 − 7)(13 + 7) = 120",steps:["Квадраттар айырмасы формуласын қолданамыз.","6 · 20 = 120."]}
+      ],
+      mistake:"(a + b)² = a² + b² болмайды. 2ab ортаңғы мүшесін ұмытпаңыз.",
+      tasks:[
+        {id:"identities-1",version:1,type:"choice",level:"Базалық",question:"(x + 4)² өрнегінің дұрыс ашылған түрін таңдаңыз.",options:[{id:"a",text:"x² + 16"},{id:"b",text:"x² + 4x + 16"},{id:"c",text:"x² + 8x + 16"},{id:"d",text:"x² + 8x + 8"}],answer:"c",displayAnswer:"x² + 8x + 16",hint:"Ортаңғы мүше 2 · x · 4-ке тең.",explanation:"(x + 4)² = x² + 2 · x · 4 + 4² = x² + 8x + 16."},
+        {id:"identities-2",version:1,type:"number",level:"Базалық",question:"Квадраттар айырмасы формуласымен 11² − 9² мәнін табыңыз.",answer:"40",displayAnswer:"40",hint:"a² − b² = (a − b)(a + b) формуласын қолданыңыз.",explanation:"11² − 9² = (11 − 9)(11 + 9) = 2 · 20 = 40."},
+        {id:"identities-3",version:1,type:"fields",level:"Қолдану",question:"Жетіспейтін коэффициенттерді толтырыңыз.",formula:"(x + 3)² = x² + ax + b",fields:[{label:"a коэффициенті"},{label:"b тұрақтысы"}],answer:["6","9"],displayAnswer:"a = 6, b = 9",hint:"2 · x · 3 = 6x, ал 3² = 9.",explanation:"(x + 3)² = x² + 2 · x · 3 + 3² = x² + 6x + 9."}
+      ]
+    },
+    {
+      id:"fractions",title:"Алгебралық бөлшектер",short:"Бөлшектерді түрлендіру",icon:"fraction",color:"green",
+      description:"Бөлімнің шартын ескер. Бөлшекті қысқартуды үйрен.",
+      goal:"Алгебралық бөлшектің анықталу шартын табу, мәнін есептеу және қысқарту.",
+      minutes:12,
+      theory:[
+        {title:"Алгебралық бөлшек",text:"Алымы мен бөлімінде алгебралық өрнектер бар бөлшек алгебралық бөлшек деп аталады. Оның бөлімі нөлге тең болмауы керек."},
+        {title:"Анықталу шарты",text:"Бөлімді нөлге айналдыратын мәндерді алып тастаймыз. Мысалы, (x + 1)/(x − 3) бөлшегі x ≠ 3 болғанда анықталған."},
+        {title:"Қысқарту",text:"Алым мен бөлімнің ортақ нөлден өзге көбейткішін қысқартамыз. Қосылғыштарды жеке қысқартуға болмайды. Бастапқы өрнектің анықталу шарты сақталады."}
+      ],
+      examples:[
+        {title:"Мәнін есептеу",expression:"3x/8, x = 2 ⇒ 6/8 = 3/4",steps:["x орнына 2 қоямыз: 3 · 2 / 8 = 6/8.","Алым мен бөлімді 2-ге бөлеміз: 3/4."]},
+        {title:"Ортақ көбейткішті қысқарту",expression:"6x²/(3x) = 2x, мұндағы x ≠ 0",steps:["6x² = 3x · 2x түрінде жазамыз.","3x ортақ көбейткішін қысқартамыз; x ≠ 0 шарты сақталады."]}
+      ],
+      mistake:"(x + 2)/x бөлшегінде x-терді жеке қысқартуға болмайды: алымдағы x бүкіл алымның көбейткіші емес.",
+      tasks:[
+        {id:"fractions-1",version:1,type:"choice",level:"Базалық",question:"(x + 1)/(x − 3) бөлшегі x-тің қай мәнінде анықталмайды?",options:[{id:"a",text:"−3"},{id:"b",text:"0"},{id:"c",text:"1"},{id:"d",text:"3"}],answer:"d",displayAnswer:"3",hint:"Бөлімді нөлге айналдыратын x мәнін табыңыз.",explanation:"x − 3 = 0 болғанда x = 3. Нөлге бөлуге болмайды, сондықтан x = 3 мәнінде бөлшек анықталмайды."},
+        {id:"fractions-2",version:1,type:"number",level:"Базалық",question:"x = 2 болса, 3x/8 бөлшегінің мәнін табыңыз.",answer:"3/4",displayAnswer:"3/4 = 0,75",hint:"x орнына 2 қойып, шыққан бөлшекті қысқартыңыз.",explanation:"3 · 2 / 8 = 6/8 = 3/4 = 0,75. Бөлшек және ондық жауап бірдей қабылданады."},
+        {id:"fractions-3",version:1,type:"fields",level:"Қолдану",question:"Бөлшекті қысқартып, шартты толтырыңыз.",formula:"6x²/(3x) = ax, мұндағы x ≠ b",fields:[{label:"a коэффициенті"},{label:"b рұқсат етілмейтін мәні"}],answer:["2","0"],displayAnswer:"a = 2, b = 0",hint:"6/3 = 2, x²/x = x. Бастапқы бөлім нөл болмауы керек.",explanation:"6x²/(3x) = 2x. Бастапқы бөлім 3x болғандықтан, x ≠ 0 шарты сақталады."}
+      ]
+    }
+  ]
+};
+</script>
+  
+  
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Негізгі мазмұнға өту</a>
+  <div id="app"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div id="print-area"></div>
+  <noscript><main class="noscript"><h1>Алгебра 7</h1><p>Интерактивті тапсырмаларды орындау үшін браузерде JavaScript қосулы болуы керек.</p></main></noscript>
+<script>(function (root) {
+  "use strict";
+  function fraction(value) {
+    var text = String(value == null ? "" : value).trim().replace(/\s/g, "").replace(/[−–]/g, "-").replace(/,/g, ".");
+    if (!text || text.length > 64) return null;
+    function decimal(s) {
+      if (!/^[+-]?(?:\d+(?:\.\d*)?|\.\d+)$/.test(s)) return null;
+      var negative = s.charAt(0) === "-";
+      var clean = s.replace(/^[+-]/, "");
+      var parts = clean.split(".");
+      var digits = (parts[0] || "0") + (parts[1] || "");
+      return [BigInt(digits) * (negative ? -1n : 1n), 10n ** BigInt((parts[1] || "").length)];
+    }
+    var bits = text.split("/");
+    if (bits.length > 2) return null;
+    var a = decimal(bits[0]);
+    if (!a) return null;
+    if (bits.length === 1) return a;
+    var b = decimal(bits[1]);
+    if (!b || b[0] === 0n) return null;
+    var out = [a[0] * b[1], a[1] * b[0]];
+    return out[1] < 0n ? [-out[0], -out[1]] : out;
+  }
+  function equal(a, b) {
+    var left = fraction(a), right = fraction(b);
+    return !!left && !!right && left[0] * right[1] === right[0] * left[1];
+  }
+  function grade(task, answer) {
+    if (task.type === "choice") {
+      if (typeof answer !== "string" || !task.options.some(function (o) { return o.id === answer; })) {
+        return {valid:false, correct:false, message:"Алдымен бір жауапты таңдаңыз."};
+      }
+      return {valid:true, correct:answer === task.answer, fieldResults:[]};
+    }
+    var values = task.type === "fields" ? answer : [answer];
+    var expected = task.type === "fields" ? task.answer : [task.answer];
+    if (!Array.isArray(values) || values.length !== expected.length || values.some(function (a) { return !fraction(a); })) {
+      return {valid:false, correct:false, message:"Барлық өріске сан енгізіңіз. Үлгі: 5, −2, 0,25 немесе 1/4. Бөлшектің бөлімі нөл болмауы керек."};
+    }
+    var checks = expected.map(function (v, i) { return equal(values[i], v); });
+    return {valid:true, correct:checks.every(Boolean), fieldResults:checks};
+  }
+  var api = {fraction:fraction, equal:equal, grade:grade};
+  root.AlgebraGrading = api;
+  if (typeof module !== "undefined" && module.exports) module.exports = api;
+})(typeof window !== "undefined" ? window : globalThis);
+</script>
+<script>(function (root) {
+  "use strict";
+  var key = "algebra7.progress.v1";
+  var available = true;
+  var state = {version:1, attempts:{}};
+  function clean(input) {
+    var attempts = {};
+    var allTasks = root.ALGEBRA_CONTENT.topics.flatMap(function (t) { return t.tasks; });
+    var source = input && input.version === 1 && input.attempts && typeof input.attempts === "object" ? input.attempts : {};
+    allTasks.forEach(function (task) {
+      var a = source[task.id];
+      if (!a || a.contentVersion !== task.version || typeof a.correct !== "boolean" || typeof a.firstCorrect !== "boolean") return;
+      if (!Number.isInteger(a.count) || a.count < 1 || a.count > 1000000) return;
+      var result = root.AlgebraGrading.grade(task, a.answer);
+      if (!result.valid || result.correct !== a.correct) return;
+      attempts[task.id] = {
+        contentVersion:task.version, correct:a.correct, firstCorrect:a.firstCorrect,
+        answer:a.answer, count:a.count, usedHint:!!a.usedHint,
+        firstUsedHint:!!a.firstUsedHint, updatedAt:typeof a.updatedAt === "string" ? a.updatedAt.slice(0,40) : ""
+      };
+    });
+    return {version:1, attempts:attempts};
+  }
+  try {
+    var raw = root.localStorage.getItem(key);
+    if (raw) state = clean(JSON.parse(raw));
+    root.localStorage.setItem(key, JSON.stringify(state));
+  } catch (error) { available = false; }
+  function persist() {
+    try { root.localStorage.setItem(key, JSON.stringify(state)); }
+    catch (error) { available = false; }
+  }
+  root.AlgebraStorage = {
+    get:function () { return state; },
+    available:function () { return available; },
+    record:function (task, answer, result, usedHint) {
+      var previous = state.attempts[task.id];
+      state.attempts[task.id] = {
+        contentVersion:task.version, answer:answer, correct:result.correct,
+        firstCorrect:previous ? previous.firstCorrect : result.correct,
+        firstUsedHint:previous ? previous.firstUsedHint : !!usedHint,
+        usedHint:!!usedHint || !!(previous && previous.usedHint),
+        count:previous ? Math.min(previous.count + 1, 1000000) : 1,
+        updatedAt:new Date().toISOString()
+      };
+      persist();
+    },
+    reset:function () { state = {version:1,attempts:{}}; persist(); },
+    restore:function (input) { state = clean(input); persist(); return Object.keys(state.attempts).length; },
+    validate:clean
+  };
+})(window);
+</script>
+<script>(function () {
+  "use strict";
+  var topics = window.ALGEBRA_CONTENT.topics;
+  var store = window.AlgebraStorage;
+  var grader = window.AlgebraGrading;
+  var app = document.getElementById("app");
+  var ui = {route:"",feedback:null,draft:null,hints:new Set(),menu:false,imported:null};
+  var mobileMedia = window.matchMedia("(max-width: 760px)");
+  var paths = {
+    home:"M3 10 12 3l9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z",
+    book:"M12 6c-3-3-8-3-10-2v15c3-1 7-1 10 2m0-15c3-3 8-3 10-2v15c-3-1-7-1-10 2V6",
+    pen:"m15 4 5 5M4 16l-1 5 5-1L21 7a2 2 0 0 0-5-5Z",
+    chart:"M4 3v17h17M8 15v-4m5 4V6m5 9V9",
+    teacher:"M3 4h18v12H3ZM8 21l4-5 4 5M7 8h10M7 12h5",
+    check:"m5 12 4 4L19 6",
+    close:"m6 6 12 12M6 18 18 6",
+    clock:"M12 8v4l3 2M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0",
+    bulb:"M9 18h6m-5 3h4M8 14a6 6 0 1 1 8 0c-1 1-1 2-1 2H9s0-1-1-2",
+    help:"M9 8a3 3 0 1 1 5 2c-2 1-2 2-2 3m0 4h.01M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0",
+    lock:"M8 10V7a4 4 0 0 1 8 0v3M5 10h14v11H5Zm7 4v3",
+    spark:"m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5Z",
+    copy:"M9 9h12v12H9ZM15 5V3H3v12h2",
+    print:"M7 8V3h10v5M7 17H3v-9h18v9h-4M7 14h10v7H7Z",
+    download:"M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4",
+    upload:"M12 16V4m-5 5 5-5 5 5M4 17v4h16v-4",
+    reset:"M3 4v6h6M3 10a9 9 0 1 1 1 8",
+    menu:"M4 6h16M4 12h16M4 18h16",
+    search:"M21 21l-5-5M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0",
+    shield:"M12 3 3 7v5c0 5 9 9 9 9s9-4 9-9V7ZM8 12l3 3 5-6",
+    target:"M15 9 21 3m-6 0v6h6M12 3a9 9 0 1 0 9 9M12 7a5 5 0 1 0 5 5"
+  };
+  function icon(name, cls) {
+    return '<svg class="icon '+(cls||"")+'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="'+(paths[name]||paths.book)+'"/></svg>';
+  }
+  function topicIcon(t) {
+    var marks = {power:"aⁿ",polynomial:"x²",graph:"ƒ",chart:"▥",formula:"(a+b)²",fraction:"a/b"};
+    return '<span class="topic-icon '+t.color+'" aria-hidden="true">'+marks[t.icon]+'</span>';
+  }
+  function esc(value) {
+    return String(value == null ? "" : value).replace(/[&<>"']/g,function (c) { return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; });
+  }
+  function topicById(id) { return topics.find(function (t) { return t.id === id; }); }
+  function stats(topic) {
+    var tasks = topic ? topic.tasks : topics.flatMap(function (t) { return t.tasks; });
+    var attempts = store.get().attempts;
+    var answered=0, correct=0, first=0, hints=0;
+    tasks.forEach(function (t) {
+      var a=attempts[t.id];
+      if (a) { answered++; if(a.correct)correct++; if(a.firstCorrect)first++; if(a.usedHint)hints++; }
+    });
+    return {total:tasks.length,answered:answered,correct:correct,first:first,hints:hints,percent:Math.round(answered/tasks.length*100),accuracy:answered?Math.round(first/answered*100):0};
+  }
+  function progress(value,total) {
+    return '<div class="progress-track" role="progressbar" aria-label="Орындалған тапсырмалар" aria-valuenow="'+value+'" aria-valuemin="0" aria-valuemax="'+total+'"><span style="width:'+(value/total*100)+'%"></span></div>';
+  }
+  function buttonLink(text,url,kind,ico) {
+    return '<a class="button '+(kind||"primary")+'" href="'+esc(url)+'">'+(ico?icon(ico):"")+esc(text)+'</a>';
+  }
+  function graph(k,b,hero) {
+    var out='<svg class="function-graph" viewBox="0 0 360 250" role="img" aria-label="'+esc("y = "+k+"x + "+b+" функциясының графигі")+'"><defs><clipPath id="graph-clip"><rect x="25" y="20" width="310" height="205"/></clipPath></defs>';
+    for(var i=-6;i<=6;i++) {
+      var x=180+i*25;
+      out+='<path class="grid-line" d="M'+x+' 20V225"/>';
+      if(i&&i%2===0)out+='<text class="axis-label" x="'+x+'" y="143" text-anchor="middle">'+i+'</text>';
+    }
+    for(var j=-4;j<=4;j++){
+      var y=125-j*25;
+      out+='<path class="grid-line" d="M25 '+y+'H335"/>';
+      if(j&&j%2===0)out+='<text class="axis-label" x="168" y="'+(y+4)+'" text-anchor="end">'+j+'</text>';
+    }
+    out+='<path class="axis-line" d="M25 125H335M180 20V225"/><text class="axis-label" x="327" y="113">x</text><text class="axis-label" x="192" y="30">y</text><text class="axis-label" x="167" y="143">0</text>';
+    out+='<g clip-path="url(#graph-clip)"><path class="graph-line" d="M30 '+(125-(-6*k+b)*25)+'L330 '+(125-(6*k+b)*25)+'"/>';
+    [-1,0,1].forEach(function(xv){out+='<circle class="graph-point" cx="'+(180+xv*25)+'" cy="'+(125-(k*xv+b)*25)+'" r="'+(hero?4:5)+'"/>';});
+    return out+'</g></svg>';
+  }
+  function navLink(url,label,ico,active) {
+    return '<a class="nav-link'+(active?' active':'')+'" href="'+url+'"'+(active?' aria-current="page"':'')+'>'+icon(ico)+'<span>'+label+'</span></a>';
+  }
+  function shell(content,section,breadcrumb) {
+    var s=stats();
+    return '<div class="mobile-scrim'+(ui.menu?' visible':'')+'" data-action="menu-close"></div>'+
+    '<aside class="sidebar'+(ui.menu?' open':'')+'" aria-label="Негізгі навигация">'+
+      '<a class="brand" href="#/"><span class="brand-symbol" aria-hidden="true">∑</span><span>Алгебра<span class="brand-grade">7-сынып</span></span></a>'+
+      '<div class="nav-label">СЕНІҢ ОҚУ ОРТАҢ</div><nav>'+
+      navLink("#/","Басты бет","home",section==="home")+
+      navLink("#/topics","Тақырыптар","book",section==="topics")+
+      navLink("#/practice","Жаттығу","pen",section==="practice")+
+      navLink("#/results","Менің нәтижем","chart",section==="results")+
+      '</nav><div class="sidebar-progress"><div class="progress-heading"><span>Оқу барысы</span><strong>'+s.answered+'/'+s.total+'</strong></div>'+progress(s.answered,s.total)+'<p>Әр есеп — алға бір қадам.</p></div>'+
+      '<nav class="secondary-nav">'+navLink("#/teacher","Мұғалімге","teacher",section==="teacher")+navLink("#/help","Көмек","help",section==="help")+'</nav>'+
+      '<div class="teacher-signature"><span class="avatar">РА</span><span><strong>Расул Арманұлы</strong><small>Математика мұғалімі</small></span></div>'+
+    '</aside><div class="workspace"><header class="topbar"><div class="topbar-left"><button class="icon-button mobile-menu" data-action="menu" aria-label="Мәзірді ашу" aria-expanded="'+ui.menu+'">'+icon("menu")+'</button><span class="breadcrumb">Оқу кеңістігі <span>/</span> <strong>'+esc(breadcrumb)+'</strong></span></div><div class="topbar-right"><span class="open-badge">'+icon("shield")+'Тіркелусіз</span><a class="help-button" href="#/help" aria-label="Пайдалану нұсқаулығы">'+icon("help")+'</a></div></header>'+
+    '<main id="main" tabindex="-1">'+(!store.available()?'<div class="storage-notice">'+icon("help")+'Нәтиже осы сеанста ғана сақталады. Браузерде сақтау қолжетімсіз.</div>':"")+content+'</main>'+
+    '<footer class="footer"><span>Алгебра 7 <span class="footer-dot">·</span> Түсініп үйрен, сенімді қолдан.</span><a href="#/help">Қалай жұмыс істейді?</a></footer></div>';
+  }
+  function topicCards(mode) {
+    return '<div class="topic-grid" id="topic-list">'+topics.map(function(t){
+      var s=stats(t), isPractice=mode==="practice";
+      return '<a class="topic-card" data-topic-search="'+esc((t.title+" "+t.short+" "+t.description).toLocaleLowerCase("kk"))+'" href="#/'+(isPractice?"practice/":"lesson/")+t.id+(isPractice?"/0":"")+'"><div class="topic-card-top">'+topicIcon(t)+(s.answered===3?'<span class="status-tag">'+icon("check")+'Орындалды</span>':'<span class="topic-duration">'+icon("clock")+t.minutes+' мин</span>')+'</div><h3>'+esc(t.title)+'</h3><p>'+esc(t.description)+'</p><div class="topic-meta"><span>2 мысал</span><span>3 тапсырма</span></div><div class="card-bottom"><span>'+(isPractice?"Жаттығуды бастау":s.answered?"Сабақты жалғастыру":"Сабақты ашу")+'</span><span class="card-count">'+s.answered+'/3</span></div>'+progress(s.answered,3)+'</a>';
+    }).join("")+'</div><div class="empty-search" id="empty-search" hidden>Бұл атаумен тақырып табылмады. Мысалы, «дәреже» деп іздеп көріңіз.</div>';
+  }
+  function home() {
+    var s=stats();
+    var next=topics.find(function(t){return stats(t).answered<3;});
+    var hero='<section class="hero"><div class="hero-copy"><span class="eyebrow"><span></span>7-СЫНЫП · ҚАЗАҚ ТІЛІНДЕ</span><h1>Алгебраны<br><em>түсініп үйрен.</em></h1><p>Қысқа ереже. Түсінікті мысал. Өз бетіңмен шығаратын есеп. Бәрі бір жерде.</p><div class="hero-actions">'+buttonLink(s.answered?"Оқуды жалғастыру":"Оқуды бастау","#/lesson/"+(next?next.id:"powers"),"primary","book")+buttonLink("Тақырыптарды қарау","#/topics","light")+'</div><div class="hero-note">'+icon("check")+'Тіркелусіз <span>·</span> Өз қарқыныңмен <span>·</span> Бірден кері байланыс</div></div><div class="hero-art" aria-hidden="true"><span class="floating-formula top-formula">aᵐ · aⁿ = aᵐ⁺ⁿ</span><div class="graph-card"><div class="graph-card-header"><span class="graph-dot"></span><span>Функцияны көріп түсін</span><span class="graph-equation">y = 2x + 1</span></div>'+graph(2,1,true)+'</div><span class="floating-formula bottom-formula"><span class="formula-check">✓</span> (a + b)² = a² + 2ab + b²</span></div></section>';
+    var numbers='<section class="overview-stats" aria-label="Платформа көрсеткіштері"><div>'+icon("book")+'<span><strong>6</strong><small>Негізгі бөлім</small></span></div><div>'+icon("pen")+'<span><strong>18</strong><small>Интерактивті тапсырма</small></span></div><div>'+icon("target")+'<span><strong>'+s.answered+'<span class="stat-denominator">/18</span></strong><small>Тапсырма орындалды</small></span></div><div>'+icon("spark")+'<span><strong>'+(s.answered?s.accuracy+"%":"Өз қарқыныңмен")+'</strong><small>'+(s.answered?"Алғашқы жауап дәлдігі":"Уақыт шектеуі жоқ")+'</small></span></div></section>';
+    var panel=s.answered?'<div class="continue-card"><span class="continue-icon">'+icon("pen")+'</span><div><h3>'+(next?"Келесі қадамға дайынсың ба?":"Барлық тапсырманы орындадың!")+'</h3><p>'+(next?esc(next.title)+" тақырыбын жалғастыр.":"Нәтижені қарап, қате есептерді қайта орында.")+'</p></div>'+buttonLink(next?"Жалғастыру":"Нәтижені көру",next?"#/lesson/"+next.id:"#/results","secondary")+'</div>':"";
+    return shell(hero+numbers+panel+'<section class="section"><div class="section-heading"><div><span class="overline">БІР ТАҚЫРЫПТАН БАСТА</span><h2>Бүгін нені үйренеміз?</h2></div><a class="text-link" href="#/topics">Барлық тақырыптар</a></div>'+topicCards("lesson")+'</section><section class="learning-note">'+icon("bulb")+'<div><h3>Қателесу — үйренудің бір бөлігі.</h3><p>Жауабың сәйкес келмесе, түсіндірмені оқып, қайта байқап көр. Әрекет саны шектелмейді.</p></div></section>',"home","Басты бет");
+  }
+  function topicsPage(mode) {
+    var practice=mode==="practice";
+    return shell('<div class="page-heading"><span class="overline">'+(practice?"БІЛІМІҢДІ ҚОЛДАН":"АЛГЕБРА 7")+'</span><h1>'+(practice?"Жаттығу алаңы":"Тақырыптар")+'</h1><p>'+(practice?"Тақырыпты таңда да, үш есеппен біліміңді бекіт. Жауаптан кейін түсіндірме беріледі.":"Әр бөлімде қысқа ереже, екі шешілген мысал және үш интерактивті тапсырма бар.")+'</p></div>'+
+    (practice?'<div class="practice-banner"><div>'+icon("spark")+'<div><h3>Аралас жаттығу</h3><p>Алты бөлімнен 18 тапсырманы ретімен орында.</p></div></div>'+buttonLink("Жаттығуды бастау","#/practice/all/0","primary","pen")+'</div>':'')+
+    '<div class="topics-toolbar"><span class="muted">6 негізгі бөлім</span><label class="search">'+icon("search")+'<span class="sr-only">Тақырып іздеу</span><input id="topic-search" type="search" placeholder="Тақырып іздеу" autocomplete="off"></label></div>'+topicCards(practice?"practice":"lesson"),practice?"practice":"topics",practice?"Жаттығу":"Тақырыптар");
+  }
+  function graphWidget() {
+    return '<section class="graph-explorer content-card"><div class="section-heading"><div><span class="overline">БАЙҚАП КӨР</span><h2>Түзу қалай өзгереді?</h2></div><span class="tag">Интерактив</span></div><p class="muted">k мен b мәндерін өзгертіп, графиктің қозғалысын бақыла.</p><div class="explorer-grid"><div id="explorer-graph">'+graph(2,1,false)+'</div><div class="graph-controls"><div id="graph-formula" class="math-expression">y = 2x + 1</div><label for="slope">Көлбеулік коэффициенті <strong id="slope-value">k = 2</strong></label><input id="slope" type="range" min="-3" max="3" step="0.5" value="2"><label for="intercept">Бос мүше <strong id="intercept-value">b = 1</strong></label><input id="intercept" type="range" min="-4" max="4" step="1" value="1"><p class="small-text">k артса, түзудің көлбеулігі өзгереді. b артса, түзу жоғары жылжиды.</p><div id="graph-values" class="graph-values"><span>x = −1 → y = −1</span><span>x = 0 → y = 1</span><span>x = 1 → y = 3</span></div></div></div></section>';
+  }
+  function lesson(topic) {
+    if(!topic)return notFound();
+    var t=topic, s=stats(t);
+    var head='<a class="back-link" href="#/topics">Тақырыптарға оралу</a><div class="lesson-heading">'+topicIcon(t)+'<div><span class="overline">ҚЫСҚА САБАҚ · '+t.minutes+' МИНУТ</span><h1>'+esc(t.title)+'</h1></div></div><div class="lesson-layout"><div class="lesson-body"><div class="goal-box">'+icon("target")+'<div><strong>Не үйренесің?</strong><p>'+esc(t.goal)+'</p></div></div>';
+    var theory='<section class="content-card"><span class="overline">ТҮСІНІП АЛ</span><h2>Ережені еске түсірейік</h2>'+t.theory.map(function(p){return '<div class="theory-paragraph"><h3>'+esc(p.title)+'</h3><p>'+esc(p.text)+'</p></div>';}).join("")+'</section>';
+    var examples='<section class="examples-section"><div class="section-heading"><h2>Бірге шығарайық</h2><span class="muted">2 мысал</span></div>'+t.examples.map(function(ex,i){return '<article class="example-card"><span class="example-label">МЫСАЛ '+(i+1)+'</span><h3>'+esc(ex.title)+'</h3><div class="math-expression">'+esc(ex.expression)+'</div><ol>'+ex.steps.map(function(step){return '<li>'+esc(step)+'</li>';}).join("")+'</ol></article>';}).join("")+'</section><div class="mistake-note">'+icon("bulb")+'<div><strong>Осыған назар аудар</strong><p>'+esc(t.mistake)+'</p></div></div>';
+    var side='<aside class="lesson-aside"><div class="lesson-checklist"><h3>Оқу жолың</h3><div>'+icon("book")+'Ереже мен екі мысал</div><div>'+icon("pen")+'Үш тапсырма</div><div>'+icon("chart")+'Нәтиже мен түсіндірме</div><hr><div class="progress-heading"><span>Орындалды</span><strong>'+s.answered+'/3</strong></div>'+progress(s.answered,3)+buttonLink(s.answered?"Жаттығуды жалғастыру":"Жаттығуға өту","#/practice/"+t.id+"/0","primary","pen")+'<button class="button ghost" data-action="print-lesson" data-topic="'+t.id+'">'+icon("print")+'Сабақты басып шығару</button></div><div class="quiet-note">'+icon("shield")+'Нәтиже тек осы браузерде сақталады. Жеке мәлімет сұралмайды.</div></aside>';
+    return shell(head+theory+examples+(t.id==="functions"?graphWidget():"")+'<div class="lesson-bottom"><h2>Енді өзің байқап көр</h2><p>Үш тапсырма арқылы біліміңді бекіт.</p>'+buttonLink("Жаттығуды бастау","#/practice/"+t.id+"/0","primary","pen")+'</div></div>'+side+'</div>',"topics",t.short);
+  }
+  function practice(group,index) {
+    var topic=topicById(group);
+    var tasks=group==="all"?topics.flatMap(function(t){return t.tasks;}):topic?topic.tasks:null;
+    if(!tasks)return notFound();
+    if(!Number.isInteger(index)||index<0||index>=tasks.length)return notFound();
+    var task=tasks[index], actualTopic=topics.find(function(t){return t.tasks.some(function(x){return x.id===task.id;});});
+    var saved=store.get().attempts[task.id];
+    var answer=ui.draft!==null?ui.draft:saved?saved.answer:task.type==="fields"?task.fields.map(function(){return "";}):"";
+    var result=ui.feedback || (saved?grader.grade(task,saved.answer):null);
+    var attempted=tasks.filter(function(t){return !!store.get().attempts[t.id];}).length;
+    var base="#/practice/"+group+"/";
+    var pager='<div class="question-pager" aria-label="Тапсырма таңдау">'+tasks.map(function(t,i){var a=store.get().attempts[t.id];return '<a href="'+base+i+'" class="question-step'+(i===index?' current':'')+(a?(a.correct?' done':' tried'):'')+'" aria-label="'+(i+1)+'-тапсырма'+(a?(a.correct?", дұрыс орындалған":", қайталау қажет"):"")+'"'+(i===index?' aria-current="step"':'')+'>'+(a&&a.correct?icon("check"):i+1)+'</a>';}).join("")+'</div>';
+    var inputs="";
+    if(task.type==="choice"){
+      inputs='<fieldset class="choice-grid"><legend class="sr-only">Жауапты таңдаңыз</legend>'+task.options.map(function(o,i){return '<label class="choice'+(answer===o.id?' selected':'')+'"><input type="radio" name="choice" value="'+o.id+'"'+(answer===o.id?' checked':'')+'><span class="option-letter">'+String.fromCharCode(65+i)+'</span><span>'+esc(o.text)+'</span></label>';}).join("")+'</fieldset>';
+    } else if(task.type==="number"){
+      inputs='<label class="answer-label" for="numeric-answer">Жауабыңыз</label><input class="answer-input numeric-input" id="numeric-answer" name="answer" type="text" inputmode="decimal" autocomplete="off" maxlength="64" placeholder="Сан немесе бөлшек" value="'+esc(answer)+'"><p class="input-help">Мысалы: 5, −2, 0,25 немесе 1/4</p>';
+    } else {
+      inputs='<div class="field-grid">'+task.fields.map(function(f,i){var bad=result&&result.valid&&result.fieldResults&&!result.fieldResults[i];return '<div><label class="answer-label" for="answer-'+i+'">'+esc(f.label)+'</label><input class="answer-input'+(bad?' field-error':'')+'" id="answer-'+i+'" name="field-'+i+'" type="text" inputmode="decimal" autocomplete="off" maxlength="64" value="'+esc(Array.isArray(answer)?answer[i]:"")+'" placeholder="Мәнін енгізіңіз"'+(bad?' aria-invalid="true"':'')+'></div>';}).join("")+'</div>';
+    }
+    var feedback="";
+    if(result){
+      if(!result.valid)feedback='<div class="feedback invalid" id="feedback" role="alert" tabindex="-1">'+icon("help")+'<div><strong>Жауапты толықтырыңыз</strong><p>'+esc(result.message)+'</p></div></div>';
+      else feedback='<div class="feedback '+(result.correct?"correct":"incorrect")+'" id="feedback" tabindex="-1" role="status">'+icon(result.correct?"check":"bulb")+'<div><strong>'+(result.correct?"Дұрыс! Жарайсың.":"Түсіндірмені оқып, қайта байқап көр.")+'</strong><p>'+esc(task.explanation)+'</p>'+(result.correct?'':'<span class="correct-answer">Дұрыс жауап: '+esc(task.displayAnswer)+'</span>')+'</div></div>';
+    }
+    var hint=ui.hints.has(task.id);
+    var prev=index>0?buttonLink("Алдыңғы тапсырма",base+(index-1),"ghost"):'<a class="text-link" href="#/lesson/'+actualTopic.id+'">Ережені ашу</a>';
+    var next=index<tasks.length-1?buttonLink("Келесі тапсырма",base+(index+1),"secondary"):buttonLink("Нәтижені көру","#/results","primary","chart");
+    var content='<div class="practice-shell"><div class="practice-header"><a class="back-link" href="#/practice">Жаттығуларға оралу</a><span class="tag">'+esc(actualTopic.title)+'</span></div><div class="practice-title"><div><span class="overline">БІЛІМІҢДІ БЕКІТ</span><h1>Жаттығу уақыты</h1></div><span class="muted">'+attempted+'/'+tasks.length+' орындалды</span></div>'+pager+
+    '<article class="question-card"><div class="question-meta"><span>Тапсырма '+(index+1)+' / '+tasks.length+'</span><span>'+task.level+'</span><span>1 ұпай</span></div><h2>'+esc(task.question)+'</h2>'+(task.formula?'<div class="task-formula math-expression">'+esc(task.formula)+'</div>':"")+
+    '<form id="answer-form" data-group="'+group+'" data-index="'+index+'" novalidate>'+inputs+'<div class="answer-actions"><button class="button primary" type="submit">'+icon("check")+(saved?"Қайта тексеру":"Жауапты тексеру")+'</button><button class="button ghost" type="button" data-action="hint" data-task="'+task.id+'" aria-expanded="'+hint+'">'+icon("bulb")+'Көмек</button></div></form><div class="hint-box" id="hint-box"'+(hint?'':' hidden')+'>'+icon("bulb")+'<p>'+esc(task.hint)+'</p></div>'+feedback+'</article><div class="question-navigation">'+prev+next+'</div><p class="practice-footnote">'+icon("lock")+'Әрекет саны шектелмейді. Бір тапсырмаға ең көбі 1 ұпай беріледі.</p></div>';
+    return shell(content,"practice","Жаттығу");
+  }
+  function results() {
+    var s=stats();
+    var a=store.get().attempts;
+    var wrong=topics.flatMap(function(t){return t.tasks.map(function(task,i){return {topic:t,task:task,index:i};});}).filter(function(x){return a[x.task.id]&&!a[x.task.id].correct;});
+    var head='<div class="page-heading"><span class="overline">ӘР ҚАДАМЫҢ МАҢЫЗДЫ</span><h1>Менің нәтижем</h1><p>Қай жерге жеткеніңді көріп, келесі қадамыңды таңда.</p></div>';
+    var body=!s.answered?'<section class="empty-state"><span class="empty-illustration">'+icon("target")+'</span><h2>Бірінші есептен бастайық</h2><p>Әлі тапсырма орындалмады. Бір тақырыпты таңдасаң, нәтижең осында пайда болады.</p>'+buttonLink("Бірінші сабақты ашу","#/lesson/powers","primary","book")+'</section>':
+    '<section class="result-summary"><div class="completion-ring" style="--completion:'+s.percent+'"><div><strong>'+s.percent+'%</strong><span>орындалды</span></div></div><div class="summary-copy"><span class="overline">СЕНІҢ ІЛГЕРІЛЕУІҢ</span><h2>'+s.answered+' тапсырма орындалды</h2><p>Барлығы 18 тапсырма. Қайта орындағанда ұпай екі рет қосылмайды.</p></div><div class="summary-metrics"><div><strong>'+s.correct+'/'+s.total+'</strong><span>Жиналған ұпай</span></div><div><strong>'+s.accuracy+'%</strong><span>Алғашқы жауап дәлдігі</span></div></div></section>'+
+    '<section class="section"><div class="section-heading"><h2>Тақырыптар бойынша</h2><span class="muted">Әр бөлімде 3 тапсырма</span></div><div class="results-list">'+topics.map(function(t){var ts=stats(t);return '<div class="result-row"><div class="result-topic">'+topicIcon(t)+'<div><h3>'+esc(t.title)+'</h3><span class="small-text">'+ts.answered+'/3 орындалды · '+ts.correct+'/3 ұпай</span></div></div><div class="result-progress">'+progress(ts.answered,3)+'</div>'+buttonLink(ts.answered?"Қайталау":"Бастау","#/practice/"+t.id+"/0","ghost")+'</div>';}).join("")+'</div></section>'+
+    (wrong.length?'<section class="section"><div class="section-heading"><div><span class="overline">КЕЛЕСІ ҚАДАМ</span><h2>Қайта байқап көр</h2></div><span class="tag">'+wrong.length+' тапсырма</span></div><div class="review-list">'+wrong.map(function(x){return '<a href="#/practice/'+x.topic.id+'/'+x.index+'"><span class="review-icon">'+icon("bulb")+'</span><div><strong>'+esc(x.task.question)+'</strong><span>'+esc(x.topic.title)+'</span></div><span class="text-link">Қайталау</span></a>';}).join("")+'</div></section>':'<section class="learning-note">'+icon("spark")+'<div><h3>Орындалған есептеріңнің бәрі дұрыс!</h3><p>'+(s.answered<18?"Келесі тақырыптағы тапсырмаларды жалғастыр.":"Барлық алты бөлімді аяқтадың. Қалаған тақырыпты қайта бекіте аласың.")+'</p></div></section>');
+    var controls='<section class="data-tools"><div><h3>Нәтиже өзіңде сақталады</h3><p>Осы браузердің деректері тазартылса, нәтиже өшуі мүмкін. Көшірмесін жүктеп алып, басқа құрылғыда қалпына келтіре аласың.</p></div><div class="data-actions"><button class="button secondary" data-action="export">'+icon("download")+'Нәтижені жүктеу</button><button class="button secondary" data-action="import">'+icon("upload")+'Қалпына келтіру</button><button class="button ghost" data-action="reset">'+icon("reset")+'Жаңа оқушы</button></div><input type="file" id="import-file" accept=".json,application/json" hidden></section>';
+    return shell(head+body+controls,"results","Менің нәтижем");
+  }
+  function taskAnswerText(task) {return task.type==="choice"?task.options.find(function(o){return o.id===task.answer;}).text:task.displayAnswer;}
+  function teacher() {
+    return shell('<div class="page-heading"><span class="overline">МҰҒАЛІМГЕ АРНАЛҒАН</span><h1>Сабаққа дайын материалдар</h1><p>Тақырыпты таңдаңыз, сілтемені оқушыға жіберіңіз немесе тапсырмаларды басып шығарыңыз.</p></div>'+
+    '<div class="teacher-intro">'+icon("teacher")+'<div><h3>Түсіндіру, жаттығу, кері байланыс</h3><p>Оқушылар тіркелусіз жұмыс істейді. Нәтиже әр оқушының өз браузерінде сақталады; бұл бетте сыныптың ортақ журналы жүргізілмейді.</p></div></div>'+
+    '<section class="teacher-materials">'+topics.map(function(t){return '<article class="teacher-card"><div class="teacher-card-heading">'+topicIcon(t)+'<div><h2>'+esc(t.title)+'</h2><p>'+esc(t.goal)+'</p></div></div><div class="teacher-card-actions">'+buttonLink("Сабақты ашу","#/lesson/"+t.id,"secondary","book")+'<button class="button ghost" data-action="copy" data-topic="'+t.id+'">'+icon("copy")+'Сілтемені көшіру</button><button class="button ghost" data-action="print-lesson" data-topic="'+t.id+'">'+icon("print")+'Басып шығару</button></div><details><summary>Тапсырмалар мен жауаптар</summary><ol class="teacher-answers">'+t.tasks.map(function(task){return '<li><p>'+esc(task.question)+(task.formula?' <span class="inline-math">'+esc(task.formula)+'</span>':"")+'</p><strong>Жауап: '+esc(taskAnswerText(task))+'</strong><p class="small-text">'+esc(task.explanation)+'</p></li>';}).join("")+'</ol></details></article>';}).join("")+'</section>'+
+    '<section class="portable-card"><span class="portable-icon">'+icon("download")+'</span><div><span class="overline">ПЛАТФОРМА СІЗДІҢ ҚОЛЫҢЫЗДА</span><h2>'+(window.ALGEBRA_OFFLINE?'Интернетсіз нұсқа':'Өз хостингіңізге көшіріңіз')+'</h2><p>'+(window.ALGEBRA_OFFLINE?'Барлық сабақтар мен тапсырмалар осы файлда. Интернетке қосылмай-ақ оқуды жалғастыра аласыз. Файлды басқа құрылғыға көшіріп ашуға болады.':'Сайттың толық көшірмесін жүктеп алыңыз. Ішінде интернетсіз ашылатын нұсқа, барлық сабақтар мен тапсырмалар және жариялау нұсқаулығы бар.')+'</p>'+(window.ALGEBRA_OFFLINE?buttonLink("Тақырыптарды ашу","#/topics","primary","book"):'<a class="button primary" href="./downloads/algebra7-platform.zip" download>'+icon("download")+'Платформаны жүктеу</a> <a class="button secondary" href="./downloads/algebra7-offline.html" download>'+icon("download")+'Интернетсіз нұсқа</a>')+'</div></section>',"teacher","Мұғалімге");
+  }
+  function help() {
+    var questions=[
+      ["Қалай бастаймын?","«Тақырыптар» бөлімінен сабақ таңда. Ережені оқып, екі мысалды қара. Содан кейін «Жаттығуға өту» батырмасын бас."],
+      ["Тіркелу немесе аккаунт керек пе?","Жоқ. Сайт ортақ сілтемемен ашылады. Оқушыдан ChatGPT аккаунты, аты-жөні, телефон нөмірі немесе электрондық пошта сұралмайды."],
+      ["Бөлшек пен теріс санды қалай енгіземін?","1/4, 0,25 және 0.25 жазылымдары бірдей мән ретінде тексеріледі. Теріс санды −2 немесе -2 деп енгізуге болады. 30% орнына 0,3 не 3/10 енгізіңіз."],
+      ["Ұпай қалай есептеледі?","Әр тапсырма ең көбі 1 ұпай береді. Бөлек өрістері бар тапсырмада барлық өріс дұрыс болуы керек. Әр бөлім — 3 ұпай, барлығы — 18 ұпай. Қайта орындау қосымша ұпай қоспайды."],
+      ["Нәтиже қайда сақталады?","Нәтиже осы сайтты ашқан браузерде сақталады. Басқа құрылғыда автоматты көрінбейді. «Менің нәтижем» бөлімінен көшірмені жүктеп, кейін қалпына келтіруге болады."],
+      ["Бір компьютерді бірнеше оқушы қолданса ше?","Келесі оқушы бастамас бұрын «Менің нәтижем» бөлімінен «Жаңа оқушы» батырмасын басып, алдыңғы нәтижені тазартуды растаңыз. Керек нәтижені алдымен жүктеп алыңыз."],
+      ["Мұғалім менің нәтижемді көре ме?","Бұл нұсқада ортақ сынып журналы жоқ. Нәтиже экранын мұғалімге көрсете аласыз немесе жүктелген нәтижені өзіңіз бөлісе аласыз."],
+      ["Интернетсіз қолдануға бола ма?","«Мұғалімге» бөлімінен платформаның архивін жүктеңіз. Архивті ашып, algebra7-offline.html файлын браузерде іске қосыңыз. Бұл файл сабақтар мен жаттығуларды интернетсіз ашады; браузердің жергілікті файлға сақтау рұқсатына қарай нәтиже сақталмауы мүмкін."]
+    ];
+    return shell('<div class="page-heading"><span class="overline">ҚАДАМЫҢ ТҮСІНІКТІ БОЛСЫН</span><h1>Көмек және нұсқаулық</h1><p>Оқуды бастауға қажет қысқа жауаптар.</p></div><div class="help-layout"><section class="faq">'+questions.map(function(q,i){return '<details'+(i===0?' open':'')+'><summary>'+q[0]+'</summary><p>'+q[1]+'</p></details>';}).join("")+'</section><aside class="help-aside"><span class="topic-icon blue">∑</span><h2>Алгебра 7</h2><p>Жобаның пән мұғалімі:<br><strong>Жұмабеков Расул Арманұлы</strong></p><p>6 тақырып · 12 мысал<br>18 интерактивті тапсырма</p>'+buttonLink("Оқуды бастау","#/topics","primary","book")+'</aside></div>',"help","Көмек");
+  }
+  function notFound() {
+    return shell('<section class="empty-state"><span class="empty-illustration">'+icon("search")+'</span><h1>Бұл бет табылмады</h1><p>Қажетті сабақты тақырыптар тізімінен ашып көріңіз.</p>'+buttonLink("Тақырыптарға өту","#/topics","primary","book")+'</section>',"topics","Бет табылмады");
+  }
+  function route() {
+    var hash=location.hash || "#/";
+    if(hash==="#main")return;
+    if(ui.route!==hash){ui.route=hash;ui.feedback=null;ui.draft=null;ui.menu=false;}
+    var parts=hash.replace(/^#\/?/,"").split("/");
+    var section=parts[0];
+    if(!section)app.innerHTML=home();
+    else if(section==="topics")app.innerHTML=topicsPage("topics");
+    else if(section==="lesson")app.innerHTML=lesson(topicById(parts[1]));
+    else if(section==="practice"&&!parts[1])app.innerHTML=topicsPage("practice");
+    else if(section==="practice")app.innerHTML=practice(parts[1],/^\d+$/.test(parts[2]||"0")?Number(parts[2]||0):-1);
+    else if(section==="results")app.innerHTML=results();
+    else if(section==="teacher")app.innerHTML=teacher();
+    else if(section==="help")app.innerHTML=help();
+    else app.innerHTML=notFound();
+    syncNavigation();
+    document.title=(section==="lesson"&&topicById(parts[1])?topicById(parts[1]).title:{"topics":"Тақырыптар","practice":"Жаттығу","results":"Менің нәтижем","teacher":"Мұғалімге","help":"Көмек"}[section]||"Түсініп үйрен")+" — Алгебра 7";
+  }
+  function syncNavigation() {
+    var sidebar=document.querySelector(".sidebar");
+    if(!sidebar)return;
+    var hidden=mobileMedia.matches&&!ui.menu;
+    sidebar.inert=hidden;
+    sidebar.setAttribute("aria-hidden",String(hidden));
+  }
+  mobileMedia.addEventListener("change",syncNavigation);
+  function toast(message) {
+    var el=document.getElementById("toast");
+    el.textContent=message;el.classList.add("visible");
+    clearTimeout(toast.timer);toast.timer=setTimeout(function(){el.classList.remove("visible");},4000);
+  }
+  function modal(title,message,confirmText,onConfirm) {
+    var overlay=document.createElement("div");
+    overlay.className="modal-overlay";
+    overlay.innerHTML='<section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-description"><span class="modal-icon">'+icon("help")+'</span><h2 id="modal-title">'+esc(title)+'</h2><p id="modal-description">'+esc(message)+'</p><div class="modal-actions"><button class="button secondary" data-modal-cancel>Бас тарту</button><button class="button primary" data-modal-confirm>'+esc(confirmText)+'</button></div></section>';
+    var previous=document.activeElement;
+    document.body.appendChild(overlay);
+    var cancel=overlay.querySelector("[data-modal-cancel]"),confirm=overlay.querySelector("[data-modal-confirm]");
+    function close(){overlay.remove();if(previous&&previous.isConnected)previous.focus();}
+    cancel.onclick=close;
+    confirm.onclick=function(){close();onConfirm();};
+    overlay.addEventListener("click",function(e){if(e.target===overlay)close();});
+    overlay.addEventListener("keydown",function(e){
+      if(e.key==="Escape"){e.preventDefault();close();}
+      if(e.key==="Tab"){e.preventDefault();(document.activeElement===cancel?confirm:cancel).focus();}
+    });
+    cancel.focus();
+  }
+  function downloadResult() {
+    var blob=new Blob([JSON.stringify(store.get(),null,2)],{type:"application/json"});
+    var url=URL.createObjectURL(blob),link=document.createElement("a");
+    link.href=url;link.download="algebra7-natizhe.json";link.click();
+    setTimeout(function(){URL.revokeObjectURL(url);},1000);
+    toast("Нәтиженің көшірмесі жүктелді.");
+  }
+  function printLesson(id) {
+    var t=topicById(id);if(!t)return;
+    document.getElementById("print-area").innerHTML='<header class="print-header"><strong>Алгебра 7</strong><span>Аты-жөні: ____________________ &nbsp; Күні: __________</span></header><h1>'+esc(t.title)+'</h1><p><strong>Мақсат:</strong> '+esc(t.goal)+'</p><h2>Қысқаша ереже</h2>'+t.theory.map(function(p){return '<p><strong>'+esc(p.title)+'.</strong> '+esc(p.text)+'</p>';}).join("")+'<h2>Шешілген мысалдар</h2>'+t.examples.map(function(ex){return '<p><strong>'+esc(ex.title)+'</strong></p><p>'+esc(ex.expression)+'</p>';}).join("")+'<h2>Өздік жұмыс</h2>'+t.tasks.map(function(task,i){return '<div class="print-task"><p><strong>'+(i+1)+'. '+esc(task.question)+'</strong></p>'+(task.formula?'<p>'+esc(task.formula)+'</p>':"")+(task.type==="choice"?'<p>'+task.options.map(function(o,j){return String.fromCharCode(65+j)+") "+esc(o.text);}).join(" &nbsp;&nbsp; ")+'</p>':task.type==="fields"?task.fields.map(function(f){return '<p>'+esc(f.label)+': ____________________</p>';}).join(""):'<p>Жауап: ____________________</p>')+'<div class="writing-space"></div></div>';}).join("")+'<p>Нәтиже: _____ / 3 ұпай</p>';
+    window.print();
+  }
+  app.addEventListener("submit",function(e){
+    if(e.target.id!=="answer-form")return;e.preventDefault();
+    var form=e.target,group=form.dataset.group,index=Number(form.dataset.index);
+    var list=group==="all"?topics.flatMap(function(t){return t.tasks;}):topicById(group).tasks;
+    var task=list[index],answer;
+    if(task.type==="choice"){var selected=form.querySelector('input[name="choice"]:checked');answer=selected?selected.value:"";}
+    else if(task.type==="number")answer=form.elements.answer.value;
+    else answer=task.fields.map(function(f,i){return form.elements["field-"+i].value;});
+    ui.draft=answer;ui.feedback=grader.grade(task,answer);
+    if(ui.feedback.valid)store.record(task,answer,ui.feedback,ui.hints.has(task.id));
+    route();
+    var feedback=document.getElementById("feedback");if(feedback)feedback.focus();
+  });
+  app.addEventListener("input",function(e){
+    if(e.target.id==="topic-search"){
+      var query=e.target.value.trim().toLocaleLowerCase("kk"),shown=0;
+      document.querySelectorAll("[data-topic-search]").forEach(function(card){var match=card.dataset.topicSearch.includes(query);card.hidden=!match;if(match)shown++;});
+      document.getElementById("empty-search").hidden=shown>0;
+    }
+    if(e.target.id==="slope"||e.target.id==="intercept"){
+      var k=Number(document.getElementById("slope").value),b=Number(document.getElementById("intercept").value);
+      document.getElementById("explorer-graph").innerHTML=graph(k,b,false);
+      document.getElementById("graph-formula").textContent="y = "+k+"x "+(b<0?"− "+Math.abs(b):"+ "+b);
+      document.getElementById("slope-value").textContent="k = "+k;
+      document.getElementById("intercept-value").textContent="b = "+b;
+      document.getElementById("graph-values").innerHTML=[-1,0,1].map(function(x){return '<span>x = '+x+' → y = '+(k*x+b)+'</span>';}).join("");
+    }
+    if(e.target.type==="radio")document.querySelectorAll(".choice").forEach(function(label){label.classList.toggle("selected",label.querySelector("input").checked);});
+  });
+  app.addEventListener("change",function(e){
+    if(e.target.id!=="import-file"||!e.target.files[0])return;
+    var file=e.target.files[0];
+    if(file.size>100000){toast("Файл тым үлкен. Нәтиженің JSON көшірмесін таңдаңыз.");return;}
+    file.text().then(function(text){
+      var input=JSON.parse(text);
+      if(input.version!==1||!input.attempts||typeof input.attempts!=="object"||Array.isArray(input.attempts))throw new Error("invalid");
+      var cleaned=store.validate(input),count=Object.keys(cleaned.attempts).length;
+      if(!count&&Object.keys(input.attempts).length)throw new Error("invalid");
+      modal("Нәтижені қалпына келтіру",count+" тапсырманың нәтижесі табылды. Осы браузердегі қазіргі нәтиже осы көшірмемен ауыстырылады.","Қалпына келтіру",function(){store.restore(cleaned);route();toast("Нәтиже қалпына келтірілді.");});
+    }).catch(function(){toast("Бұл файл жарамсыз. Алгебра 7 нәтижесінің JSON көшірмесін таңдаңыз.");});
+    e.target.value="";
+  });
+  app.addEventListener("click",function(e){
+    var target=e.target.closest("[data-action]");if(!target)return;
+    var action=target.dataset.action;
+    if(action==="menu"||action==="menu-close"){
+      ui.menu=action==="menu"?!ui.menu:false;
+      var sidebar=document.querySelector(".sidebar"),scrim=document.querySelector(".mobile-scrim"),toggle=document.querySelector(".mobile-menu");
+      sidebar.classList.toggle("open",ui.menu);scrim.classList.toggle("visible",ui.menu);toggle.setAttribute("aria-expanded",String(ui.menu));
+      syncNavigation();
+    }
+    if(action==="hint"){
+      ui.hints.add(target.dataset.task);
+      document.getElementById("hint-box").hidden=false;target.setAttribute("aria-expanded","true");
+    }
+    if(action==="export")downloadResult();
+    if(action==="import")document.getElementById("import-file").click();
+    if(action==="reset")modal("Жаңа оқушы бастай ма?","Осы браузердегі барлық тапсырма нәтижесі тазаланады. Қажет болса, алдымен нәтижені жүктеп алыңыз.","Нәтижені тазарту",function(){store.reset();ui.feedback=null;ui.draft=null;ui.hints.clear();route();toast("Жаңа оқу бастауға дайын.");});
+    if(action==="print-lesson")printLesson(target.dataset.topic);
+    if(action==="copy"){
+      var url=location.href.split("#")[0]+"#/lesson/"+target.dataset.topic;
+      if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(url).then(function(){toast("Сабақ сілтемесі көшірілді.");}).catch(function(){showCopy(url);});
+      else showCopy(url);
+    }
+  });
+  function showCopy(url) {
+    var overlay=document.createElement("div");overlay.className="modal-overlay";
+    overlay.innerHTML='<section class="modal" role="dialog" aria-modal="true" aria-labelledby="copy-title"><h2 id="copy-title">Сабақ сілтемесі</h2><p>Сілтемені белгілеп, көшіріп алыңыз.</p><input class="answer-input" readonly aria-label="Көшіруге арналған сілтеме" value="'+esc(url)+'"><button class="button primary">Жабу</button></section>';
+    document.body.appendChild(overlay);var input=overlay.querySelector("input");input.focus();input.select();
+    overlay.querySelector("button").onclick=function(){overlay.remove();};
+    overlay.addEventListener("keydown",function(e){if(e.key==="Escape")overlay.remove();});
+  }
+  window.addEventListener("hashchange",function(){route();window.scrollTo(0,0);var main=document.getElementById("main");if(main)main.focus({preventScroll:true});});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&ui.menu){ui.menu=false;document.querySelector(".sidebar").classList.remove("open");document.querySelector(".mobile-scrim").classList.remove("visible");document.querySelector(".mobile-menu").setAttribute("aria-expanded","false");syncNavigation();document.querySelector(".mobile-menu").focus();}});
+  route();
+})();
+</script>
+</body>
+</html>
