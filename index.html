@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#2457e8">
-  <meta name="description" content="7-сынып алгебрасын қазақ тілінде үйрен. Қысқа сабақтар, 18 интерактивті тапсырма, автоматты тексеру. Тіркелусіз, тегін қолданыңыз.">
-  <title>Алгебра 7 — түсініп үйрен</title>
-  
+  <meta name="description" content="SandyQumar — мектеп математикасын түсініп үйрен. 7 және 9-сынып: алгебра, геометрия, сабақтар мен автоматты тексерілетін тапсырмалар. Тіркелусіз.">
+  <title>SandyQumar — сандарға құмар оқушыларға</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2215%22 fill=%22%232457e8%22/%3E%3Ctext x=%2232%22 y=%2240%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Arial%22 font-size=%2225%22 font-weight=%22700%22%3ESQ%3C/text%3E%3C/svg%3E">
   <style>:root{--blue:#2457e8;--blue-dark:#1743bf;--ink:#182944;--muted:#67758b;--line:#e5eaf2;--surface:#fff;--bg:#f7f9fc;--green:#13715a;--radius:18px;font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:var(--ink);font-size:16px;font-synthesis:none}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);line-height:1.6}
@@ -377,139 +377,24 @@ summary::-webkit-details-marker{display:none}
 .graph-controls label{font-size:.875rem}
 @media(max-width:520px){.hero-actions .button{font-size:.8rem!important}.question-navigation .button{font-size:.8rem!important}.teacher-card-actions .button{font-size:.8rem!important}.data-actions .button{font-size:.8rem!important}.topbar .breadcrumb{font-size:.75rem;max-width:175px}.hero-note{font-size:.75rem;gap:5px}.overview-stats>div:last-child strong{font-size:.85rem}.overview-stats>div{align-items:start}.hero-art{margin-top:18px}.result-topic h3{font-size:.9rem}.result-topic{flex-basis:70%}.result-row{gap:8px}.result-row .button{font-size:.8rem!important}.question-meta{gap:8px}.question-meta>span+span:before{margin-right:8px}}
 @media print{body{background:white;color:#000;font-size:11pt;line-height:1.6}#app,#toast,.modal-overlay,.skip-link{display:none!important}#print-area{display:block;margin:0;padding:0}#print-area h1{font-size:21pt;margin:25px 0 16px}#print-area h2{font-size:15pt;margin:21px 0 12px}#print-area p{font-size:10.5pt;line-height:1.7;margin:9px 0}.print-header{display:flex;justify-content:space-between;border-bottom:1px solid #aaa;padding-bottom:12px;font-size:10pt}.print-task{break-inside:avoid;margin:20px 0}.writing-space{height:40px;border-bottom:1px solid #ccc;margin:12px 0 20px}@page{size:A4;margin:17mm}}
+
+/* SandyQumar class navigation */
+.brand{font-size:1.1rem;letter-spacing:-.035em;margin-bottom:32px;padding:0 4px;gap:9px}
+.brand-symbol{font-family:inherit;font-size:1rem;letter-spacing:-.07em;flex-shrink:0;height:43px}
+.brand-grade{font-size:.75rem;line-height:1.5;letter-spacing:0;max-width:145px;font-weight:450}
+.grade-bar{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:17px 22px;background:white;border:1px solid var(--line);border-radius:14px;margin-bottom:24px}
+.grade-bar strong{display:block;font-size:.9rem}.grade-bar>div>span{display:block;font-size:.75rem;color:var(--muted);margin-top:2px}
+.grade-options{display:flex;gap:8px}.grade-choice{font:600 .9rem inherit;font-family:inherit;font-size:.9rem;min-height:44px;padding:10px 22px;border:1px solid var(--line);background:#f5f7fb;border-radius:10px;color:#667993}
+.grade-choice.selected{background:var(--blue);color:white;border-color:var(--blue);box-shadow:0 4px 12px #2457e823}.grade-choice:hover{border-color:#7d9ce8}
+.hero .brand-tagline{font-size:1.3rem;font-weight:600;color:#35588f;line-height:1.5;margin-bottom:12px;max-width:100%}.hero h1{font-size:clamp(2rem,3.5vw,3.3rem);white-space:nowrap}
+.course-scope{font-size:.8rem;color:#7889a2;padding:15px 3px 0}
+.subject-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 22px}.subject-tab{border:1px solid var(--line);padding:10px 19px;min-height:44px;background:white;border-radius:9px;font-family:inherit;font-size:.875rem;color:#647996}
+.subject-tab.selected{background:#e9f0ff;border-color:#bacdf8;color:var(--blue);font-weight:650}
+.subject-label{font-size:.75rem;color:#8595b0;display:block;margin:-5px 0 8px}
+.subject-tabs+.topics-toolbar{margin-top:12px}
+@media(max-width:520px){.grade-bar{padding:17px 18px;align-items:stretch;flex-direction:column;gap:13px;margin-bottom:19px}.grade-options{display:grid;grid-template-columns:1fr 1fr}.grade-choice{padding:11px 15px}.hero h1{font-size:2.15rem;letter-spacing:-.045em}.hero .brand-tagline{font-size:1.12rem;line-height:1.6}.subject-tab{padding:9px 16px;font-size:.875rem}.course-scope{font-size:.75rem;line-height:1.8}.breadcrumb{max-width:175px}.brand{font-size:1.13rem}.hero{padding-left:23px;padding-right:23px}}
 </style>
-  <script>window.ALGEBRA_OFFLINE=true;</script><script>window.ALGEBRA_CONTENT = {
-  version:1,
-  topics:[
-    {
-      id:"powers", title:"Бүтін көрсеткішті дәреже", short:"Дәреже және оның қасиеттері", icon:"power", color:"blue",
-      description:"Дәреженің мағынасын түсін. Көрсеткіштермен амалдарды меңгер.",
-      goal:"Натурал көрсеткішті дәрежені есептеу және негіздері бірдей дәрежелердің көбейтіндісін табу.",
-      minutes:10,
-      theory:[
-        {title:"Дәреже нені білдіреді?",text:"aⁿ — a санын өзіне n рет көбейту. Мұндағы a — негіз, n — көрсеткіш. Мысалы, 2³ = 2 · 2 · 2 = 8."},
-        {title:"Негіздері бірдей болса",text:"Көбейткенде көрсеткіштер қосылады: aᵐ · aⁿ = aᵐ⁺ⁿ. Дәрежені дәрежеге шығарғанда көрсеткіштер көбейтіледі: (aᵐ)ⁿ = aᵐⁿ."},
-        {title:"Нөлдік және теріс көрсеткіш",text:"a ≠ 0 болғанда a⁰ = 1, ал a⁻ⁿ = 1/aⁿ. Мысалы, 2⁻² = 1/4. Теріс көрсеткіш жауаптың міндетті түрде теріс болатынын білдірмейді."}
-      ],
-      examples:[
-        {title:"Санның дәрежесін есептеу",expression:"3³ = 3 · 3 · 3 = 27",steps:["Негіз — 3, көрсеткіш — 3.","Үш бірдей көбейткішті көбейтеміз: 3 · 3 = 9, 9 · 3 = 27."]},
-        {title:"Қасиетті қолдану",expression:"x² · x⁴ = x²⁺⁴ = x⁶",steps:["Екі дәреженің негізі бірдей: x.","Көрсеткіштерді қосамыз: 2 + 4 = 6."]}
-      ],
-      mistake:"2³ = 6 емес. Көрсеткішке көбейтпейміз: 2 санын үш рет көбейтеміз.",
-      tasks:[
-        {id:"powers-1",version:1,type:"choice",level:"Базалық",question:"2³ мәнін таңдаңыз.",options:[{id:"a",text:"6"},{id:"b",text:"8"},{id:"c",text:"9"},{id:"d",text:"16"}],answer:"b",displayAnswer:"8",hint:"2³ дегеніміз — үш 2-нің көбейтіндісі.",explanation:"2³ = 2 · 2 · 2 = 8. Дәреже көрсеткіші көбейткіштің неше рет алынғанын көрсетеді."},
-        {id:"powers-2",version:1,type:"number",level:"Базалық",question:"3² мәнін енгізіңіз.",answer:"9",displayAnswer:"9",hint:"3 санын өзіне көбейтіңіз.",explanation:"3² = 3 · 3 = 9. Квадратқа шығару — санды 2-ге көбейту емес."},
-        {id:"powers-3",version:1,type:"fields",level:"Қолдану",question:"Жетіспейтін көрсеткішті толтырыңыз.",formula:"a² · a³ = aⁿ",fields:[{label:"n көрсеткіші"}],answer:["5"],displayAnswer:"n = 5",hint:"Негіздері бірдей дәрежелер көбейтілгенде көрсеткіштері қосылады.",explanation:"a² · a³ = a²⁺³ = a⁵. Сондықтан n = 5."}
-      ]
-    },
-    {
-      id:"polynomials",title:"Көпмүшелер",short:"Өрнектерді ықшамдау",icon:"polynomial",color:"violet",
-      description:"Ұқсас мүшелерді біріктір. Жақшаны ашып, өрнекті ықшамда.",
-      goal:"Бірмүшенің дәрежесі мен коэффициентін анықтау және көпмүшені бірмүшеге көбейту.",
-      minutes:12,
-      theory:[
-        {title:"Бірмүше және оның дәрежесі",text:"Бірмүше — сандар мен айнымалылар дәрежелерінің көбейтіндісі. 4x³y² бірмүшесінің коэффициенті 4, дәрежесі 3 + 2 = 5."},
-        {title:"Ұқсас мүшелер",text:"Айнымалы бөліктері бірдей мүшелер ұқсас болады. Олардың коэффициенттері қосылады: 3x + 2x = 5x. Ал 3x пен 2x² ұқсас емес."},
-        {title:"Жақшаны ашу",text:"Бірмүшені жақшадағы әр мүшеге көбейтеміз: a(b + c) = ab + ac. Теріс таңба болса, әр көбейтіндінің таңбасына назар аударыңыз."}
-      ],
-      examples:[
-        {title:"Ұқсас мүшелерді біріктіру",expression:"4x + 3 − x + 2 = 3x + 5",steps:["Айнымалысы бар мүшелер: 4x − x = 3x.","Тұрақты сандар: 3 + 2 = 5."]},
-        {title:"Көпмүшені бірмүшеге көбейту",expression:"3x(x + 2) = 3x² + 6x",steps:["3x · x = 3x².","3x · 2 = 6x. Екі нәтижені қосамыз."]}
-      ],
-      mistake:"2(x + 3) өрнегі 2x + 3 болмайды. 2 санын жақшадағы екі мүшеге де көбейтіңіз.",
-      tasks:[
-        {id:"polynomials-1",version:1,type:"choice",level:"Базалық",question:"4x³y² бірмүшесінің дәрежесі неге тең?",options:[{id:"a",text:"3"},{id:"b",text:"4"},{id:"c",text:"5"},{id:"d",text:"6"}],answer:"c",displayAnswer:"5",hint:"Айнымалылардың көрсеткіштерін қосыңыз.",explanation:"Бірмүшенің дәрежесі — айнымалылар көрсеткіштерінің қосындысы: 3 + 2 = 5. Коэффициент 4 қосылмайды."},
-        {id:"polynomials-2",version:1,type:"number",level:"Базалық",question:"3x + 2x − 4 өрнегін ықшамдағанда x-тің коэффициенті қандай?",answer:"5",displayAnswer:"5",hint:"3x пен 2x — ұқсас мүшелер.",explanation:"3x + 2x − 4 = 5x − 4. x-тің коэффициенті 5-ке тең."},
-        {id:"polynomials-3",version:1,type:"fields",level:"Қолдану",question:"Жақшаны ашып, коэффициенттерді толтырыңыз.",formula:"2x(x + 3) = ax² + bx",fields:[{label:"a коэффициенті"},{label:"b коэффициенті"}],answer:["2","6"],displayAnswer:"a = 2, b = 6",hint:"2x-ті x-ке де, 3-ке де көбейтіңіз.",explanation:"2x · x + 2x · 3 = 2x² + 6x. Сондықтан a = 2 және b = 6."}
-      ]
-    },
-    {
-      id:"functions",title:"Функция және оның графигі",short:"Функциялар мен графиктер",icon:"graph",color:"teal",
-      description:"Айнымалылар байланысын көр. Формуладан кесте мен графикке өт.",
-      goal:"Сызықтық функцияның мәнін есептеу, нүктенің графикке тиістілігін анықтау және мәндер кестесін толтыру.",
-      minutes:12,
-      theory:[
-        {title:"Функция ұғымы",text:"Функцияда x-тің әрбір рұқсат етілген мәніне y-тің бір ғана мәні сәйкес келеді. Мысалы, y = 2x + 1 формуласында x = 3 болса, y = 7."},
-        {title:"Сызықтық функция",text:"y = kx + b функциясының графигі — түзу. k түзудің көлбеулігін анықтайды, b — түзудің y осімен қиылысу ординатасы."},
-        {title:"Графиктегі нүкте",text:"Нүктенің x координатасын формулаға қойыңыз. Есептелген y нүктенің y координатасына тең болса, нүкте графикке тиісті."}
-      ],
-      examples:[
-        {title:"Функцияның мәнін табу",expression:"y = 2x − 3, x = 4 ⇒ y = 5",steps:["x орнына 4 санын қоямыз: y = 2 · 4 − 3.","Алдымен көбейтеміз, содан кейін азайтамыз: 8 − 3 = 5."]},
-        {title:"Нүктені тексеру",expression:"(2; 5) нүктесі y = 2x + 1 графигіне тиісті",steps:["x = 2 мәнін қоямыз: 2 · 2 + 1 = 5.","Нәтиже нүктенің екінші координатасына тең."]}
-      ],
-      mistake:"Нүкте (x; y) ретімен жазылады. Координаталардың орнын ауыстырмаңыз.",
-      tasks:[
-        {id:"functions-1",version:1,type:"choice",level:"Базалық",question:"Қай нүкте y = 2x + 1 графигіне тиісті?",options:[{id:"a",text:"(1; 2)"},{id:"b",text:"(2; 5)"},{id:"c",text:"(0; 0)"},{id:"d",text:"(−1; 1)"}],answer:"b",displayAnswer:"(2; 5)",hint:"Әр нүктенің бірінші координатасын x орнына қойыңыз.",explanation:"x = 2 болса, y = 2 · 2 + 1 = 5. Сондықтан (2; 5) нүктесі осы графикте жатады."},
-        {id:"functions-2",version:1,type:"number",level:"Базалық",question:"y = 3x − 2 функциясында x = 4 болса, y неге тең?",answer:"10",displayAnswer:"10",hint:"x орнына 4 қойып, алдымен көбейтуді орындаңыз.",explanation:"y = 3 · 4 − 2 = 12 − 2 = 10."},
-        {id:"functions-3",version:1,type:"fields",level:"Қолдану",question:"y = 2x + 1 функциясының кестесін толтырыңыз.",fields:[{label:"x = −1 болғандағы y"},{label:"x = 0 болғандағы y"},{label:"x = 2 болғандағы y"}],answer:["-1","1","5"],displayAnswer:"−1; 1; 5",hint:"Әр x мәнін 2x + 1 формуласына жеке қойыңыз.",explanation:"x = −1: y = −2 + 1 = −1. x = 0: y = 1. x = 2: y = 4 + 1 = 5."}
-      ]
-    },
-    {
-      id:"statistics",title:"Статистика элементтері",short:"Деректер мен жиілік",icon:"chart",color:"orange",
-      description:"Деректерді ретте. Абсолюттік және салыстырмалы жиілікті тап.",
-      goal:"Деректегі мәннің абсолюттік және салыстырмалы жиілігін табу, жиілік кестесін толтыру.",
-      minutes:10,
-      theory:[
-        {title:"Деректерді зерттеу",text:"Статистика деректерді жинауға, реттеуге және түсіндіруге көмектеседі. Өсу ретімен жазылған деректер вариациялық қатар құрайды."},
-        {title:"Абсолюттік жиілік",text:"Белгілі бір мәннің неше рет кездесетінін көрсетеді. Мысалы, 2, 3, 2, 4, 2 қатарында 2 саны үш рет кездеседі: жиілігі — 3."},
-        {title:"Салыстырмалы жиілік",text:"Абсолюттік жиілікті барлық бақылау санына бөлеміз: w = n/N. Барлық салыстырмалы жиіліктердің қосындысы 1-ге тең."}
-      ],
-      examples:[
-        {title:"Жиілікті санау",expression:"1, 2, 1, 3, 2 ⇒ n(1) = 2",steps:["Деректерде 1 саны екі рет жазылған.","Барлығы бес бақылау бар."]},
-        {title:"Салыстырмалы жиілік",expression:"n = 2, N = 5 ⇒ w = 2/5 = 0,4 = 40%",steps:["Мәннің жиілігін барлық бақылау санына бөлеміз: 2/5.","Пайызбен көрсету үшін 100%-ға көбейтеміз."]}
-      ],
-      mistake:"Жиілік пен мәнді шатастырмаңыз. Мысалы, 7 саны екі рет кездессе, оның жиілігі 7 емес, 2 болады.",
-      tasks:[
-        {id:"statistics-1",version:1,type:"choice",level:"Базалық",question:"2, 3, 2, 4, 2, 3 деректерінде 2 санының абсолюттік жиілігі қандай?",options:[{id:"a",text:"1"},{id:"b",text:"2"},{id:"c",text:"3"},{id:"d",text:"6"}],answer:"c",displayAnswer:"3",hint:"2 саны неше рет кездесетінін санаңыз.",explanation:"2 саны бірінші, үшінші және бесінші орындарда кездеседі. Абсолюттік жиілігі — 3."},
-        {id:"statistics-2",version:1,type:"number",level:"Базалық",question:"10 оқушының үшеуі шахмат ойнайды. Олардың салыстырмалы жиілігін бөлшекпен немесе ондық санмен жазыңыз.",answer:"3/10",displayAnswer:"3/10 = 0,3",hint:"Шахмат ойнайтын оқушылар санын барлық оқушы санына бөліңіз.",explanation:"Салыстырмалы жиілік w = 3/10 = 0,3. Бұл — 30%."},
-        {id:"statistics-3",version:1,type:"fields",level:"Қолдану",question:"1, 2, 1, 3, 2, 1 қатары үшін жиілік кестесін толтырыңыз.",fields:[{label:"1 санының жиілігі"},{label:"2 санының жиілігі"},{label:"3 санының жиілігі"}],answer:["3","2","1"],displayAnswer:"3; 2; 1",hint:"Әр мәннің кездесу санын бөлек санаңыз. Жиіліктердің қосындысы 6 болуы керек.",explanation:"1 саны үш рет, 2 саны екі рет, 3 саны бір рет кездеседі. Тексеру: 3 + 2 + 1 = 6."}
-      ]
-    },
-    {
-      id:"identities",title:"Қысқаша көбейту формулалары",short:"Формулаларды қолдану",icon:"formula",color:"pink",
-      description:"Қосындының квадратын аш. Квадраттар айырмасын қолдан.",
-      goal:"Қосындының квадраты мен квадраттар айырмасы формулаларын тану және есептерде қолдану.",
-      minutes:12,
-      theory:[
-        {title:"Қосындының квадраты",text:"(a + b)² = a² + 2ab + b². Екі мүшенің квадраттарына олардың екі еселенген көбейтіндісін қосамыз."},
-        {title:"Айырманың квадраты",text:"(a − b)² = a² − 2ab + b². Соңғы мүше оң болады, өйткені (−b)² = b²."},
-        {title:"Квадраттар айырмасы",text:"a² − b² = (a − b)(a + b). Бұл формуланы өрнекті көбейткіштерге жіктеуге және ыңғайлы есептеуге қолданамыз."}
-      ],
-      examples:[
-        {title:"Қосындының квадратын ашу",expression:"(x + 2)² = x² + 4x + 4",steps:["a = x, b = 2 деп аламыз.","Ортаңғы мүше: 2 · x · 2 = 4x. Соңғы мүше: 2² = 4."]},
-        {title:"Ыңғайлы есептеу",expression:"13² − 7² = (13 − 7)(13 + 7) = 120",steps:["Квадраттар айырмасы формуласын қолданамыз.","6 · 20 = 120."]}
-      ],
-      mistake:"(a + b)² = a² + b² болмайды. 2ab ортаңғы мүшесін ұмытпаңыз.",
-      tasks:[
-        {id:"identities-1",version:1,type:"choice",level:"Базалық",question:"(x + 4)² өрнегінің дұрыс ашылған түрін таңдаңыз.",options:[{id:"a",text:"x² + 16"},{id:"b",text:"x² + 4x + 16"},{id:"c",text:"x² + 8x + 16"},{id:"d",text:"x² + 8x + 8"}],answer:"c",displayAnswer:"x² + 8x + 16",hint:"Ортаңғы мүше 2 · x · 4-ке тең.",explanation:"(x + 4)² = x² + 2 · x · 4 + 4² = x² + 8x + 16."},
-        {id:"identities-2",version:1,type:"number",level:"Базалық",question:"Квадраттар айырмасы формуласымен 11² − 9² мәнін табыңыз.",answer:"40",displayAnswer:"40",hint:"a² − b² = (a − b)(a + b) формуласын қолданыңыз.",explanation:"11² − 9² = (11 − 9)(11 + 9) = 2 · 20 = 40."},
-        {id:"identities-3",version:1,type:"fields",level:"Қолдану",question:"Жетіспейтін коэффициенттерді толтырыңыз.",formula:"(x + 3)² = x² + ax + b",fields:[{label:"a коэффициенті"},{label:"b тұрақтысы"}],answer:["6","9"],displayAnswer:"a = 6, b = 9",hint:"2 · x · 3 = 6x, ал 3² = 9.",explanation:"(x + 3)² = x² + 2 · x · 3 + 3² = x² + 6x + 9."}
-      ]
-    },
-    {
-      id:"fractions",title:"Алгебралық бөлшектер",short:"Бөлшектерді түрлендіру",icon:"fraction",color:"green",
-      description:"Бөлімнің шартын ескер. Бөлшекті қысқартуды үйрен.",
-      goal:"Алгебралық бөлшектің анықталу шартын табу, мәнін есептеу және қысқарту.",
-      minutes:12,
-      theory:[
-        {title:"Алгебралық бөлшек",text:"Алымы мен бөлімінде алгебралық өрнектер бар бөлшек алгебралық бөлшек деп аталады. Оның бөлімі нөлге тең болмауы керек."},
-        {title:"Анықталу шарты",text:"Бөлімді нөлге айналдыратын мәндерді алып тастаймыз. Мысалы, (x + 1)/(x − 3) бөлшегі x ≠ 3 болғанда анықталған."},
-        {title:"Қысқарту",text:"Алым мен бөлімнің ортақ нөлден өзге көбейткішін қысқартамыз. Қосылғыштарды жеке қысқартуға болмайды. Бастапқы өрнектің анықталу шарты сақталады."}
-      ],
-      examples:[
-        {title:"Мәнін есептеу",expression:"3x/8, x = 2 ⇒ 6/8 = 3/4",steps:["x орнына 2 қоямыз: 3 · 2 / 8 = 6/8.","Алым мен бөлімді 2-ге бөлеміз: 3/4."]},
-        {title:"Ортақ көбейткішті қысқарту",expression:"6x²/(3x) = 2x, мұндағы x ≠ 0",steps:["6x² = 3x · 2x түрінде жазамыз.","3x ортақ көбейткішін қысқартамыз; x ≠ 0 шарты сақталады."]}
-      ],
-      mistake:"(x + 2)/x бөлшегінде x-терді жеке қысқартуға болмайды: алымдағы x бүкіл алымның көбейткіші емес.",
-      tasks:[
-        {id:"fractions-1",version:1,type:"choice",level:"Базалық",question:"(x + 1)/(x − 3) бөлшегі x-тің қай мәнінде анықталмайды?",options:[{id:"a",text:"−3"},{id:"b",text:"0"},{id:"c",text:"1"},{id:"d",text:"3"}],answer:"d",displayAnswer:"3",hint:"Бөлімді нөлге айналдыратын x мәнін табыңыз.",explanation:"x − 3 = 0 болғанда x = 3. Нөлге бөлуге болмайды, сондықтан x = 3 мәнінде бөлшек анықталмайды."},
-        {id:"fractions-2",version:1,type:"number",level:"Базалық",question:"x = 2 болса, 3x/8 бөлшегінің мәнін табыңыз.",answer:"3/4",displayAnswer:"3/4 = 0,75",hint:"x орнына 2 қойып, шыққан бөлшекті қысқартыңыз.",explanation:"3 · 2 / 8 = 6/8 = 3/4 = 0,75. Бөлшек және ондық жауап бірдей қабылданады."},
-        {id:"fractions-3",version:1,type:"fields",level:"Қолдану",question:"Бөлшекті қысқартып, шартты толтырыңыз.",formula:"6x²/(3x) = ax, мұндағы x ≠ b",fields:[{label:"a коэффициенті"},{label:"b рұқсат етілмейтін мәні"}],answer:["2","0"],displayAnswer:"a = 2, b = 0",hint:"6/3 = 2, x²/x = x. Бастапқы бөлім нөл болмауы керек.",explanation:"6x²/(3x) = 2x. Бастапқы бөлім 3x болғандықтан, x ≠ 0 шарты сақталады."}
-      ]
-    }
-  ]
-};
-</script>
+  
   
   
   
@@ -520,6 +405,1875 @@ summary::-webkit-details-marker{display:none}
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <div id="print-area"></div>
   <noscript><main class="noscript"><h1>Алгебра 7</h1><p>Интерактивті тапсырмаларды орындау үшін браузерде JavaScript қосулы болуы керек.</p></main></noscript>
+<script>window.ALGEBRA_CONTENT = {
+  "version": 1,
+  "topics": [
+    {
+      "id": "powers",
+      "title": "Бүтін көрсеткішті дәреже",
+      "short": "Дәреже және оның қасиеттері",
+      "icon": "power",
+      "color": "blue",
+      "description": "Дәреженің мағынасын түсін. Көрсеткіштермен амалдарды меңгер.",
+      "goal": "Натурал көрсеткішті дәрежені есептеу және негіздері бірдей дәрежелердің көбейтіндісін табу.",
+      "minutes": 10,
+      "theory": [
+        {
+          "title": "Дәреже нені білдіреді?",
+          "text": "aⁿ — a санын өзіне n рет көбейту. Мұндағы a — негіз, n — көрсеткіш. Мысалы, 2³ = 2 · 2 · 2 = 8."
+        },
+        {
+          "title": "Негіздері бірдей болса",
+          "text": "Көбейткенде көрсеткіштер қосылады: aᵐ · aⁿ = aᵐ⁺ⁿ. Дәрежені дәрежеге шығарғанда көрсеткіштер көбейтіледі: (aᵐ)ⁿ = aᵐⁿ."
+        },
+        {
+          "title": "Нөлдік және теріс көрсеткіш",
+          "text": "a ≠ 0 болғанда a⁰ = 1, ал a⁻ⁿ = 1/aⁿ. Мысалы, 2⁻² = 1/4. Теріс көрсеткіш жауаптың міндетті түрде теріс болатынын білдірмейді."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Санның дәрежесін есептеу",
+          "expression": "3³ = 3 · 3 · 3 = 27",
+          "steps": [
+            "Негіз — 3, көрсеткіш — 3.",
+            "Үш бірдей көбейткішті көбейтеміз: 3 · 3 = 9, 9 · 3 = 27."
+          ]
+        },
+        {
+          "title": "Қасиетті қолдану",
+          "expression": "x² · x⁴ = x²⁺⁴ = x⁶",
+          "steps": [
+            "Екі дәреженің негізі бірдей: x.",
+            "Көрсеткіштерді қосамыз: 2 + 4 = 6."
+          ]
+        }
+      ],
+      "mistake": "2³ = 6 емес. Көрсеткішке көбейтпейміз: 2 санын үш рет көбейтеміз.",
+      "tasks": [
+        {
+          "id": "powers-1",
+          "version": 1,
+          "type": "choice",
+          "level": "Базалық",
+          "question": "2³ мәнін таңдаңыз.",
+          "options": [
+            {
+              "id": "a",
+              "text": "6"
+            },
+            {
+              "id": "b",
+              "text": "8"
+            },
+            {
+              "id": "c",
+              "text": "9"
+            },
+            {
+              "id": "d",
+              "text": "16"
+            }
+          ],
+          "answer": "b",
+          "displayAnswer": "8",
+          "hint": "2³ дегеніміз — үш 2-нің көбейтіндісі.",
+          "explanation": "2³ = 2 · 2 · 2 = 8. Дәреже көрсеткіші көбейткіштің неше рет алынғанын көрсетеді."
+        },
+        {
+          "id": "powers-2",
+          "version": 1,
+          "type": "number",
+          "level": "Базалық",
+          "question": "3² мәнін енгізіңіз.",
+          "answer": "9",
+          "displayAnswer": "9",
+          "hint": "3 санын өзіне көбейтіңіз.",
+          "explanation": "3² = 3 · 3 = 9. Квадратқа шығару — санды 2-ге көбейту емес."
+        },
+        {
+          "id": "powers-3",
+          "version": 1,
+          "type": "fields",
+          "level": "Қолдану",
+          "question": "Жетіспейтін көрсеткішті толтырыңыз.",
+          "formula": "a² · a³ = aⁿ",
+          "fields": [
+            {
+              "label": "n көрсеткіші"
+            }
+          ],
+          "answer": [
+            "5"
+          ],
+          "displayAnswer": "n = 5",
+          "hint": "Негіздері бірдей дәрежелер көбейтілгенде көрсеткіштері қосылады.",
+          "explanation": "a² · a³ = a²⁺³ = a⁵. Сондықтан n = 5."
+        }
+      ],
+      "grade": 7,
+      "subject": "Алгебра"
+    },
+    {
+      "id": "polynomials",
+      "title": "Көпмүшелер",
+      "short": "Өрнектерді ықшамдау",
+      "icon": "polynomial",
+      "color": "violet",
+      "description": "Ұқсас мүшелерді біріктір. Жақшаны ашып, өрнекті ықшамда.",
+      "goal": "Бірмүшенің дәрежесі мен коэффициентін анықтау және көпмүшені бірмүшеге көбейту.",
+      "minutes": 12,
+      "theory": [
+        {
+          "title": "Бірмүше және оның дәрежесі",
+          "text": "Бірмүше — сандар мен айнымалылар дәрежелерінің көбейтіндісі. 4x³y² бірмүшесінің коэффициенті 4, дәрежесі 3 + 2 = 5."
+        },
+        {
+          "title": "Ұқсас мүшелер",
+          "text": "Айнымалы бөліктері бірдей мүшелер ұқсас болады. Олардың коэффициенттері қосылады: 3x + 2x = 5x. Ал 3x пен 2x² ұқсас емес."
+        },
+        {
+          "title": "Жақшаны ашу",
+          "text": "Бірмүшені жақшадағы әр мүшеге көбейтеміз: a(b + c) = ab + ac. Теріс таңба болса, әр көбейтіндінің таңбасына назар аударыңыз."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Ұқсас мүшелерді біріктіру",
+          "expression": "4x + 3 − x + 2 = 3x + 5",
+          "steps": [
+            "Айнымалысы бар мүшелер: 4x − x = 3x.",
+            "Тұрақты сандар: 3 + 2 = 5."
+          ]
+        },
+        {
+          "title": "Көпмүшені бірмүшеге көбейту",
+          "expression": "3x(x + 2) = 3x² + 6x",
+          "steps": [
+            "3x · x = 3x².",
+            "3x · 2 = 6x. Екі нәтижені қосамыз."
+          ]
+        }
+      ],
+      "mistake": "2(x + 3) өрнегі 2x + 3 болмайды. 2 санын жақшадағы екі мүшеге де көбейтіңіз.",
+      "tasks": [
+        {
+          "id": "polynomials-1",
+          "version": 1,
+          "type": "choice",
+          "level": "Базалық",
+          "question": "4x³y² бірмүшесінің дәрежесі неге тең?",
+          "options": [
+            {
+              "id": "a",
+              "text": "3"
+            },
+            {
+              "id": "b",
+              "text": "4"
+            },
+            {
+              "id": "c",
+              "text": "5"
+            },
+            {
+              "id": "d",
+              "text": "6"
+            }
+          ],
+          "answer": "c",
+          "displayAnswer": "5",
+          "hint": "Айнымалылардың көрсеткіштерін қосыңыз.",
+          "explanation": "Бірмүшенің дәрежесі — айнымалылар көрсеткіштерінің қосындысы: 3 + 2 = 5. Коэффициент 4 қосылмайды."
+        },
+        {
+          "id": "polynomials-2",
+          "version": 1,
+          "type": "number",
+          "level": "Базалық",
+          "question": "3x + 2x − 4 өрнегін ықшамдағанда x-тің коэффициенті қандай?",
+          "answer": "5",
+          "displayAnswer": "5",
+          "hint": "3x пен 2x — ұқсас мүшелер.",
+          "explanation": "3x + 2x − 4 = 5x − 4. x-тің коэффициенті 5-ке тең."
+        },
+        {
+          "id": "polynomials-3",
+          "version": 1,
+          "type": "fields",
+          "level": "Қолдану",
+          "question": "Жақшаны ашып, коэффициенттерді толтырыңыз.",
+          "formula": "2x(x + 3) = ax² + bx",
+          "fields": [
+            {
+              "label": "a коэффициенті"
+            },
+            {
+              "label": "b коэффициенті"
+            }
+          ],
+          "answer": [
+            "2",
+            "6"
+          ],
+          "displayAnswer": "a = 2, b = 6",
+          "hint": "2x-ті x-ке де, 3-ке де көбейтіңіз.",
+          "explanation": "2x · x + 2x · 3 = 2x² + 6x. Сондықтан a = 2 және b = 6."
+        }
+      ],
+      "grade": 7,
+      "subject": "Алгебра"
+    },
+    {
+      "id": "functions",
+      "title": "Функция және оның графигі",
+      "short": "Функциялар мен графиктер",
+      "icon": "graph",
+      "color": "teal",
+      "description": "Айнымалылар байланысын көр. Формуладан кесте мен графикке өт.",
+      "goal": "Сызықтық функцияның мәнін есептеу, нүктенің графикке тиістілігін анықтау және мәндер кестесін толтыру.",
+      "minutes": 12,
+      "theory": [
+        {
+          "title": "Функция ұғымы",
+          "text": "Функцияда x-тің әрбір рұқсат етілген мәніне y-тің бір ғана мәні сәйкес келеді. Мысалы, y = 2x + 1 формуласында x = 3 болса, y = 7."
+        },
+        {
+          "title": "Сызықтық функция",
+          "text": "y = kx + b функциясының графигі — түзу. k түзудің көлбеулігін анықтайды, b — түзудің y осімен қиылысу ординатасы."
+        },
+        {
+          "title": "Графиктегі нүкте",
+          "text": "Нүктенің x координатасын формулаға қойыңыз. Есептелген y нүктенің y координатасына тең болса, нүкте графикке тиісті."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Функцияның мәнін табу",
+          "expression": "y = 2x − 3, x = 4 ⇒ y = 5",
+          "steps": [
+            "x орнына 4 санын қоямыз: y = 2 · 4 − 3.",
+            "Алдымен көбейтеміз, содан кейін азайтамыз: 8 − 3 = 5."
+          ]
+        },
+        {
+          "title": "Нүктені тексеру",
+          "expression": "(2; 5) нүктесі y = 2x + 1 графигіне тиісті",
+          "steps": [
+            "x = 2 мәнін қоямыз: 2 · 2 + 1 = 5.",
+            "Нәтиже нүктенің екінші координатасына тең."
+          ]
+        }
+      ],
+      "mistake": "Нүкте (x; y) ретімен жазылады. Координаталардың орнын ауыстырмаңыз.",
+      "tasks": [
+        {
+          "id": "functions-1",
+          "version": 1,
+          "type": "choice",
+          "level": "Базалық",
+          "question": "Қай нүкте y = 2x + 1 графигіне тиісті?",
+          "options": [
+            {
+              "id": "a",
+              "text": "(1; 2)"
+            },
+            {
+              "id": "b",
+              "text": "(2; 5)"
+            },
+            {
+              "id": "c",
+              "text": "(0; 0)"
+            },
+            {
+              "id": "d",
+              "text": "(−1; 1)"
+            }
+          ],
+          "answer": "b",
+          "displayAnswer": "(2; 5)",
+          "hint": "Әр нүктенің бірінші координатасын x орнына қойыңыз.",
+          "explanation": "x = 2 болса, y = 2 · 2 + 1 = 5. Сондықтан (2; 5) нүктесі осы графикте жатады."
+        },
+        {
+          "id": "functions-2",
+          "version": 1,
+          "type": "number",
+          "level": "Базалық",
+          "question": "y = 3x − 2 функциясында x = 4 болса, y неге тең?",
+          "answer": "10",
+          "displayAnswer": "10",
+          "hint": "x орнына 4 қойып, алдымен көбейтуді орындаңыз.",
+          "explanation": "y = 3 · 4 − 2 = 12 − 2 = 10."
+        },
+        {
+          "id": "functions-3",
+          "version": 1,
+          "type": "fields",
+          "level": "Қолдану",
+          "question": "y = 2x + 1 функциясының кестесін толтырыңыз.",
+          "fields": [
+            {
+              "label": "x = −1 болғандағы y"
+            },
+            {
+              "label": "x = 0 болғандағы y"
+            },
+            {
+              "label": "x = 2 болғандағы y"
+            }
+          ],
+          "answer": [
+            "-1",
+            "1",
+            "5"
+          ],
+          "displayAnswer": "−1; 1; 5",
+          "hint": "Әр x мәнін 2x + 1 формуласына жеке қойыңыз.",
+          "explanation": "x = −1: y = −2 + 1 = −1. x = 0: y = 1. x = 2: y = 4 + 1 = 5."
+        }
+      ],
+      "grade": 7,
+      "subject": "Алгебра"
+    },
+    {
+      "id": "statistics",
+      "title": "Статистика элементтері",
+      "short": "Деректер мен жиілік",
+      "icon": "chart",
+      "color": "orange",
+      "description": "Деректерді ретте. Абсолюттік және салыстырмалы жиілікті тап.",
+      "goal": "Деректегі мәннің абсолюттік және салыстырмалы жиілігін табу, жиілік кестесін толтыру.",
+      "minutes": 10,
+      "theory": [
+        {
+          "title": "Деректерді зерттеу",
+          "text": "Статистика деректерді жинауға, реттеуге және түсіндіруге көмектеседі. Өсу ретімен жазылған деректер вариациялық қатар құрайды."
+        },
+        {
+          "title": "Абсолюттік жиілік",
+          "text": "Белгілі бір мәннің неше рет кездесетінін көрсетеді. Мысалы, 2, 3, 2, 4, 2 қатарында 2 саны үш рет кездеседі: жиілігі — 3."
+        },
+        {
+          "title": "Салыстырмалы жиілік",
+          "text": "Абсолюттік жиілікті барлық бақылау санына бөлеміз: w = n/N. Барлық салыстырмалы жиіліктердің қосындысы 1-ге тең."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Жиілікті санау",
+          "expression": "1, 2, 1, 3, 2 ⇒ n(1) = 2",
+          "steps": [
+            "Деректерде 1 саны екі рет жазылған.",
+            "Барлығы бес бақылау бар."
+          ]
+        },
+        {
+          "title": "Салыстырмалы жиілік",
+          "expression": "n = 2, N = 5 ⇒ w = 2/5 = 0,4 = 40%",
+          "steps": [
+            "Мәннің жиілігін барлық бақылау санына бөлеміз: 2/5.",
+            "Пайызбен көрсету үшін 100%-ға көбейтеміз."
+          ]
+        }
+      ],
+      "mistake": "Жиілік пен мәнді шатастырмаңыз. Мысалы, 7 саны екі рет кездессе, оның жиілігі 7 емес, 2 болады.",
+      "tasks": [
+        {
+          "id": "statistics-1",
+          "version": 1,
+          "type": "choice",
+          "level": "Базалық",
+          "question": "2, 3, 2, 4, 2, 3 деректерінде 2 санының абсолюттік жиілігі қандай?",
+          "options": [
+            {
+              "id": "a",
+              "text": "1"
+            },
+            {
+              "id": "b",
+              "text": "2"
+            },
+            {
+              "id": "c",
+              "text": "3"
+            },
+            {
+              "id": "d",
+              "text": "6"
+            }
+          ],
+          "answer": "c",
+          "displayAnswer": "3",
+          "hint": "2 саны неше рет кездесетінін санаңыз.",
+          "explanation": "2 саны бірінші, үшінші және бесінші орындарда кездеседі. Абсолюттік жиілігі — 3."
+        },
+        {
+          "id": "statistics-2",
+          "version": 1,
+          "type": "number",
+          "level": "Базалық",
+          "question": "10 оқушының үшеуі шахмат ойнайды. Олардың салыстырмалы жиілігін бөлшекпен немесе ондық санмен жазыңыз.",
+          "answer": "3/10",
+          "displayAnswer": "3/10 = 0,3",
+          "hint": "Шахмат ойнайтын оқушылар санын барлық оқушы санына бөліңіз.",
+          "explanation": "Салыстырмалы жиілік w = 3/10 = 0,3. Бұл — 30%."
+        },
+        {
+          "id": "statistics-3",
+          "version": 1,
+          "type": "fields",
+          "level": "Қолдану",
+          "question": "1, 2, 1, 3, 2, 1 қатары үшін жиілік кестесін толтырыңыз.",
+          "fields": [
+            {
+              "label": "1 санының жиілігі"
+            },
+            {
+              "label": "2 санының жиілігі"
+            },
+            {
+              "label": "3 санының жиілігі"
+            }
+          ],
+          "answer": [
+            "3",
+            "2",
+            "1"
+          ],
+          "displayAnswer": "3; 2; 1",
+          "hint": "Әр мәннің кездесу санын бөлек санаңыз. Жиіліктердің қосындысы 6 болуы керек.",
+          "explanation": "1 саны үш рет, 2 саны екі рет, 3 саны бір рет кездеседі. Тексеру: 3 + 2 + 1 = 6."
+        }
+      ],
+      "grade": 7,
+      "subject": "Алгебра"
+    },
+    {
+      "id": "identities",
+      "title": "Қысқаша көбейту формулалары",
+      "short": "Формулаларды қолдану",
+      "icon": "formula",
+      "color": "pink",
+      "description": "Қосындының квадратын аш. Квадраттар айырмасын қолдан.",
+      "goal": "Қосындының квадраты мен квадраттар айырмасы формулаларын тану және есептерде қолдану.",
+      "minutes": 12,
+      "theory": [
+        {
+          "title": "Қосындының квадраты",
+          "text": "(a + b)² = a² + 2ab + b². Екі мүшенің квадраттарына олардың екі еселенген көбейтіндісін қосамыз."
+        },
+        {
+          "title": "Айырманың квадраты",
+          "text": "(a − b)² = a² − 2ab + b². Соңғы мүше оң болады, өйткені (−b)² = b²."
+        },
+        {
+          "title": "Квадраттар айырмасы",
+          "text": "a² − b² = (a − b)(a + b). Бұл формуланы өрнекті көбейткіштерге жіктеуге және ыңғайлы есептеуге қолданамыз."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Қосындының квадратын ашу",
+          "expression": "(x + 2)² = x² + 4x + 4",
+          "steps": [
+            "a = x, b = 2 деп аламыз.",
+            "Ортаңғы мүше: 2 · x · 2 = 4x. Соңғы мүше: 2² = 4."
+          ]
+        },
+        {
+          "title": "Ыңғайлы есептеу",
+          "expression": "13² − 7² = (13 − 7)(13 + 7) = 120",
+          "steps": [
+            "Квадраттар айырмасы формуласын қолданамыз.",
+            "6 · 20 = 120."
+          ]
+        }
+      ],
+      "mistake": "(a + b)² = a² + b² болмайды. 2ab ортаңғы мүшесін ұмытпаңыз.",
+      "tasks": [
+        {
+          "id": "identities-1",
+          "version": 1,
+          "type": "choice",
+          "level": "Базалық",
+          "question": "(x + 4)² өрнегінің дұрыс ашылған түрін таңдаңыз.",
+          "options": [
+            {
+              "id": "a",
+              "text": "x² + 16"
+            },
+            {
+              "id": "b",
+              "text": "x² + 4x + 16"
+            },
+            {
+              "id": "c",
+              "text": "x² + 8x + 16"
+            },
+            {
+              "id": "d",
+              "text": "x² + 8x + 8"
+            }
+          ],
+          "answer": "c",
+          "displayAnswer": "x² + 8x + 16",
+          "hint": "Ортаңғы мүше 2 · x · 4-ке тең.",
+          "explanation": "(x + 4)² = x² + 2 · x · 4 + 4² = x² + 8x + 16."
+        },
+        {
+          "id": "identities-2",
+          "version": 1,
+          "type": "number",
+          "level": "Базалық",
+          "question": "Квадраттар айырмасы формуласымен 11² − 9² мәнін табыңыз.",
+          "answer": "40",
+          "displayAnswer": "40",
+          "hint": "a² − b² = (a − b)(a + b) формуласын қолданыңыз.",
+          "explanation": "11² − 9² = (11 − 9)(11 + 9) = 2 · 20 = 40."
+        },
+        {
+          "id": "identities-3",
+          "version": 1,
+          "type": "fields",
+          "level": "Қолдану",
+          "question": "Жетіспейтін коэффициенттерді толтырыңыз.",
+          "formula": "(x + 3)² = x² + ax + b",
+          "fields": [
+            {
+              "label": "a коэффициенті"
+            },
+            {
+              "label": "b тұрақтысы"
+            }
+          ],
+          "answer": [
+            "6",
+            "9"
+          ],
+          "displayAnswer": "a = 6, b = 9",
+          "hint": "2 · x · 3 = 6x, ал 3² = 9.",
+          "explanation": "(x + 3)² = x² + 2 · x · 3 + 3² = x² + 6x + 9."
+        }
+      ],
+      "grade": 7,
+      "subject": "Алгебра"
+    },
+    {
+      "id": "fractions",
+      "title": "Алгебралық бөлшектер",
+      "short": "Бөлшектерді түрлендіру",
+      "icon": "fraction",
+      "color": "green",
+      "description": "Бөлімнің шартын ескер. Бөлшекті қысқартуды үйрен.",
+      "goal": "Алгебралық бөлшектің анықталу шартын табу, мәнін есептеу және қысқарту.",
+      "minutes": 12,
+      "theory": [
+        {
+          "title": "Алгебралық бөлшек",
+          "text": "Алымы мен бөлімінде алгебралық өрнектер бар бөлшек алгебралық бөлшек деп аталады. Оның бөлімі нөлге тең болмауы керек."
+        },
+        {
+          "title": "Анықталу шарты",
+          "text": "Бөлімді нөлге айналдыратын мәндерді алып тастаймыз. Мысалы, (x + 1)/(x − 3) бөлшегі x ≠ 3 болғанда анықталған."
+        },
+        {
+          "title": "Қысқарту",
+          "text": "Алым мен бөлімнің ортақ нөлден өзге көбейткішін қысқартамыз. Қосылғыштарды жеке қысқартуға болмайды. Бастапқы өрнектің анықталу шарты сақталады."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Мәнін есептеу",
+          "expression": "3x/8, x = 2 ⇒ 6/8 = 3/4",
+          "steps": [
+            "x орнына 2 қоямыз: 3 · 2 / 8 = 6/8.",
+            "Алым мен бөлімді 2-ге бөлеміз: 3/4."
+          ]
+        },
+        {
+          "title": "Ортақ көбейткішті қысқарту",
+          "expression": "6x²/(3x) = 2x, мұндағы x ≠ 0",
+          "steps": [
+            "6x² = 3x · 2x түрінде жазамыз.",
+            "3x ортақ көбейткішін қысқартамыз; x ≠ 0 шарты сақталады."
+          ]
+        }
+      ],
+      "mistake": "(x + 2)/x бөлшегінде x-терді жеке қысқартуға болмайды: алымдағы x бүкіл алымның көбейткіші емес.",
+      "tasks": [
+        {
+          "id": "fractions-1",
+          "version": 1,
+          "type": "choice",
+          "level": "Базалық",
+          "question": "(x + 1)/(x − 3) бөлшегі x-тің қай мәнінде анықталмайды?",
+          "options": [
+            {
+              "id": "a",
+              "text": "−3"
+            },
+            {
+              "id": "b",
+              "text": "0"
+            },
+            {
+              "id": "c",
+              "text": "1"
+            },
+            {
+              "id": "d",
+              "text": "3"
+            }
+          ],
+          "answer": "d",
+          "displayAnswer": "3",
+          "hint": "Бөлімді нөлге айналдыратын x мәнін табыңыз.",
+          "explanation": "x − 3 = 0 болғанда x = 3. Нөлге бөлуге болмайды, сондықтан x = 3 мәнінде бөлшек анықталмайды."
+        },
+        {
+          "id": "fractions-2",
+          "version": 1,
+          "type": "number",
+          "level": "Базалық",
+          "question": "x = 2 болса, 3x/8 бөлшегінің мәнін табыңыз.",
+          "answer": "3/4",
+          "displayAnswer": "3/4 = 0,75",
+          "hint": "x орнына 2 қойып, шыққан бөлшекті қысқартыңыз.",
+          "explanation": "3 · 2 / 8 = 6/8 = 3/4 = 0,75. Бөлшек және ондық жауап бірдей қабылданады."
+        },
+        {
+          "id": "fractions-3",
+          "version": 1,
+          "type": "fields",
+          "level": "Қолдану",
+          "question": "Бөлшекті қысқартып, шартты толтырыңыз.",
+          "formula": "6x²/(3x) = ax, мұндағы x ≠ b",
+          "fields": [
+            {
+              "label": "a коэффициенті"
+            },
+            {
+              "label": "b рұқсат етілмейтін мәні"
+            }
+          ],
+          "answer": [
+            "2",
+            "0"
+          ],
+          "displayAnswer": "a = 2, b = 0",
+          "hint": "6/3 = 2, x²/x = x. Бастапқы бөлім нөл болмауы керек.",
+          "explanation": "6x²/(3x) = 2x. Бастапқы бөлім 3x болғандықтан, x ≠ 0 шарты сақталады."
+        }
+      ],
+      "grade": 7,
+      "subject": "Алгебра"
+    },
+    {
+      "id": "g7-angles",
+      "grade": 7,
+      "subject": "Геометрия",
+      "title": "Бұрыштар және параллель түзулер",
+      "short": "Бұрыштар және параллель түзулер",
+      "description": "Вертикаль, сыбайлас және параллель түзулердегі бұрыштарды есептеу.",
+      "goal": "Вертикаль, сыбайлас және параллель түзулердегі бұрыштарды есептеу.",
+      "minutes": 12,
+      "icon": "polynomial",
+      "color": "teal",
+      "theory": [
+        {
+          "title": "Сыбайлас бұрыштар",
+          "text": "Ортақ қабырғасы бар, ал қалған екі қабырғасы қарама-қарсы сәулелер болатын бұрыштардың қосындысы 180°."
+        },
+        {
+          "title": "Вертикаль бұрыштар",
+          "text": "Екі түзу қиылысқанда пайда болатын вертикаль бұрыштар тең болады."
+        },
+        {
+          "title": "Параллель түзулер",
+          "text": "Екі параллель түзуді қиюшы қиғанда сәйкес бұрыштар және айқыш бұрыштар тең. Тұстас ішкі бұрыштардың қосындысы 180°."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Сыбайлас бұрыш",
+          "expression": "180° − 65° = 115°",
+          "steps": [
+            "Бір бұрыш 65°.",
+            "Екіншісі 180° − 65° = 115°."
+          ]
+        },
+        {
+          "title": "Вертикаль бұрыш",
+          "expression": "α = 48° ⇒ β = 48°",
+          "steps": [
+            "Берілген екі бұрыш вертикаль.",
+            "Олар тең болғандықтан, β = 48°."
+          ]
+        }
+      ],
+      "mistake": "Сыбайлас бұрыштар міндетті түрде тең емес. Олардың қосындысы 180°.",
+      "tasks": [
+        {
+          "id": "g7-angles-1",
+          "version": 1,
+          "type": "choice",
+          "level": "Базалық",
+          "question": "Вертикаль бұрыштардың бірі 37°. Екіншісі неше градус?",
+          "options": [
+            {
+              "id": "0",
+              "text": "37°"
+            },
+            {
+              "id": "1",
+              "text": "53°"
+            },
+            {
+              "id": "2",
+              "text": "143°"
+            },
+            {
+              "id": "3",
+              "text": "180°"
+            }
+          ],
+          "answer": "0",
+          "displayAnswer": "37°",
+          "hint": "Вертикаль бұрыштар тең.",
+          "explanation": "Вертикаль бұрыштар тең болғандықтан, екіншісі де 37°."
+        },
+        {
+          "id": "g7-angles-2",
+          "version": 1,
+          "type": "number",
+          "level": "Базалық",
+          "question": "Сыбайлас бұрыштардың бірі 72°. Екіншісінің градустық мәнін енгізіңіз.",
+          "answer": "108",
+          "displayAnswer": "108",
+          "hint": "180-нен берілген бұрышты азайтыңыз.",
+          "explanation": "180 − 72 = 108°."
+        },
+        {
+          "id": "g7-angles-3",
+          "version": 1,
+          "type": "fields",
+          "level": "Қолдану",
+          "question": "Екі параллель түзуді қиюшы қиғанда бір ішкі бұрыш 64°. Оған айқыш және тұстас ішкі бұрыштарды табыңыз.",
+          "fields": [
+            {
+              "label": "Айқыш бұрыш, градус"
+            },
+            {
+              "label": "Тұстас бұрыш, градус"
+            }
+          ],
+          "answer": [
+            "64",
+            "116"
+          ],
+          "displayAnswer": "64; 116",
+          "hint": "Айқыш бұрыш тең; тұстас екеуінің қосындысы 180°.",
+          "explanation": "Айқыш бұрыш 64°. Тұстас ішкі бұрыш: 180 − 64 = 116°."
+        }
+      ]
+    },
+    {
+      "id": "g7-triangles",
+      "grade": 7,
+      "subject": "Геометрия",
+      "title": "Үшбұрыштар және олардың қасиеттері",
+      "short": "Үшбұрыштар және олардың қасиеттері",
+      "description": "Үшбұрыш бұрыштарының қосындысын және теңбүйірлі үшбұрыш қасиетін қолдану.",
+      "goal": "Үшбұрыш бұрыштарының қосындысын және теңбүйірлі үшбұрыш қасиетін қолдану.",
+      "minutes": 12,
+      "icon": "polynomial",
+      "color": "green",
+      "theory": [
+        {
+          "title": "Ішкі бұрыштар",
+          "text": "Кез келген үшбұрыштың ішкі бұрыштарының қосындысы 180°."
+        },
+        {
+          "title": "Теңбүйірлі үшбұрыш",
+          "text": "Екі қабырғасы тең үшбұрыштың табанындағы бұрыштары тең болады."
+        },
+        {
+          "title": "Теңдік белгілері",
+          "text": "Үшбұрыштар екі қабырға және олардың арасындағы бұрыш, бір қабырға және оған іргелес екі бұрыш немесе үш қабырға бойынша тең болуы мүмкін."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Үшінші бұрыш",
+          "expression": "180° − 50° − 60° = 70°",
+          "steps": [
+            "Берілген бұрыштарды қосамыз: 110°.",
+            "180°-тан азайтамыз: 70°."
+          ]
+        },
+        {
+          "title": "Табан бұрышы",
+          "expression": "(180° − 40°)/2 = 70°",
+          "steps": [
+            "Төбесіндегі бұрыш 40°.",
+            "Табанның тең екі бұрышына қалған 140°-ты бөлеміз."
+          ]
+        }
+      ],
+      "mistake": "Теңбүйірлі үшбұрышта барлық үш бұрыштың тең болуы міндетті емес.",
+      "tasks": [
+        {
+          "id": "g7-triangles-1",
+          "version": 1,
+          "type": "choice",
+          "level": "Базалық",
+          "question": "Үшбұрыштың екі бұрышы 45° және 55°. Үшіншісі қандай?",
+          "options": [
+            {
+              "id": "0",
+              "text": "70°"
+            },
+            {
+              "id": "1",
+              "text": "80°"
+            },
+            {
+              "id": "2",
+              "text": "90°"
+            },
+            {
+              "id": "3",
+              "text": "100°"
+            }
+          ],
+          "answer": "1",
+          "displayAnswer": "80°",
+          "hint": "Барлық үш бұрыштың қосындысы 180°.",
+          "explanation": "180 − 45 − 55 = 80°."
+        },
+        {
+          "id": "g7-triangles-2",
+          "version": 1,
+          "type": "number",
+          "level": "Базалық",
+          "question": "Теңбүйірлі үшбұрыштың төбе бұрышы 80°. Бір табан бұрышы неше градус?",
+          "answer": "50",
+          "displayAnswer": "50",
+          "hint": "Қалған екі бұрыш тең.",
+          "explanation": "(180 − 80)/2 = 50°."
+        },
+        {
+          "id": "g7-triangles-3",
+          "version": 1,
+          "type": "fields",
+          "level": "Қолдану",
+          "question": "Теңбүйірлі үшбұрыштың бір табан бұрышы 35°. Екінші табан бұрышы мен төбе бұрышын табыңыз.",
+          "fields": [
+            {
+              "label": "Екінші табан бұрышы"
+            },
+            {
+              "label": "Төбе бұрышы"
+            }
+          ],
+          "answer": [
+            "35",
+            "110"
+          ],
+          "displayAnswer": "35; 110",
+          "hint": "Табан бұрыштары тең.",
+          "explanation": "Екінші табан бұрышы 35°. Төбе бұрышы 180 − 35 − 35 = 110°."
+        }
+      ]
+    },
+    {
+      "id": "g9-systems",
+      "grade": 9,
+      "subject": "Алгебра",
+      "title": "Екі айнымалысы бар теңдеулер мен жүйелер",
+      "short": "Екі айнымалысы бар теңдеулер мен жүйелер",
+      "description": "Реттелген жұпты тексеру және қарапайым сызықтық емес жүйені алмастыру тәсілімен шешу.",
+      "goal": "Реттелген жұпты тексеру және қарапайым сызықтық емес жүйені алмастыру тәсілімен шешу.",
+      "minutes": 12,
+      "icon": "polynomial",
+      "color": "blue",
+      "theory": [
+        {
+          "title": "Шешім деген не",
+          "text": "Екі айнымалысы бар теңдеудің шешімі — теңдікті тура ететін (x; y) реттелген жұбы. Жүйенің шешімі оның барлық теңдеуін бір мезгілде қанағаттандырады."
+        },
+        {
+          "title": "Алмастыру тәсілі",
+          "text": "Бір теңдеуден бір айнымалыны өрнектеп, екінші теңдеуге қоямыз. Табылған мәндерді бастапқы жүйеде тексереміз."
+        },
+        {
+          "title": "Теңсіздікті тексеру",
+          "text": "Екі айнымалысы бар теңсіздікке нүктенің координаталарын қойып тексеруге болады. Қатаң теңсіздікте шекара нүктелері шешімге кірмейді."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Жұпты тексеру",
+          "expression": "3² + 4² = 25",
+          "steps": [
+            "(3; 4) жұбын x² + y² = 25 теңдеуіне қоямыз.",
+            "9 + 16 = 25, сондықтан бұл — шешім."
+          ]
+        },
+        {
+          "title": "Жүйені шешу",
+          "expression": "x + y = 5, xy = 6 ⇒ (2; 3), (3; 2)",
+          "steps": [
+            "y = 5 − x деп алмастырамыз: x(5 − x) = 6.",
+            "x² − 5x + 6 = 0 ⇒ x = 2 немесе 3. Сәйкес y = 3 немесе 2."
+          ]
+        }
+      ],
+      "mistake": "Жүйенің жауабы бір теңдеуді ғана емес, барлық теңдеуді қанағаттандыруы керек.",
+      "tasks": [
+        {
+          "id": "g9-systems-1",
+          "version": 1,
+          "type": "choice",
+          "level": "Базалық",
+          "question": "Қай жұп x² + y² = 25 теңдеуін қанағаттандырады?",
+          "options": [
+            {
+              "id": "0",
+              "text": "(1; 2)"
+            },
+            {
+              "id": "1",
+              "text": "(3; 4)"
+            },
+            {
+              "id": "2",
+              "text": "(2; 3)"
+            },
+            {
+              "id": "3",
+              "text": "(4; 4)"
+            }
+          ],
+          "answer": "1",
+          "displayAnswer": "(3; 4)",
+          "hint": "Әр координатаны квадраттап қосыңыз.",
+          "explanation": "3² + 4² = 9 + 16 = 25."
+        },
+        {
+          "id": "g9-systems-2",
+          "version": 1,
+          "type": "number",
+          "level": "Базалық",
+          "question": "x + y = 7 және x = 3 болса, y мәнін табыңыз.",
+          "answer": "4",
+          "displayAnswer": "4",
+          "hint": "y = 7 − x.",
+          "explanation": "y = 7 − 3 = 4."
+        },
+        {
+          "id": "g9-systems-3",
+          "version": 1,
+          "type": "fields",
+          "level": "Қолдану",
+          "question": "x + y = 5, xy = 6 жүйесінің x < y шартын қанағаттандыратын шешімін табыңыз.",
+          "fields": [
+            {
+              "label": "x мәні"
+            },
+            {
+              "label": "y мәні"
+            }
+          ],
+          "answer": [
+            "2",
+            "3"
+          ],
+          "displayAnswer": "2; 3",
+          "hint": "Қосындысы 5, көбейтіндісі 6 болатын сандарды табыңыз.",
+          "explanation": "2 + 3 = 5 және 2 · 3 = 6. x < y болғандықтан, (2; 3)."
+        }
+      ]
+    },
+    {
+      "id": "g9-combinatorics",
+      "grade": 9,
+      "subject": "Алгебра",
+      "title": "Комбинаторика элементтері",
+      "short": "Комбинаторика элементтері",
+      "description": "Көбейту ережесін, факториалды және теру формуласын қолдану.",
+      "goal": "Көбейту ережесін, факториалды және теру формуласын қолдану.",
+      "minutes": 12,
+      "icon": "chart",
+      "color": "violet",
+      "theory": [
+        {
+          "title": "Көбейту ережесі",
+          "text": "Бірінші таңдаудың m, әрқайсысынан кейінгі екінші таңдаудың n мүмкіндігі болса, жұп таңдаулар саны m · n болады."
+        },
+        {
+          "title": "Факториал",
+          "text": "n! = 1 · 2 · … · n. Анықтама бойынша 0! = 1. n түрлі затты реттеу саны Pₙ = n!."
+        },
+        {
+          "title": "Теру",
+          "text": "Реті маңызды емес және қайталанбайтын k затты n заттан таңдау саны: C(n,k) = n! / (k!(n−k)!). Рет маңызды болса, орналастыру қолданылады."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Екі таңдау",
+          "expression": "3 жейде · 2 шалбар = 6 киім жиынтығы",
+          "steps": [
+            "Әр жейдеге екі шалбар сәйкес келеді.",
+            "3 · 2 = 6."
+          ]
+        },
+        {
+          "title": "Екі оқушыны таңдау",
+          "expression": "C(5,2) = 5 · 4 / 2 = 10",
+          "steps": [
+            "Рет маңызды емес: А мен Б — Б мен А жұбымен бірдей.",
+            "5 · 4 / 2 = 10 жұп."
+          ]
+        }
+      ],
+      "mistake": "Теруде рет маңызды емес. Бір жұпты екі рет санамаңыз.",
+      "tasks": [
+        {
+          "id": "g9-combinatorics-1",
+          "version": 1,
+          "type": "choice",
+          "level": "Базалық",
+          "question": "4! мәні қандай?",
+          "options": [
+            {
+              "id": "0",
+              "text": "12"
+            },
+            {
+              "id": "1",
+              "text": "16"
+            },
+            {
+              "id": "2",
+              "text": "20"
+            },
+            {
+              "id": "3",
+              "text": "24"
+            }
+          ],
+          "answer": "3",
+          "displayAnswer": "24",
+          "hint": "1 · 2 · 3 · 4 көбейтіндісін табыңыз.",
+          "explanation": "4! = 1 · 2 · 3 · 4 = 24."
+        },
+        {
+          "id": "g9-combinatorics-2",
+          "version": 1,
+          "type": "number",
+          "level": "Базалық",
+          "question": "3 сусын мен 4 тағамнан бір сусын және бір тағамды неше тәсілмен таңдауға болады?",
+          "answer": "12",
+          "displayAnswer": "12",
+          "hint": "Көбейту ережесін қолданыңыз.",
+          "explanation": "3 · 4 = 12 тәсіл."
+        },
+        {
+          "id": "g9-combinatorics-3",
+          "version": 1,
+          "type": "fields",
+          "level": "Қолдану",
+          "question": "5 оқушыдан екі адамдық топ және үш адамдық топ неше тәсілмен таңдалады? Рет маңызды емес.",
+          "fields": [
+            {
+              "label": "C(5,2)"
+            },
+            {
+              "label": "C(5,3)"
+            }
+          ],
+          "answer": [
+            "10",
+            "10"
+          ],
+          "displayAnswer": "10; 10",
+          "hint": "C(n,k) = n! / (k!(n−k)!).",
+          "explanation": "C(5,2) = 10, C(5,3) = 10. Қалған екі адамды таңдау үш адамдық топты анықтайды."
+        }
+      ]
+    },
+    {
+      "id": "g9-arithmetic",
+      "grade": 9,
+      "subject": "Алгебра",
+      "title": "Арифметикалық прогрессия",
+      "short": "Арифметикалық прогрессия",
+      "description": "Айырманы, n-ші мүшені және алғашқы мүшелердің қосындысын табу.",
+      "goal": "Айырманы, n-ші мүшені және алғашқы мүшелердің қосындысын табу.",
+      "minutes": 12,
+      "icon": "power",
+      "color": "teal",
+      "theory": [
+        {
+          "title": "Тұрақты айырма",
+          "text": "Арифметикалық прогрессияда әрбір келесі мүше алдыңғысына бірдей d саны қосылғанда шығады: d = aₙ₊₁ − aₙ."
+        },
+        {
+          "title": "n-ші мүше",
+          "text": "aₙ = a₁ + (n−1)d. Бірінші мүшеден n-ші мүшеге жеткенше n−1 рет айырма қосылады."
+        },
+        {
+          "title": "Қосынды",
+          "text": "Sₙ = n(a₁ + aₙ)/2 = n(2a₁ + (n−1)d)/2."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Бесінші мүше",
+          "expression": "a₁ = 3, d = 2 ⇒ a₅ = 11",
+          "steps": [
+            "a₅ = 3 + (5−1) · 2.",
+            "3 + 8 = 11."
+          ]
+        },
+        {
+          "title": "Алғашқы бес мүшенің қосындысы",
+          "expression": "3 + 5 + 7 + 9 + 11 = 35",
+          "steps": [
+            "S₅ = 5(3 + 11)/2.",
+            "5 · 14 / 2 = 35."
+          ]
+        }
+      ],
+      "mistake": "aₙ формуласында nd емес, (n−1)d қолданылады.",
+      "tasks": [
+        {
+          "id": "g9-arithmetic-1",
+          "version": 1,
+          "type": "choice",
+          "level": "Базалық",
+          "question": "4, 7, 10, 13, … прогрессиясының айырмасы қандай?",
+          "options": [
+            {
+              "id": "0",
+              "text": "2"
+            },
+            {
+              "id": "1",
+              "text": "3"
+            },
+            {
+              "id": "2",
+              "text": "4"
+            },
+            {
+              "id": "3",
+              "text": "7"
+            }
+          ],
+          "answer": "1",
+          "displayAnswer": "3",
+          "hint": "Келесі мүшеден алдыңғысын азайтыңыз.",
+          "explanation": "d = 7 − 4 = 3."
+        },
+        {
+          "id": "g9-arithmetic-2",
+          "version": 1,
+          "type": "number",
+          "level": "Базалық",
+          "question": "a₁ = 2, d = 3 болса, a₅ мәнін табыңыз.",
+          "answer": "14",
+          "displayAnswer": "14",
+          "hint": "a₅ = a₁ + 4d.",
+          "explanation": "a₅ = 2 + 4 · 3 = 14."
+        },
+        {
+          "id": "g9-arithmetic-3",
+          "version": 1,
+          "type": "fields",
+          "level": "Қолдану",
+          "question": "a₁ = 3, d = 2 прогрессиясы үшін a₅ және S₅ мәндерін табыңыз.",
+          "fields": [
+            {
+              "label": "a₅"
+            },
+            {
+              "label": "S₅"
+            }
+          ],
+          "answer": [
+            "11",
+            "35"
+          ],
+          "displayAnswer": "11; 35",
+          "hint": "Алдымен бесінші мүшені, содан кейін қосындыны табыңыз.",
+          "explanation": "a₅ = 3 + 4 · 2 = 11; S₅ = 5(3 + 11)/2 = 35."
+        }
+      ]
+    },
+    {
+      "id": "g9-geometric",
+      "grade": 9,
+      "subject": "Алгебра",
+      "title": "Геометриялық прогрессия",
+      "short": "Геометриялық прогрессия",
+      "description": "Еселікті, n-ші мүшені және геометриялық прогрессияның қосындысын табу.",
+      "goal": "Еселікті, n-ші мүшені және геометриялық прогрессияның қосындысын табу.",
+      "minutes": 12,
+      "icon": "power",
+      "color": "orange",
+      "theory": [
+        {
+          "title": "Тұрақты еселік",
+          "text": "Геометриялық прогрессияның әрбір мүшесі алдыңғысын бірдей q санына көбейту арқылы алынады. Нөлден өзге мүшелер үшін q = bₙ₊₁ / bₙ."
+        },
+        {
+          "title": "Мүше және ақырлы қосынды",
+          "text": "bₙ = b₁qⁿ⁻¹. q ≠ 1 болса, Sₙ = b₁(qⁿ−1)/(q−1). q = 1 болса, Sₙ = nb₁."
+        },
+        {
+          "title": "Шексіз кемімелі қосынды",
+          "text": "|q| < 1 болса, шексіз геометриялық прогрессияның қосындысы S = b₁/(1−q)."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Төртінші мүше",
+          "expression": "b₁ = 2, q = 3 ⇒ b₄ = 54",
+          "steps": [
+            "b₄ = 2 · 3³.",
+            "2 · 27 = 54."
+          ]
+        },
+        {
+          "title": "Шексіз қосынды",
+          "expression": "8 + 4 + 2 + … = 16",
+          "steps": [
+            "b₁ = 8 және q = 1/2, |q| < 1.",
+            "S = 8/(1−1/2) = 16."
+          ]
+        }
+      ],
+      "mistake": "Шексіз қосынды формуласын |q| < 1 шарты орындалғанда ғана қолданыңыз.",
+      "tasks": [
+        {
+          "id": "g9-geometric-1",
+          "version": 1,
+          "type": "choice",
+          "level": "Базалық",
+          "question": "2, 6, 18, 54, … прогрессиясының еселігі қандай?",
+          "options": [
+            {
+              "id": "0",
+              "text": "2"
+            },
+            {
+              "id": "1",
+              "text": "3"
+            },
+            {
+              "id": "2",
+              "text": "4"
+            },
+            {
+              "id": "3",
+              "text": "6"
+            }
+          ],
+          "answer": "1",
+          "displayAnswer": "3",
+          "hint": "q = 6/2.",
+          "explanation": "q = 6/2 = 3."
+        },
+        {
+          "id": "g9-geometric-2",
+          "version": 1,
+          "type": "number",
+          "level": "Базалық",
+          "question": "b₁ = 3, q = 2 болса, b₄ мәнін табыңыз.",
+          "answer": "24",
+          "displayAnswer": "24",
+          "hint": "b₄ = 3 · 2³.",
+          "explanation": "b₄ = 3 · 8 = 24."
+        },
+        {
+          "id": "g9-geometric-3",
+          "version": 1,
+          "type": "fields",
+          "level": "Қолдану",
+          "question": "b₁ = 2, q = 3 үшін b₄ және алғашқы төрт мүшенің S₄ қосындысын табыңыз.",
+          "fields": [
+            {
+              "label": "b₄"
+            },
+            {
+              "label": "S₄"
+            }
+          ],
+          "answer": [
+            "54",
+            "80"
+          ],
+          "displayAnswer": "54; 80",
+          "hint": "Мүшелері: 2, 6, 18, 54.",
+          "explanation": "b₄ = 54; S₄ = 2 + 6 + 18 + 54 = 80."
+        }
+      ]
+    },
+    {
+      "id": "g9-trigonometry",
+      "grade": 9,
+      "subject": "Алгебра",
+      "title": "Тригонометрия негіздері",
+      "short": "Тригонометрия негіздері",
+      "description": "Градус пен радианды байланыстыру және негізгі тригонометриялық тепе-теңдікті қолдану.",
+      "goal": "Градус пен радианды байланыстыру және негізгі тригонометриялық тепе-теңдікті қолдану.",
+      "minutes": 12,
+      "icon": "formula",
+      "color": "pink",
+      "theory": [
+        {
+          "title": "Градус пен радиан",
+          "text": "180° = π радиан. Градустан радианға ауыстыру үшін π/180-ге, радианнан градусқа ауыстыру үшін 180/π-ге көбейтеміз."
+        },
+        {
+          "title": "Бірлік шеңбер",
+          "text": "Бірлік шеңбердегі α бұрышына сәйкес нүктенің координаталары (cos α; sin α). sin 30° = 1/2, cos 60° = 1/2, sin 90° = 1."
+        },
+        {
+          "title": "Негізгі тепе-теңдік",
+          "text": "sin² α + cos² α = 1. tg α = sin α / cos α, мұндағы cos α ≠ 0. Тепе-теңдікті түрлендіргенде анықталу шартын сақтаймыз."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Радианға ауыстыру",
+          "expression": "60° = π/3 радиан",
+          "steps": [
+            "60 · π/180 деп жазамыз.",
+            "60/180 = 1/3 болғандықтан, π/3."
+          ]
+        },
+        {
+          "title": "Тепе-теңдік",
+          "expression": "sin² α = 0,36 ⇒ cos² α = 0,64",
+          "steps": [
+            "cos² α = 1 − sin² α.",
+            "1 − 0,36 = 0,64. cos α таңбасын тек осыдан анықтау мүмкін емес."
+          ]
+        }
+      ],
+      "mistake": "cos² α мен cos α бірдей емес. Квадраттан түбір алғанда бұрыштың ширегін ескеріңіз.",
+      "tasks": [
+        {
+          "id": "g9-trigonometry-1",
+          "version": 1,
+          "type": "choice",
+          "level": "Базалық",
+          "question": "sin 30° мәні қандай?",
+          "options": [
+            {
+              "id": "0",
+              "text": "0"
+            },
+            {
+              "id": "1",
+              "text": "1/2"
+            },
+            {
+              "id": "2",
+              "text": "1"
+            },
+            {
+              "id": "3",
+              "text": "2"
+            }
+          ],
+          "answer": "1",
+          "displayAnswer": "1/2",
+          "hint": "Арнайы бұрыштардың мәндерін еске түсіріңіз.",
+          "explanation": "sin 30° = 1/2."
+        },
+        {
+          "id": "g9-trigonometry-2",
+          "version": 1,
+          "type": "number",
+          "level": "Базалық",
+          "question": "π радиан неше градусқа тең? Тек санды енгізіңіз.",
+          "answer": "180",
+          "displayAnswer": "180",
+          "hint": "π радиан — жазыңқы бұрыш.",
+          "explanation": "π радиан = 180°."
+        },
+        {
+          "id": "g9-trigonometry-3",
+          "version": 1,
+          "type": "fields",
+          "level": "Қолдану",
+          "question": "sin² α = 0,36. cos² α мәнін және 90° бұрышын kπ түрінде жазғандағы k коэффициентін табыңыз.",
+          "fields": [
+            {
+              "label": "cos² α"
+            },
+            {
+              "label": "k коэффициенті"
+            }
+          ],
+          "answer": [
+            "0.64",
+            "1/2"
+          ],
+          "displayAnswer": "0.64; 1/2",
+          "hint": "cos² α = 1 − 0,36; 90° = π/2.",
+          "explanation": "cos² α = 0,64. 90° = (1/2)π, сондықтан k = 1/2."
+        }
+      ]
+    },
+    {
+      "id": "g9-probability",
+      "grade": 9,
+      "subject": "Алгебра",
+      "title": "Ықтималдық теориясының элементтері",
+      "short": "Ықтималдық теориясының элементтері",
+      "description": "Тең мүмкіндікті нәтижелер үшін ықтималдықты және қарама-қарсы оқиғаны есептеу.",
+      "goal": "Тең мүмкіндікті нәтижелер үшін ықтималдықты және қарама-қарсы оқиғаны есептеу.",
+      "minutes": 12,
+      "icon": "chart",
+      "color": "green",
+      "theory": [
+        {
+          "title": "Классикалық ықтималдық",
+          "text": "Барлық элементар нәтижелер тең мүмкіндікті және саны ақырлы болса, P(A) = m/n: m — қолайлы, n — барлық нәтиже саны."
+        },
+        {
+          "title": "Шектер және қарама-қарсы оқиға",
+          "text": "0 ≤ P(A) ≤ 1. Ақиқат оқиғаның ықтималдығы 1, мүмкін емес оқиғанікі 0. Қарама-қарсы оқиға үшін P(Ā) = 1 − P(A)."
+        },
+        {
+          "title": "Жиілік және ықтималдық",
+          "text": "Тәжірибедегі салыстырмалы жиілік — оқиға болған санның тәжірибе санына қатынасы. Ол теориялық ықтималдықпен әр тәжірибеде міндетті түрде тең болмайды."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Ойын сүйегі",
+          "expression": "P(жұп сан) = 3/6 = 1/2",
+          "steps": [
+            "Әділ сүйектегі мүмкін нәтижелер: 1, 2, 3, 4, 5, 6.",
+            "Жұптары — 2, 4, 6: үш қолайлы нәтиже."
+          ]
+        },
+        {
+          "title": "Қарама-қарсы оқиға",
+          "expression": "P(A) = 0,3 ⇒ P(Ā) = 0,7",
+          "steps": [
+            "Екі қарама-қарсы оқиға барлық нәтижелерді қамтиды.",
+            "1 − 0,3 = 0,7."
+          ]
+        }
+      ],
+      "mistake": "Қолайлы нәтижелер санын барлық нәтижелер санына бөліңіз. Екі санның орнын ауыстырмаңыз.",
+      "tasks": [
+        {
+          "id": "g9-probability-1",
+          "version": 1,
+          "type": "choice",
+          "level": "Базалық",
+          "question": "Әділ ойын сүйегі бір рет лақтырылады. 6 түсу ықтималдығы қандай?",
+          "options": [
+            {
+              "id": "0",
+              "text": "1/2"
+            },
+            {
+              "id": "1",
+              "text": "1/3"
+            },
+            {
+              "id": "2",
+              "text": "1/6"
+            },
+            {
+              "id": "3",
+              "text": "1"
+            }
+          ],
+          "answer": "2",
+          "displayAnswer": "1/6",
+          "hint": "Алты тең мүмкіндікті нәтиженің біреуі қолайлы.",
+          "explanation": "P = 1/6."
+        },
+        {
+          "id": "g9-probability-2",
+          "version": 1,
+          "type": "number",
+          "level": "Базалық",
+          "question": "Қапта 3 қызыл және 2 көк шар бар. Кездейсоқ алынған шардың қызыл болу ықтималдығын бөлшекпен жазыңыз.",
+          "answer": "3/5",
+          "displayAnswer": "3/5",
+          "hint": "Барлығы 5 шар, қызылы 3.",
+          "explanation": "P = 3/(3+2) = 3/5."
+        },
+        {
+          "id": "g9-probability-3",
+          "version": 1,
+          "type": "fields",
+          "level": "Қолдану",
+          "question": "P(A) = 0,3 болса, қарама-қарсы оқиғаның ықтималдығын табыңыз. Әділ сүйекте жұп сан түсу ықтималдығын да жазыңыз.",
+          "fields": [
+            {
+              "label": "P(Ā)"
+            },
+            {
+              "label": "P(жұп сан)"
+            }
+          ],
+          "answer": [
+            "0.7",
+            "1/2"
+          ],
+          "displayAnswer": "0.7; 1/2",
+          "hint": "Қарама-қарсы ықтималдық 1 − P(A).",
+          "explanation": "P(Ā) = 1 − 0,3 = 0,7. Жұп сан үшін 3/6 = 1/2."
+        }
+      ]
+    },
+    {
+      "id": "g9-vectors",
+      "grade": 9,
+      "subject": "Геометрия",
+      "title": "Жазықтықтағы векторлар",
+      "short": "Жазықтықтағы векторлар",
+      "description": "Вектор координаталарын, ұзындығын және скаляр көбейтіндісін табу.",
+      "goal": "Вектор координаталарын, ұзындығын және скаляр көбейтіндісін табу.",
+      "minutes": 12,
+      "icon": "graph",
+      "color": "teal",
+      "theory": [
+        {
+          "title": "Вектор координаталары",
+          "text": "A(x₁; y₁), B(x₂; y₂) болса, AB = (x₂−x₁; y₂−y₁). Бастапқы нүктенің координаталарын соңғы нүктеден азайтамыз."
+        },
+        {
+          "title": "Амалдар және ұзындық",
+          "text": "(a; b) + (c; d) = (a+c; b+d). k(a; b) = (ka; kb). Вектор ұзындығы √(a²+b²)."
+        },
+        {
+          "title": "Скаляр көбейтінді",
+          "text": "(a; b) · (c; d) = ac + bd. Нөлден өзге екі вектордың скаляр көбейтіндісі нөл болса, олар перпендикуляр."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Бағытталған вектор",
+          "expression": "A(1; 2), B(4; 6) ⇒ AB = (3; 4)",
+          "steps": [
+            "4 − 1 = 3.",
+            "6 − 2 = 4."
+          ]
+        },
+        {
+          "title": "Ұзындық",
+          "expression": "|(3; 4)| = √(9+16) = 5",
+          "steps": [
+            "Координаталарды квадраттап қосамыз.",
+            "√25 = 5."
+          ]
+        }
+      ],
+      "mistake": "AB және BA векторларының бағыттары қарама-қарсы: BA = −AB.",
+      "tasks": [
+        {
+          "id": "g9-vectors-1",
+          "version": 1,
+          "type": "choice",
+          "level": "Базалық",
+          "question": "a = (2; 1), b = (3; −1). a + b қандай?",
+          "options": [
+            {
+              "id": "0",
+              "text": "(5; 0)"
+            },
+            {
+              "id": "1",
+              "text": "(1; 2)"
+            },
+            {
+              "id": "2",
+              "text": "(6; −1)"
+            },
+            {
+              "id": "3",
+              "text": "(5; 2)"
+            }
+          ],
+          "answer": "0",
+          "displayAnswer": "(5; 0)",
+          "hint": "Координаталарды сәйкесінше қосыңыз.",
+          "explanation": "(2+3; 1−1) = (5; 0)."
+        },
+        {
+          "id": "g9-vectors-2",
+          "version": 1,
+          "type": "number",
+          "level": "Базалық",
+          "question": "(3; 4) векторының ұзындығын табыңыз.",
+          "answer": "5",
+          "displayAnswer": "5",
+          "hint": "√(3²+4²) формуласын қолданыңыз.",
+          "explanation": "√(9+16) = √25 = 5."
+        },
+        {
+          "id": "g9-vectors-3",
+          "version": 1,
+          "type": "fields",
+          "level": "Қолдану",
+          "question": "A(1; 2), B(4; 6). AB векторының координаталарын жазыңыз.",
+          "fields": [
+            {
+              "label": "x координатасы"
+            },
+            {
+              "label": "y координатасы"
+            }
+          ],
+          "answer": [
+            "3",
+            "4"
+          ],
+          "displayAnswer": "3; 4",
+          "hint": "Соңғы нүктеден бастапқы нүктені азайтыңыз.",
+          "explanation": "AB = (4−1; 6−2) = (3; 4)."
+        }
+      ]
+    },
+    {
+      "id": "g9-transformations",
+      "grade": 9,
+      "subject": "Геометрия",
+      "title": "Жазықтықтағы түрлендірулер",
+      "short": "Жазықтықтағы түрлендірулер",
+      "description": "Симметрия, параллель көшіру және гомотетияны координаталар арқылы қолдану.",
+      "goal": "Симметрия, параллель көшіру және гомотетияны координаталар арқылы қолдану.",
+      "minutes": 12,
+      "icon": "graph",
+      "color": "violet",
+      "theory": [
+        {
+          "title": "Симметрия",
+          "text": "Ox осіне қатысты (x; y) → (x; −y), Oy осіне қатысты (x; y) → (−x; y). Координаталар басына қатысты (x; y) → (−x; −y)."
+        },
+        {
+          "title": "Параллель көшіру",
+          "text": "(a; b) векторына көшіргенде (x; y) → (x+a; y+b). Көшіру ұзындықтар мен бұрыштарды сақтайды."
+        },
+        {
+          "title": "Гомотетия",
+          "text": "Центрі O(0; 0), коэффициенті k гомотетияда (x; y) → (kx; ky). Ұзындықтар |k| есе, аудандар k² есе өзгереді."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Осьтік симметрия",
+          "expression": "(3; −2) → (3; 2), Ox осіне қатысты",
+          "steps": [
+            "x координатасы өзгермейді.",
+            "y таңбасы қарама-қарсыға өзгереді."
+          ]
+        },
+        {
+          "title": "Параллель көшіру",
+          "expression": "(2; 1) + (3; −4) = (5; −3)",
+          "steps": [
+            "x = 2+3 = 5.",
+            "y = 1−4 = −3."
+          ]
+        }
+      ],
+      "mistake": "Гомотетияда ауданды |k|-ға емес, k²-қа көбейтеміз.",
+      "tasks": [
+        {
+          "id": "g9-transformations-1",
+          "version": 1,
+          "type": "choice",
+          "level": "Базалық",
+          "question": "(2; 3) нүктесінің Ox осіне қатысты симметриясы қандай?",
+          "options": [
+            {
+              "id": "0",
+              "text": "(−2; 3)"
+            },
+            {
+              "id": "1",
+              "text": "(2; −3)"
+            },
+            {
+              "id": "2",
+              "text": "(−2; −3)"
+            },
+            {
+              "id": "3",
+              "text": "(3; 2)"
+            }
+          ],
+          "answer": "1",
+          "displayAnswer": "(2; −3)",
+          "hint": "Ox симметриясында y таңбасы өзгереді.",
+          "explanation": "(x; y) → (x; −y), сондықтан (2; −3)."
+        },
+        {
+          "id": "g9-transformations-2",
+          "version": 1,
+          "type": "number",
+          "level": "Базалық",
+          "question": "Гомотетия коэффициенті k = 3. Фигура ауданы неше есе артады?",
+          "answer": "9",
+          "displayAnswer": "9",
+          "hint": "Аудан k² есе өзгереді.",
+          "explanation": "3² = 9 есе."
+        },
+        {
+          "id": "g9-transformations-3",
+          "version": 1,
+          "type": "fields",
+          "level": "Қолдану",
+          "question": "(2; 1) нүктесін (3; −4) векторына көшіріңіз.",
+          "fields": [
+            {
+              "label": "Жаңа x"
+            },
+            {
+              "label": "Жаңа y"
+            }
+          ],
+          "answer": [
+            "5",
+            "-3"
+          ],
+          "displayAnswer": "5; -3",
+          "hint": "Вектор координаталарын нүктеге қосыңыз.",
+          "explanation": "(2+3; 1−4) = (5; −3)."
+        }
+      ]
+    },
+    {
+      "id": "g9-triangle-solving",
+      "grade": 9,
+      "subject": "Геометрия",
+      "title": "Үшбұрыштарды шешу",
+      "short": "Үшбұрыштарды шешу",
+      "description": "Синустар және косинустар теоремаларын, үшбұрыштың ауданын қолдану.",
+      "goal": "Синустар және косинустар теоремаларын, үшбұрыштың ауданын қолдану.",
+      "minutes": 12,
+      "icon": "formula",
+      "color": "orange",
+      "theory": [
+        {
+          "title": "Синустар теоремасы",
+          "text": "a/sin A = b/sin B = c/sin C = 2R. Мұнда a қабырғасы A бұрышына, b — B бұрышына, c — C бұрышына қарсы жатыр."
+        },
+        {
+          "title": "Косинустар теоремасы",
+          "text": "a² = b² + c² − 2bc cos A. A — b мен c қабырғаларының арасындағы бұрыш."
+        },
+        {
+          "title": "Аудан формуласы",
+          "text": "Екі қабырға мен олардың арасындағы бұрыш белгілі болса, S = (1/2)bc sin A."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Косинустар теоремасы",
+          "expression": "b = 3, c = 4, A = 90° ⇒ a = 5",
+          "steps": [
+            "cos 90° = 0 болғандықтан, a² = 9+16 = 25.",
+            "Қабырға ұзындығы оң: a = 5."
+          ]
+        },
+        {
+          "title": "Аудан",
+          "expression": "b = 6, c = 4, A = 30° ⇒ S = 6",
+          "steps": [
+            "sin 30° = 1/2.",
+            "S = (1/2) · 6 · 4 · (1/2) = 6."
+          ]
+        }
+      ],
+      "mistake": "Формуладағы бұрыш берілген екі қабырғаның арасында жатуы керек. Қабырғаға қарсы бұрышты дұрыс сәйкестендіріңіз.",
+      "tasks": [
+        {
+          "id": "g9-triangle-solving-1",
+          "version": 1,
+          "type": "choice",
+          "level": "Базалық",
+          "question": "Косинустар теоремасының дұрыс түрін таңдаңыз.",
+          "options": [
+            {
+              "id": "0",
+              "text": "a² = b² + c² − 2bc cos A"
+            },
+            {
+              "id": "1",
+              "text": "a = b + c"
+            },
+            {
+              "id": "2",
+              "text": "a² = b² + c² + 2bc"
+            },
+            {
+              "id": "3",
+              "text": "a² = 2bc sin A"
+            }
+          ],
+          "answer": "0",
+          "displayAnswer": "a² = b² + c² − 2bc cos A",
+          "hint": "Екі квадраттың қосындысынан 2bc cos A азайтылады.",
+          "explanation": "Дұрыс формула: a² = b² + c² − 2bc cos A."
+        },
+        {
+          "id": "g9-triangle-solving-2",
+          "version": 1,
+          "type": "number",
+          "level": "Базалық",
+          "question": "b = 6, c = 4 және олардың арасындағы бұрыш 30°. Үшбұрыш ауданын табыңыз.",
+          "answer": "6",
+          "displayAnswer": "6",
+          "hint": "S = (1/2)bc sin A.",
+          "explanation": "S = (1/2) · 6 · 4 · (1/2) = 6."
+        },
+        {
+          "id": "g9-triangle-solving-3",
+          "version": 1,
+          "type": "fields",
+          "level": "Қолдану",
+          "question": "a = 5, A = 30°. Синустар теоремасы бойынша a/sin A және сырттай сызылған шеңбер радиусы R мәндерін табыңыз.",
+          "fields": [
+            {
+              "label": "a/sin A"
+            },
+            {
+              "label": "R"
+            }
+          ],
+          "answer": [
+            "10",
+            "5"
+          ],
+          "displayAnswer": "10; 5",
+          "hint": "a/sin A = 2R.",
+          "explanation": "5/(1/2) = 10 = 2R. Сондықтан R = 5."
+        }
+      ]
+    }
+  ],
+  "brand": "SandyQumar",
+  "tagline": "Сандарға құмар оқушыларға"
+};
+</script>
 <script>(function (root) {
   "use strict";
   function fraction(value) {
@@ -622,7 +2376,20 @@ summary::-webkit-details-marker{display:none}
 </script>
 <script>(function () {
   "use strict";
-  var topics = window.ALGEBRA_CONTENT.topics;
+  var allTopics = window.ALGEBRA_CONTENT.topics;
+  var activeGrade = 7;
+  try { activeGrade = Number(localStorage.getItem("sandyqumar.grade")) === 9 ? 9 : 7; } catch(e) {}
+  var topics = allTopics.filter(function(t){return t.grade === activeGrade;});
+  var activeSubject = "Барлығы";
+  function selectGrade(grade) {
+    activeGrade = grade === 9 ? 9 : 7;
+    topics = allTopics.filter(function(t){return t.grade === activeGrade;});
+    activeSubject = "Барлығы";
+    try { localStorage.setItem("sandyqumar.grade",String(activeGrade)); } catch(e) {}
+  }
+  function gradeBar() {
+    return '<section class="grade-bar" aria-label="Сынып таңдау"><div><strong>Сыныбыңды таңда</strong><span>Алгебра және геометрия</span></div><div class="grade-options">'+[7,9].map(function(g){return '<button class="grade-choice'+(activeGrade===g?' selected':'')+'" data-action="grade" data-grade="'+g+'" aria-pressed="'+(activeGrade===g)+'">'+g+'-сынып</button>';}).join("")+'</div></section>';
+  }
   var store = window.AlgebraStorage;
   var grader = window.AlgebraGrading;
   var app = document.getElementById("app");
@@ -655,13 +2422,13 @@ summary::-webkit-details-marker{display:none}
     return '<svg class="icon '+(cls||"")+'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="'+(paths[name]||paths.book)+'"/></svg>';
   }
   function topicIcon(t) {
-    var marks = {power:"aⁿ",polynomial:"x²",graph:"ƒ",chart:"▥",formula:"(a+b)²",fraction:"a/b"};
+    var marks = {power:"aⁿ",polynomial:"x²",geometry:"△",graph:"ƒ",chart:"▥",formula:"(a+b)²",fraction:"a/b"};
     return '<span class="topic-icon '+t.color+'" aria-hidden="true">'+marks[t.icon]+'</span>';
   }
   function esc(value) {
     return String(value == null ? "" : value).replace(/[&<>"']/g,function (c) { return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; });
   }
-  function topicById(id) { return topics.find(function (t) { return t.id === id; }); }
+  function topicById(id) { return allTopics.find(function (t) { return t.id === id; }); }
   function stats(topic) {
     var tasks = topic ? topic.tasks : topics.flatMap(function (t) { return t.tasks; });
     var attempts = store.get().attempts;
@@ -702,7 +2469,7 @@ summary::-webkit-details-marker{display:none}
     var s=stats();
     return '<div class="mobile-scrim'+(ui.menu?' visible':'')+'" data-action="menu-close"></div>'+
     '<aside class="sidebar'+(ui.menu?' open':'')+'" aria-label="Негізгі навигация">'+
-      '<a class="brand" href="#/"><span class="brand-symbol" aria-hidden="true">∑</span><span>Алгебра<span class="brand-grade">7-сынып</span></span></a>'+
+      '<a class="brand" href="#/"><span class="brand-symbol" aria-hidden="true">SQ</span><span>SandyQumar<span class="brand-grade">Сандарға құмар оқушыларға</span></span></a>'+
       '<div class="nav-label">СЕНІҢ ОҚУ ОРТАҢ</div><nav>'+
       navLink("#/","Басты бет","home",section==="home")+
       navLink("#/topics","Тақырыптар","book",section==="topics")+
@@ -711,29 +2478,29 @@ summary::-webkit-details-marker{display:none}
       '</nav><div class="sidebar-progress"><div class="progress-heading"><span>Оқу барысы</span><strong>'+s.answered+'/'+s.total+'</strong></div>'+progress(s.answered,s.total)+'<p>Әр есеп — алға бір қадам.</p></div>'+
       '<nav class="secondary-nav">'+navLink("#/teacher","Мұғалімге","teacher",section==="teacher")+navLink("#/help","Көмек","help",section==="help")+'</nav>'+
       '<div class="teacher-signature"><span class="avatar">РА</span><span><strong>Расул Арманұлы</strong><small>Математика мұғалімі</small></span></div>'+
-    '</aside><div class="workspace"><header class="topbar"><div class="topbar-left"><button class="icon-button mobile-menu" data-action="menu" aria-label="Мәзірді ашу" aria-expanded="'+ui.menu+'">'+icon("menu")+'</button><span class="breadcrumb">Оқу кеңістігі <span>/</span> <strong>'+esc(breadcrumb)+'</strong></span></div><div class="topbar-right"><span class="open-badge">'+icon("shield")+'Тіркелусіз</span><a class="help-button" href="#/help" aria-label="Пайдалану нұсқаулығы">'+icon("help")+'</a></div></header>'+
-    '<main id="main" tabindex="-1">'+(!store.available()?'<div class="storage-notice">'+icon("help")+'Нәтиже осы сеанста ғана сақталады. Браузерде сақтау қолжетімсіз.</div>':"")+content+'</main>'+
-    '<footer class="footer"><span>Алгебра 7 <span class="footer-dot">·</span> Түсініп үйрен, сенімді қолдан.</span><a href="#/help">Қалай жұмыс істейді?</a></footer></div>';
+    '</aside><div class="workspace"><header class="topbar"><div class="topbar-left"><button class="icon-button mobile-menu" data-action="menu" aria-label="Мәзірді ашу" aria-expanded="'+ui.menu+'">'+icon("menu")+'</button><span class="breadcrumb">SandyQumar <span>/</span> <strong>'+esc(breadcrumb)+'</strong></span></div><div class="topbar-right"><span class="open-badge">'+icon("shield")+'Тіркелусіз</span><a class="help-button" href="#/help" aria-label="Пайдалану нұсқаулығы">'+icon("help")+'</a></div></header>'+
+    '<main id="main" tabindex="-1">'+gradeBar()+(!store.available()?'<div class="storage-notice">'+icon("help")+'Нәтиже осы сеанста ғана сақталады. Браузерде сақтау қолжетімсіз.</div>':"")+content+'</main>'+
+    '<footer class="footer"><span>SandyQumar <span class="footer-dot">·</span> Түсініп үйрен, сенімді қолдан.</span><a href="#/help">Қалай жұмыс істейді?</a></footer></div>';
   }
   function topicCards(mode) {
-    return '<div class="topic-grid" id="topic-list">'+topics.map(function(t){
+    return '<div class="topic-grid" id="topic-list">'+topics.filter(function(t){return mode === "home" || activeSubject === "Барлығы" || t.subject === activeSubject;}).map(function(t){
       var s=stats(t), isPractice=mode==="practice";
-      return '<a class="topic-card" data-topic-search="'+esc((t.title+" "+t.short+" "+t.description).toLocaleLowerCase("kk"))+'" href="#/'+(isPractice?"practice/":"lesson/")+t.id+(isPractice?"/0":"")+'"><div class="topic-card-top">'+topicIcon(t)+(s.answered===3?'<span class="status-tag">'+icon("check")+'Орындалды</span>':'<span class="topic-duration">'+icon("clock")+t.minutes+' мин</span>')+'</div><h3>'+esc(t.title)+'</h3><p>'+esc(t.description)+'</p><div class="topic-meta"><span>2 мысал</span><span>3 тапсырма</span></div><div class="card-bottom"><span>'+(isPractice?"Жаттығуды бастау":s.answered?"Сабақты жалғастыру":"Сабақты ашу")+'</span><span class="card-count">'+s.answered+'/3</span></div>'+progress(s.answered,3)+'</a>';
-    }).join("")+'</div><div class="empty-search" id="empty-search" hidden>Бұл атаумен тақырып табылмады. Мысалы, «дәреже» деп іздеп көріңіз.</div>';
+      return '<a class="topic-card" data-topic-search="'+esc((t.subject+" "+t.title+" "+t.short+" "+t.description).toLocaleLowerCase("kk"))+'" href="#/'+(isPractice?"practice/":"lesson/")+t.id+(isPractice?"/0":"")+'"><div class="topic-card-top">'+topicIcon(t)+(s.answered===3?'<span class="status-tag">'+icon("check")+'Орындалды</span>':'<span class="topic-duration">'+icon("clock")+t.minutes+' мин</span>')+'</div><span class="subject-label">'+esc(t.subject)+'</span><h3>'+esc(t.title)+'</h3><p>'+esc(t.description)+'</p><div class="topic-meta"><span>2 мысал</span><span>3 тапсырма</span></div><div class="card-bottom"><span>'+(isPractice?"Жаттығуды бастау":s.answered?"Сабақты жалғастыру":"Сабақты ашу")+'</span><span class="card-count">'+s.answered+'/3</span></div>'+progress(s.answered,3)+'</a>';
+    }).join("")+'</div><div class="empty-search" id="empty-search" hidden>Бұл атаумен тақырып табылмады. Басқа сөзбен іздеп көріңіз.</div>';
   }
   function home() {
     var s=stats();
     var next=topics.find(function(t){return stats(t).answered<3;});
-    var hero='<section class="hero"><div class="hero-copy"><span class="eyebrow"><span></span>7-СЫНЫП · ҚАЗАҚ ТІЛІНДЕ</span><h1>Алгебраны<br><em>түсініп үйрен.</em></h1><p>Қысқа ереже. Түсінікті мысал. Өз бетіңмен шығаратын есеп. Бәрі бір жерде.</p><div class="hero-actions">'+buttonLink(s.answered?"Оқуды жалғастыру":"Оқуды бастау","#/lesson/"+(next?next.id:"powers"),"primary","book")+buttonLink("Тақырыптарды қарау","#/topics","light")+'</div><div class="hero-note">'+icon("check")+'Тіркелусіз <span>·</span> Өз қарқыныңмен <span>·</span> Бірден кері байланыс</div></div><div class="hero-art" aria-hidden="true"><span class="floating-formula top-formula">aᵐ · aⁿ = aᵐ⁺ⁿ</span><div class="graph-card"><div class="graph-card-header"><span class="graph-dot"></span><span>Функцияны көріп түсін</span><span class="graph-equation">y = 2x + 1</span></div>'+graph(2,1,true)+'</div><span class="floating-formula bottom-formula"><span class="formula-check">✓</span> (a + b)² = a² + 2ab + b²</span></div></section>';
-    var numbers='<section class="overview-stats" aria-label="Платформа көрсеткіштері"><div>'+icon("book")+'<span><strong>6</strong><small>Негізгі бөлім</small></span></div><div>'+icon("pen")+'<span><strong>18</strong><small>Интерактивті тапсырма</small></span></div><div>'+icon("target")+'<span><strong>'+s.answered+'<span class="stat-denominator">/18</span></strong><small>Тапсырма орындалды</small></span></div><div>'+icon("spark")+'<span><strong>'+(s.answered?s.accuracy+"%":"Өз қарқыныңмен")+'</strong><small>'+(s.answered?"Алғашқы жауап дәлдігі":"Уақыт шектеуі жоқ")+'</small></span></div></section>';
+    var hero='<section class="hero"><div class="hero-copy"><span class="eyebrow"><span></span>МЕКТЕП МАТЕМАТИКАСЫ · ҚАЗАҚ ТІЛІНДЕ</span><h1>Sandy<em>Qumar</em></h1><p class="brand-tagline">Сандарға құмар оқушыларға</p><p>Математиканы түсініп үйрен. Сыныбыңды таңдап, ережеден өз бетіңмен есеп шығаруға өт.</p><div class="hero-actions">'+buttonLink(s.answered?"Оқуды жалғастыру":"Оқуды бастау","#/lesson/"+(next?next.id:topics[0].id),"primary","book")+buttonLink("Тақырыптарды қарау","#/topics","light")+'</div><div class="hero-note">'+icon("check")+'Тіркелусіз <span>·</span> Өз қарқыныңмен <span>·</span> Бірден кері байланыс</div></div><div class="hero-art" aria-hidden="true"><span class="floating-formula top-formula">aᵐ · aⁿ = aᵐ⁺ⁿ</span><div class="graph-card"><div class="graph-card-header"><span class="graph-dot"></span><span>Функцияны көріп түсін</span><span class="graph-equation">y = 2x + 1</span></div>'+graph(2,1,true)+'</div><span class="floating-formula bottom-formula"><span class="formula-check">✓</span> (a + b)² = a² + 2ab + b²</span></div></section>';
+    var numbers='<section class="overview-stats" aria-label="Платформа көрсеткіштері"><div>'+icon("book")+'<span><strong>'+topics.length+'</strong><small>'+activeGrade+'-сынып тақырыбы</small></span></div><div>'+icon("pen")+'<span><strong>'+s.total+'</strong><small>Интерактивті тапсырма</small></span></div><div>'+icon("target")+'<span><strong>'+s.answered+'<span class="stat-denominator">/'+s.total+'</span></strong><small>Тапсырма орындалды</small></span></div><div>'+icon("spark")+'<span><strong>'+(s.answered?s.accuracy+"%":"Өз қарқыныңмен")+'</strong><small>'+(s.answered?"Алғашқы жауап дәлдігі":"Уақыт шектеуі жоқ")+'</small></span></div></section>';
     var panel=s.answered?'<div class="continue-card"><span class="continue-icon">'+icon("pen")+'</span><div><h3>'+(next?"Келесі қадамға дайынсың ба?":"Барлық тапсырманы орындадың!")+'</h3><p>'+(next?esc(next.title)+" тақырыбын жалғастыр.":"Нәтижені қарап, қате есептерді қайта орында.")+'</p></div>'+buttonLink(next?"Жалғастыру":"Нәтижені көру",next?"#/lesson/"+next.id:"#/results","secondary")+'</div>':"";
-    return shell(hero+numbers+panel+'<section class="section"><div class="section-heading"><div><span class="overline">БІР ТАҚЫРЫПТАН БАСТА</span><h2>Бүгін нені үйренеміз?</h2></div><a class="text-link" href="#/topics">Барлық тақырыптар</a></div>'+topicCards("lesson")+'</section><section class="learning-note">'+icon("bulb")+'<div><h3>Қателесу — үйренудің бір бөлігі.</h3><p>Жауабың сәйкес келмесе, түсіндірмені оқып, қайта байқап көр. Әрекет саны шектелмейді.</p></div></section>',"home","Басты бет");
+    return shell(hero+'<p class="course-scope">'+activeGrade+'-сынып · Алгебра және геометрия · Әр бөлімде кіріспе сабақ пен жаттығу. Тақырыптар біртіндеп толықтырылады.</p>'+numbers+panel+'<section class="section"><div class="section-heading"><div><span class="overline">БІР ТАҚЫРЫПТАН БАСТА</span><h2>Бүгін нені үйренеміз?</h2></div><a class="text-link" href="#/topics">Барлық тақырыптар</a></div>'+topicCards("home")+'</section><section class="learning-note">'+icon("bulb")+'<div><h3>Қателесу — үйренудің бір бөлігі.</h3><p>Жауабың сәйкес келмесе, түсіндірмені оқып, қайта байқап көр. Әрекет саны шектелмейді.</p></div></section>',"home","Басты бет");
   }
   function topicsPage(mode) {
     var practice=mode==="practice";
-    return shell('<div class="page-heading"><span class="overline">'+(practice?"БІЛІМІҢДІ ҚОЛДАН":"АЛГЕБРА 7")+'</span><h1>'+(practice?"Жаттығу алаңы":"Тақырыптар")+'</h1><p>'+(practice?"Тақырыпты таңда да, үш есеппен біліміңді бекіт. Жауаптан кейін түсіндірме беріледі.":"Әр бөлімде қысқа ереже, екі шешілген мысал және үш интерактивті тапсырма бар.")+'</p></div>'+
-    (practice?'<div class="practice-banner"><div>'+icon("spark")+'<div><h3>Аралас жаттығу</h3><p>Алты бөлімнен 18 тапсырманы ретімен орында.</p></div></div>'+buttonLink("Жаттығуды бастау","#/practice/all/0","primary","pen")+'</div>':'')+
-    '<div class="topics-toolbar"><span class="muted">6 негізгі бөлім</span><label class="search">'+icon("search")+'<span class="sr-only">Тақырып іздеу</span><input id="topic-search" type="search" placeholder="Тақырып іздеу" autocomplete="off"></label></div>'+topicCards(practice?"practice":"lesson"),practice?"practice":"topics",practice?"Жаттығу":"Тақырыптар");
+    return shell('<div class="page-heading"><span class="overline">'+(practice?"БІЛІМІҢДІ ҚОЛДАН":activeGrade+"-СЫНЫП · МАТЕМАТИКА")+'</span><h1>'+(practice?"Жаттығу алаңы":"Тақырыптар")+'</h1><p>'+(practice?"Тақырыпты таңда да, үш есеппен біліміңді бекіт. Жауаптан кейін түсіндірме беріледі.":"Әр бөлімде қысқа ереже, екі шешілген мысал және үш интерактивті тапсырма бар.")+'</p></div>'+
+    (practice?'<div class="practice-banner"><div>'+icon("spark")+'<div><h3>Аралас жаттығу</h3><p>'+topics.length+' бөлімнен '+stats().total+' тапсырманы ретімен орында.</p></div></div>'+buttonLink("Жаттығуды бастау","#/practice/all/0","primary","pen")+'</div>':'')+
+    '<div class="subject-tabs" role="group" aria-label="Пәнді таңдау">'+["Барлығы","Алгебра","Геометрия"].map(function(sub){return '<button class="subject-tab'+(activeSubject===sub?' selected':'')+'" data-action="subject" data-subject="'+sub+'" aria-pressed="'+(activeSubject===sub)+'">'+sub+'</button>';}).join("")+'</div><div class="topics-toolbar"><span class="muted">'+topics.filter(function(t){return activeSubject==="Барлығы"||t.subject===activeSubject;}).length+' тақырып · '+activeGrade+'-сынып</span><label class="search">'+icon("search")+'<span class="sr-only">Тақырып іздеу</span><input id="topic-search" type="search" placeholder="Тақырып іздеу" autocomplete="off"></label></div>'+topicCards(practice?"practice":"lesson"),practice?"practice":"topics",practice?"Жаттығу":"Тақырыптар");
   }
   function graphWidget() {
     return '<section class="graph-explorer content-card"><div class="section-heading"><div><span class="overline">БАЙҚАП КӨР</span><h2>Түзу қалай өзгереді?</h2></div><span class="tag">Интерактив</span></div><p class="muted">k мен b мәндерін өзгертіп, графиктің қозғалысын бақыла.</p><div class="explorer-grid"><div id="explorer-graph">'+graph(2,1,false)+'</div><div class="graph-controls"><div id="graph-formula" class="math-expression">y = 2x + 1</div><label for="slope">Көлбеулік коэффициенті <strong id="slope-value">k = 2</strong></label><input id="slope" type="range" min="-3" max="3" step="0.5" value="2"><label for="intercept">Бос мүше <strong id="intercept-value">b = 1</strong></label><input id="intercept" type="range" min="-4" max="4" step="1" value="1"><p class="small-text">k артса, түзудің көлбеулігі өзгереді. b артса, түзу жоғары жылжиды.</p><div id="graph-values" class="graph-values"><span>x = −1 → y = −1</span><span>x = 0 → y = 1</span><span>x = 1 → y = 3</span></div></div></div></section>';
@@ -784,11 +2551,11 @@ summary::-webkit-details-marker{display:none}
     var s=stats();
     var a=store.get().attempts;
     var wrong=topics.flatMap(function(t){return t.tasks.map(function(task,i){return {topic:t,task:task,index:i};});}).filter(function(x){return a[x.task.id]&&!a[x.task.id].correct;});
-    var head='<div class="page-heading"><span class="overline">ӘР ҚАДАМЫҢ МАҢЫЗДЫ</span><h1>Менің нәтижем</h1><p>Қай жерге жеткеніңді көріп, келесі қадамыңды таңда.</p></div>';
-    var body=!s.answered?'<section class="empty-state"><span class="empty-illustration">'+icon("target")+'</span><h2>Бірінші есептен бастайық</h2><p>Әлі тапсырма орындалмады. Бір тақырыпты таңдасаң, нәтижең осында пайда болады.</p>'+buttonLink("Бірінші сабақты ашу","#/lesson/powers","primary","book")+'</section>':
-    '<section class="result-summary"><div class="completion-ring" style="--completion:'+s.percent+'"><div><strong>'+s.percent+'%</strong><span>орындалды</span></div></div><div class="summary-copy"><span class="overline">СЕНІҢ ІЛГЕРІЛЕУІҢ</span><h2>'+s.answered+' тапсырма орындалды</h2><p>Барлығы 18 тапсырма. Қайта орындағанда ұпай екі рет қосылмайды.</p></div><div class="summary-metrics"><div><strong>'+s.correct+'/'+s.total+'</strong><span>Жиналған ұпай</span></div><div><strong>'+s.accuracy+'%</strong><span>Алғашқы жауап дәлдігі</span></div></div></section>'+
+    var head='<div class="page-heading"><span class="overline">ӘР ҚАДАМЫҢ МАҢЫЗДЫ</span><h1>Менің нәтижем</h1><p>'+activeGrade+'-сынып бойынша қай жерге жеткеніңді көріп, келесі қадамыңды таңда.</p></div>';
+    var body=!s.answered?'<section class="empty-state"><span class="empty-illustration">'+icon("target")+'</span><h2>Бірінші есептен бастайық</h2><p>Әлі тапсырма орындалмады. Бір тақырыпты таңдасаң, нәтижең осында пайда болады.</p>'+buttonLink("Бірінші сабақты ашу","#/lesson/"+topics[0].id,"primary","book")+'</section>':
+    '<section class="result-summary"><div class="completion-ring" style="--completion:'+s.percent+'"><div><strong>'+s.percent+'%</strong><span>орындалды</span></div></div><div class="summary-copy"><span class="overline">СЕНІҢ ІЛГЕРІЛЕУІҢ</span><h2>'+s.answered+' тапсырма орындалды</h2><p>Осы сыныпта '+s.total+' тапсырма. Қайта орындағанда ұпай екі рет қосылмайды.</p></div><div class="summary-metrics"><div><strong>'+s.correct+'/'+s.total+'</strong><span>Жиналған ұпай</span></div><div><strong>'+s.accuracy+'%</strong><span>Алғашқы жауап дәлдігі</span></div></div></section>'+
     '<section class="section"><div class="section-heading"><h2>Тақырыптар бойынша</h2><span class="muted">Әр бөлімде 3 тапсырма</span></div><div class="results-list">'+topics.map(function(t){var ts=stats(t);return '<div class="result-row"><div class="result-topic">'+topicIcon(t)+'<div><h3>'+esc(t.title)+'</h3><span class="small-text">'+ts.answered+'/3 орындалды · '+ts.correct+'/3 ұпай</span></div></div><div class="result-progress">'+progress(ts.answered,3)+'</div>'+buttonLink(ts.answered?"Қайталау":"Бастау","#/practice/"+t.id+"/0","ghost")+'</div>';}).join("")+'</div></section>'+
-    (wrong.length?'<section class="section"><div class="section-heading"><div><span class="overline">КЕЛЕСІ ҚАДАМ</span><h2>Қайта байқап көр</h2></div><span class="tag">'+wrong.length+' тапсырма</span></div><div class="review-list">'+wrong.map(function(x){return '<a href="#/practice/'+x.topic.id+'/'+x.index+'"><span class="review-icon">'+icon("bulb")+'</span><div><strong>'+esc(x.task.question)+'</strong><span>'+esc(x.topic.title)+'</span></div><span class="text-link">Қайталау</span></a>';}).join("")+'</div></section>':'<section class="learning-note">'+icon("spark")+'<div><h3>Орындалған есептеріңнің бәрі дұрыс!</h3><p>'+(s.answered<18?"Келесі тақырыптағы тапсырмаларды жалғастыр.":"Барлық алты бөлімді аяқтадың. Қалаған тақырыпты қайта бекіте аласың.")+'</p></div></section>');
+    (wrong.length?'<section class="section"><div class="section-heading"><div><span class="overline">КЕЛЕСІ ҚАДАМ</span><h2>Қайта байқап көр</h2></div><span class="tag">'+wrong.length+' тапсырма</span></div><div class="review-list">'+wrong.map(function(x){return '<a href="#/practice/'+x.topic.id+'/'+x.index+'"><span class="review-icon">'+icon("bulb")+'</span><div><strong>'+esc(x.task.question)+'</strong><span>'+esc(x.topic.title)+'</span></div><span class="text-link">Қайталау</span></a>';}).join("")+'</div></section>':'<section class="learning-note">'+icon("spark")+'<div><h3>Орындалған есептеріңнің бәрі дұрыс!</h3><p>'+(s.answered<s.total?"Келесі тақырыптағы тапсырмаларды жалғастыр.":"Осы сыныптың барлық бөлімін аяқтадың. Қалаған тақырыпты қайта бекіте аласың.")+'</p></div></section>');
     var controls='<section class="data-tools"><div><h3>Нәтиже өзіңде сақталады</h3><p>Осы браузердің деректері тазартылса, нәтиже өшуі мүмкін. Көшірмесін жүктеп алып, басқа құрылғыда қалпына келтіре аласың.</p></div><div class="data-actions"><button class="button secondary" data-action="export">'+icon("download")+'Нәтижені жүктеу</button><button class="button secondary" data-action="import">'+icon("upload")+'Қалпына келтіру</button><button class="button ghost" data-action="reset">'+icon("reset")+'Жаңа оқушы</button></div><input type="file" id="import-file" accept=".json,application/json" hidden></section>';
     return shell(head+body+controls,"results","Менің нәтижем");
   }
@@ -797,20 +2564,20 @@ summary::-webkit-details-marker{display:none}
     return shell('<div class="page-heading"><span class="overline">МҰҒАЛІМГЕ АРНАЛҒАН</span><h1>Сабаққа дайын материалдар</h1><p>Тақырыпты таңдаңыз, сілтемені оқушыға жіберіңіз немесе тапсырмаларды басып шығарыңыз.</p></div>'+
     '<div class="teacher-intro">'+icon("teacher")+'<div><h3>Түсіндіру, жаттығу, кері байланыс</h3><p>Оқушылар тіркелусіз жұмыс істейді. Нәтиже әр оқушының өз браузерінде сақталады; бұл бетте сыныптың ортақ журналы жүргізілмейді.</p></div></div>'+
     '<section class="teacher-materials">'+topics.map(function(t){return '<article class="teacher-card"><div class="teacher-card-heading">'+topicIcon(t)+'<div><h2>'+esc(t.title)+'</h2><p>'+esc(t.goal)+'</p></div></div><div class="teacher-card-actions">'+buttonLink("Сабақты ашу","#/lesson/"+t.id,"secondary","book")+'<button class="button ghost" data-action="copy" data-topic="'+t.id+'">'+icon("copy")+'Сілтемені көшіру</button><button class="button ghost" data-action="print-lesson" data-topic="'+t.id+'">'+icon("print")+'Басып шығару</button></div><details><summary>Тапсырмалар мен жауаптар</summary><ol class="teacher-answers">'+t.tasks.map(function(task){return '<li><p>'+esc(task.question)+(task.formula?' <span class="inline-math">'+esc(task.formula)+'</span>':"")+'</p><strong>Жауап: '+esc(taskAnswerText(task))+'</strong><p class="small-text">'+esc(task.explanation)+'</p></li>';}).join("")+'</ol></details></article>';}).join("")+'</section>'+
-    '<section class="portable-card"><span class="portable-icon">'+icon("download")+'</span><div><span class="overline">ПЛАТФОРМА СІЗДІҢ ҚОЛЫҢЫЗДА</span><h2>'+(window.ALGEBRA_OFFLINE?'Интернетсіз нұсқа':'Өз хостингіңізге көшіріңіз')+'</h2><p>'+(window.ALGEBRA_OFFLINE?'Барлық сабақтар мен тапсырмалар осы файлда. Интернетке қосылмай-ақ оқуды жалғастыра аласыз. Файлды басқа құрылғыға көшіріп ашуға болады.':'Сайттың толық көшірмесін жүктеп алыңыз. Ішінде интернетсіз ашылатын нұсқа, барлық сабақтар мен тапсырмалар және жариялау нұсқаулығы бар.')+'</p>'+(window.ALGEBRA_OFFLINE?buttonLink("Тақырыптарды ашу","#/topics","primary","book"):'<a class="button primary" href="./downloads/algebra7-platform.zip" download>'+icon("download")+'Платформаны жүктеу</a> <a class="button secondary" href="./downloads/algebra7-offline.html" download>'+icon("download")+'Интернетсіз нұсқа</a>')+'</div></section>',"teacher","Мұғалімге");
+    '<section class="portable-card"><span class="portable-icon">'+icon("download")+'</span><div><span class="overline">МАТЕМАТИКА ӘРДАЙЫМ ЖАНЫҢДА</span><h2>Бір файлда барлық сабақ</h2><p>7 және 9-сыныптың ережелері, мысалдары мен жаттығуларын бір файлға жүктеп ал. Оны интернетсіз де браузерде ашуға болады.</p><button class="button primary" data-action="download-platform">'+icon("download")+'Платформаны жүктеу</button></div></section>',"teacher","Мұғалімге");
   }
   function help() {
     var questions=[
-      ["Қалай бастаймын?","«Тақырыптар» бөлімінен сабақ таңда. Ережені оқып, екі мысалды қара. Содан кейін «Жаттығуға өту» батырмасын бас."],
+      ["Қалай бастаймын?","Алдымен 7 немесе 9-сыныпты таңда. «Тақырыптар» бөлімінен сабақ таңда. Ережені оқып, екі мысалды қара. Содан кейін «Жаттығуға өту» батырмасын бас."],
       ["Тіркелу немесе аккаунт керек пе?","Жоқ. Сайт ортақ сілтемемен ашылады. Оқушыдан ChatGPT аккаунты, аты-жөні, телефон нөмірі немесе электрондық пошта сұралмайды."],
       ["Бөлшек пен теріс санды қалай енгіземін?","1/4, 0,25 және 0.25 жазылымдары бірдей мән ретінде тексеріледі. Теріс санды −2 немесе -2 деп енгізуге болады. 30% орнына 0,3 не 3/10 енгізіңіз."],
-      ["Ұпай қалай есептеледі?","Әр тапсырма ең көбі 1 ұпай береді. Бөлек өрістері бар тапсырмада барлық өріс дұрыс болуы керек. Әр бөлім — 3 ұпай, барлығы — 18 ұпай. Қайта орындау қосымша ұпай қоспайды."],
+      ["Ұпай қалай есептеледі?","Әр тапсырма ең көбі 1 ұпай береді. Бөлек өрістері бар тапсырмада барлық өріс дұрыс болуы керек. Әр бөлім — 3 ұпай. Жалпы ұпай таңдалған сыныптың тапсырма санына байланысты. Қайта орындау қосымша ұпай қоспайды."],
       ["Нәтиже қайда сақталады?","Нәтиже осы сайтты ашқан браузерде сақталады. Басқа құрылғыда автоматты көрінбейді. «Менің нәтижем» бөлімінен көшірмені жүктеп, кейін қалпына келтіруге болады."],
       ["Бір компьютерді бірнеше оқушы қолданса ше?","Келесі оқушы бастамас бұрын «Менің нәтижем» бөлімінен «Жаңа оқушы» батырмасын басып, алдыңғы нәтижені тазартуды растаңыз. Керек нәтижені алдымен жүктеп алыңыз."],
       ["Мұғалім менің нәтижемді көре ме?","Бұл нұсқада ортақ сынып журналы жоқ. Нәтиже экранын мұғалімге көрсете аласыз немесе жүктелген нәтижені өзіңіз бөлісе аласыз."],
-      ["Интернетсіз қолдануға бола ма?","«Мұғалімге» бөлімінен платформаның архивін жүктеңіз. Архивті ашып, algebra7-offline.html файлын браузерде іске қосыңыз. Бұл файл сабақтар мен жаттығуларды интернетсіз ашады; браузердің жергілікті файлға сақтау рұқсатына қарай нәтиже сақталмауы мүмкін."]
+      ["Интернетсіз қолдануға бола ма?","«Мұғалімге» бөлімінен «Платформаны жүктеу» батырмасын басыңыз. SandyQumar.html файлын браузерде ашыңыз. Бұл файл сабақтар мен жаттығуларды интернетсіз ашады; браузердің жергілікті файлға сақтау рұқсатына қарай нәтиже сақталмауы мүмкін."]
     ];
-    return shell('<div class="page-heading"><span class="overline">ҚАДАМЫҢ ТҮСІНІКТІ БОЛСЫН</span><h1>Көмек және нұсқаулық</h1><p>Оқуды бастауға қажет қысқа жауаптар.</p></div><div class="help-layout"><section class="faq">'+questions.map(function(q,i){return '<details'+(i===0?' open':'')+'><summary>'+q[0]+'</summary><p>'+q[1]+'</p></details>';}).join("")+'</section><aside class="help-aside"><span class="topic-icon blue">∑</span><h2>Алгебра 7</h2><p>Жобаның пән мұғалімі:<br><strong>Жұмабеков Расул Арманұлы</strong></p><p>6 тақырып · 12 мысал<br>18 интерактивті тапсырма</p>'+buttonLink("Оқуды бастау","#/topics","primary","book")+'</aside></div>',"help","Көмек");
+    return shell('<div class="page-heading"><span class="overline">ҚАДАМЫҢ ТҮСІНІКТІ БОЛСЫН</span><h1>Көмек және нұсқаулық</h1><p>Оқуды бастауға қажет қысқа жауаптар.</p></div><div class="help-layout"><section class="faq">'+questions.map(function(q,i){return '<details'+(i===0?' open':'')+'><summary>'+q[0]+'</summary><p>'+q[1]+'</p></details>';}).join("")+'</section><aside class="help-aside"><span class="topic-icon blue">∑</span><h2>SandyQumar</h2><p>Жобаның пән мұғалімі:<br><strong>Жұмабеков Расул Арманұлы</strong></p><p>'+topics.length+' тақырып · '+(topics.length*2)+' мысал<br>'+stats().total+' интерактивті тапсырма</p>'+buttonLink("Оқуды бастау","#/topics","primary","book")+'</aside></div>',"help","Көмек");
   }
   function notFound() {
     return shell('<section class="empty-state"><span class="empty-illustration">'+icon("search")+'</span><h1>Бұл бет табылмады</h1><p>Қажетті сабақты тақырыптар тізімінен ашып көріңіз.</p>'+buttonLink("Тақырыптарға өту","#/topics","primary","book")+'</section>',"topics","Бет табылмады");
@@ -821,6 +2588,10 @@ summary::-webkit-details-marker{display:none}
     if(ui.route!==hash){ui.route=hash;ui.feedback=null;ui.draft=null;ui.menu=false;}
     var parts=hash.replace(/^#\/?/,"").split("/");
     var section=parts[0];
+    if ((section==="lesson" || section==="practice") && parts[1] && parts[1]!=="all") {
+      var linked=topicById(parts[1]);
+      if(linked && linked.grade!==activeGrade) selectGrade(linked.grade);
+    }
     if(!section)app.innerHTML=home();
     else if(section==="topics")app.innerHTML=topicsPage("topics");
     else if(section==="lesson")app.innerHTML=lesson(topicById(parts[1]));
@@ -831,7 +2602,7 @@ summary::-webkit-details-marker{display:none}
     else if(section==="help")app.innerHTML=help();
     else app.innerHTML=notFound();
     syncNavigation();
-    document.title=(section==="lesson"&&topicById(parts[1])?topicById(parts[1]).title:{"topics":"Тақырыптар","practice":"Жаттығу","results":"Менің нәтижем","teacher":"Мұғалімге","help":"Көмек"}[section]||"Түсініп үйрен")+" — Алгебра 7";
+    document.title=(section==="lesson"&&topicById(parts[1])?topicById(parts[1]).title:{"topics":"Тақырыптар","practice":"Жаттығу","results":"Менің нәтижем","teacher":"Мұғалімге","help":"Көмек"}[section]||"Түсініп үйрен")+" — SandyQumar";
   }
   function syncNavigation() {
     var sidebar=document.querySelector(".sidebar");
@@ -866,13 +2637,13 @@ summary::-webkit-details-marker{display:none}
   function downloadResult() {
     var blob=new Blob([JSON.stringify(store.get(),null,2)],{type:"application/json"});
     var url=URL.createObjectURL(blob),link=document.createElement("a");
-    link.href=url;link.download="algebra7-natizhe.json";link.click();
+    link.href=url;link.download="sandyqumar-natizhe.json";link.click();
     setTimeout(function(){URL.revokeObjectURL(url);},1000);
     toast("Нәтиженің көшірмесі жүктелді.");
   }
   function printLesson(id) {
     var t=topicById(id);if(!t)return;
-    document.getElementById("print-area").innerHTML='<header class="print-header"><strong>Алгебра 7</strong><span>Аты-жөні: ____________________ &nbsp; Күні: __________</span></header><h1>'+esc(t.title)+'</h1><p><strong>Мақсат:</strong> '+esc(t.goal)+'</p><h2>Қысқаша ереже</h2>'+t.theory.map(function(p){return '<p><strong>'+esc(p.title)+'.</strong> '+esc(p.text)+'</p>';}).join("")+'<h2>Шешілген мысалдар</h2>'+t.examples.map(function(ex){return '<p><strong>'+esc(ex.title)+'</strong></p><p>'+esc(ex.expression)+'</p>';}).join("")+'<h2>Өздік жұмыс</h2>'+t.tasks.map(function(task,i){return '<div class="print-task"><p><strong>'+(i+1)+'. '+esc(task.question)+'</strong></p>'+(task.formula?'<p>'+esc(task.formula)+'</p>':"")+(task.type==="choice"?'<p>'+task.options.map(function(o,j){return String.fromCharCode(65+j)+") "+esc(o.text);}).join(" &nbsp;&nbsp; ")+'</p>':task.type==="fields"?task.fields.map(function(f){return '<p>'+esc(f.label)+': ____________________</p>';}).join(""):'<p>Жауап: ____________________</p>')+'<div class="writing-space"></div></div>';}).join("")+'<p>Нәтиже: _____ / 3 ұпай</p>';
+    document.getElementById("print-area").innerHTML='<header class="print-header"><strong>SandyQumar</strong><span>Аты-жөні: ____________________ &nbsp; Күні: __________</span></header><h1>'+esc(t.title)+'</h1><p><strong>Мақсат:</strong> '+esc(t.goal)+'</p><h2>Қысқаша ереже</h2>'+t.theory.map(function(p){return '<p><strong>'+esc(p.title)+'.</strong> '+esc(p.text)+'</p>';}).join("")+'<h2>Шешілген мысалдар</h2>'+t.examples.map(function(ex){return '<p><strong>'+esc(ex.title)+'</strong></p><p>'+esc(ex.expression)+'</p>';}).join("")+'<h2>Өздік жұмыс</h2>'+t.tasks.map(function(task,i){return '<div class="print-task"><p><strong>'+(i+1)+'. '+esc(task.question)+'</strong></p>'+(task.formula?'<p>'+esc(task.formula)+'</p>':"")+(task.type==="choice"?'<p>'+task.options.map(function(o,j){return String.fromCharCode(65+j)+") "+esc(o.text);}).join(" &nbsp;&nbsp; ")+'</p>':task.type==="fields"?task.fields.map(function(f){return '<p>'+esc(f.label)+': ____________________</p>';}).join(""):'<p>Жауап: ____________________</p>')+'<div class="writing-space"></div></div>';}).join("")+'<p>Нәтиже: _____ / 3 ұпай</p>';
     window.print();
   }
   app.addEventListener("submit",function(e){
@@ -914,12 +2685,26 @@ summary::-webkit-details-marker{display:none}
       var cleaned=store.validate(input),count=Object.keys(cleaned.attempts).length;
       if(!count&&Object.keys(input.attempts).length)throw new Error("invalid");
       modal("Нәтижені қалпына келтіру",count+" тапсырманың нәтижесі табылды. Осы браузердегі қазіргі нәтиже осы көшірмемен ауыстырылады.","Қалпына келтіру",function(){store.restore(cleaned);route();toast("Нәтиже қалпына келтірілді.");});
-    }).catch(function(){toast("Бұл файл жарамсыз. Алгебра 7 нәтижесінің JSON көшірмесін таңдаңыз.");});
+    }).catch(function(){toast("Бұл файл жарамсыз. SandyQumar нәтижесінің JSON көшірмесін таңдаңыз.");});
     e.target.value="";
   });
   app.addEventListener("click",function(e){
     var target=e.target.closest("[data-action]");if(!target)return;
     var action=target.dataset.action;
+    if(action==="grade") {
+      selectGrade(Number(target.dataset.grade)); ui.route=""; location.hash="#/"; route(); window.scrollTo(0,0); return;
+    }
+    if(action==="subject") {
+      activeSubject=target.dataset.subject; route(); return;
+    }
+    if(action==="download-platform") {
+      var clone=document.documentElement.cloneNode(true);
+      ["#app","#toast","#print-area"].forEach(function(id){var el=clone.querySelector(id);if(el)el.innerHTML="";});
+      var blob=new Blob(["<!doctype html>\n"+clone.outerHTML],{type:"text/html;charset=utf-8"});
+      var url=URL.createObjectURL(blob),a=document.createElement("a");
+      a.href=url;a.download="SandyQumar.html";a.click();
+      setTimeout(function(){URL.revokeObjectURL(url);},1000);toast("SandyQumar көшірмесі жүктелді.");return;
+    }
     if(action==="menu"||action==="menu-close"){
       ui.menu=action==="menu"?!ui.menu:false;
       var sidebar=document.querySelector(".sidebar"),scrim=document.querySelector(".mobile-scrim"),toggle=document.querySelector(".mobile-menu");
