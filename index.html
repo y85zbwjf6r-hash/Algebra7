@@ -1761,23 +1761,23 @@ body.gp-presenting main{max-width:1800px;padding:28px 290px 50px 32px}
       "subject": "Алгебра",
       "title": "Геометриялық прогрессия",
       "short": "Геометриялық прогрессия",
-      "description": "Еселікті, n-ші мүшені және геометриялық прогрессияның қосындысын табу.",
-      "goal": "Еселікті, n-ші мүшені және геометриялық прогрессияның қосындысын табу.",
+      "description": "Еселікті, n-ші мүше формуласын және сипаттамалық қасиетті түсіну.",
+      "goal": "Еселікті, n-ші мүше формуласын және сипаттамалық қасиетті түсіну.",
       "minutes": 12,
       "icon": "power",
       "color": "orange",
       "theory": [
         {
           "title": "Тұрақты еселік",
-          "text": "Геометриялық прогрессияның әрбір мүшесі алдыңғысын бірдей q санына көбейту арқылы алынады. Нөлден өзге мүшелер үшін q = bₙ₊₁ / bₙ."
+          "text": "Геометриялық прогрессияда bₙ₊₁ = bₙq; b₁ ≠ 0 және q ≠ 0. Еселік q = b₂/b₁."
         },
         {
-          "title": "Мүше және ақырлы қосынды",
-          "text": "bₙ = b₁qⁿ⁻¹. q ≠ 1 болса, Sₙ = b₁(qⁿ−1)/(q−1). q = 1 болса, Sₙ = nb₁."
+          "title": "n-ші мүше",
+          "text": "bₙ = b₁qⁿ⁻¹. Бірінші мүшеден n-ші мүшеге дейін n − 1 көбейту қадамы бар."
         },
         {
-          "title": "Шексіз кемімелі қосынды",
-          "text": "|q| < 1 болса, шексіз геометриялық прогрессияның қосындысы S = b₁/(1−q)."
+          "title": "Сипаттамалық қасиет",
+          "text": "n ≥ 2 болса, bₙ² = bₙ₋₁bₙ₊₁. Ортаңғы мүшенің екі мүмкін мәні шығуы мүмкін: b₂ = ±√(b₁b₃)."
         }
       ],
       "examples": [
@@ -1790,15 +1790,15 @@ body.gp-presenting main{max-width:1800px;padding:28px 290px 50px 32px}
           ]
         },
         {
-          "title": "Шексіз қосынды",
-          "expression": "8 + 4 + 2 + … = 16",
+          "title": "Ортаңғы мүшенің екі мәні",
+          "expression": "b₁ = 2, b₃ = 18 ⇒ b₂ = ±6",
           "steps": [
-            "b₁ = 8 және q = 1/2, |q| < 1.",
-            "S = 8/(1−1/2) = 16."
+            "b₂² = b₁b₃ = 2 · 18 = 36.",
+            "b₂ = −6 немесе b₂ = 6. q < 0 болса −6, q > 0 болса 6 таңдалады."
           ]
         }
       ],
-      "mistake": "Шексіз қосынды формуласын |q| < 1 шарты орындалғанда ғана қолданыңыз.",
+      "mistake": "Квадрат теңдеуден ортаңғы мүшені тапқанда екі таңбаны да тексер. Қосымша шарт сәйкес мәнді таңдауға көмектеседі.",
       "tasks": [
         {
           "id": "g9-geometric-1",
@@ -1842,25 +1842,25 @@ body.gp-presenting main{max-width:1800px;padding:28px 290px 50px 32px}
         },
         {
           "id": "g9-geometric-3",
-          "version": 1,
+          "version": 2,
           "type": "fields",
           "level": "Қолдану",
-          "question": "b₁ = 2, q = 3 үшін b₄ және алғашқы төрт мүшенің S₄ қосындысын табыңыз.",
+          "question": "b₁ = 2, b₃ = 18. Ортаңғы b₂ мүшесінің екі мүмкін мәнін жазыңыз.",
           "fields": [
             {
-              "label": "b₄"
+              "label": "Теріс мүмкін мән"
             },
             {
-              "label": "S₄"
+              "label": "Оң мүмкін мән"
             }
           ],
           "answer": [
-            "54",
-            "80"
+            "-6",
+            "6"
           ],
-          "displayAnswer": "54; 80",
-          "hint": "Мүшелері: 2, 6, 18, 54.",
-          "explanation": "b₄ = 54; S₄ = 2 + 6 + 18 + 54 = 80."
+          "displayAnswer": "−6; 6",
+          "hint": "b₂² = b₁b₃. Екі таңбаны да қарастыр.",
+          "explanation": "b₂² = 2 · 18 = 36, сондықтан b₂ = −6 немесе b₂ = 6."
         }
       ]
     },
@@ -2514,216 +2514,8 @@ body.gp-presenting main{max-width:1800px;padding:28px 290px 50px 32px}
   };
 })(window);
 </script>
-<script>(function (root) {
-  "use strict";
-  function valid(b1, q) {
-    return [b1, q].every(function (v) { return Number.isFinite(v) && v !== 0 && Math.abs(v * 100 - Math.round(v * 100)) < 1e-8; }) && Math.abs(b1) <= 9 && Math.abs(q) <= 3;
-  }
-  function terms(b1, q, count) {
-    return Array.from({length: count}, function (_, i) { return b1 * Math.pow(q, i); });
-  }
-  function sum(b1, q, count) {
-    return terms(b1, q, count).reduce(function (a, b) { return a + b; }, 0);
-  }
-  function comparison(b1, q) {
-    var d = b1 * (q - 1);
-    return {d: d, ap: Array.from({length: 4}, function (_, i) { return b1 + i * d; }), gp: terms(b1, q, 4)};
-  }
-  function format(value) {
-    var s = value.toFixed(8).replace(/0+$/, "").replace(/\.$/, "");
-    if (s === "-0") s = "0";
-    return s.replace("-", "−").replace(".", ",");
-  }
-  function freshTimer(activity, seconds) {
-    return {activity: activity, durationMs: seconds * 1000, remainingMs: seconds * 1000, deadline: 0, running: false};
-  }
-  function remaining(timer, now) {
-    return Math.max(0, timer.running ? timer.deadline - now : timer.remainingMs);
-  }
-  function start(timer, now) {
-    if (!timer.running && timer.remainingMs > 0) {
-      timer.deadline = now + timer.remainingMs;
-      timer.running = true;
-    }
-    return timer;
-  }
-  function pause(timer, now) {
-    timer.remainingMs = remaining(timer, now);
-    timer.running = false;
-    timer.deadline = 0;
-    return timer;
-  }
-  function score(value, delta) { return Math.max(-999, Math.min(999, value + delta)); }
-  var model = {valid: valid, terms: terms, sum: sum, comparison: comparison, format: format, freshTimer: freshTimer, remaining: remaining, start: start, pause: pause, score: score};
-  if (typeof module !== "undefined" && module.exports) module.exports = model;
-  if (root) root.SandyGPModel = model;
-})(typeof window !== "undefined" ? window : null);
-</script>
-<script>(function () {
-  "use strict";
-  var M = window.SandyGPModel, key = "sandyqumar.gp.classroom.v1";
-  var state = {b1: 2, q: 2, scores: [0, 0, 0], timer: null};
-  try {
-    var saved = JSON.parse(localStorage.getItem(key));
-    if (saved && M.valid(saved.b1, saved.q)) { state.b1 = saved.b1; state.q = saved.q; }
-    if (saved && Array.isArray(saved.scores) && saved.scores.length === 3 && saved.scores.every(function (n) { return Number.isInteger(n) && Math.abs(n) <= 999; })) state.scores = saved.scores;
-    var t = saved && saved.timer;
-    if (t && typeof t.activity === "string" && Number.isFinite(t.durationMs) && t.durationMs >= 60000 && t.durationMs <= 7200000 && Number.isFinite(t.remainingMs) && t.remainingMs >= 0 && t.remainingMs <= t.durationMs && typeof t.running === "boolean" && Number.isFinite(t.deadline)) state.timer = t;
-  } catch (e) {}
-  function save() { try { localStorage.setItem(key, JSON.stringify(state)); } catch (e) {} }
-  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return {"&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;"}[c]; }); }
-  var f = M.format, tickId = null;
-  var activities = [
-    {id:"group-1", type:"group", title:"1-топ · Өсетін шаршылар", minutes:5, max:5,
-      intro:"Бірінші шаршының ауданы 3 бірлік². Әр келесі шаршының ауданы алдыңғысынан 2 есе үлкен.",
-      tasks:["Алғашқы төрт шаршыны сызба түрінде көрсетіп, аудандарын жазыңдар.", "Неліктен бұл геометриялық прогрессия? Еселік пен көршілес шаршылар қабырғаларының қатынасын түсіндіріңдер.", "Бесінші шаршының ауданын және алғашқы бес ауданның қосындысын табыңдар."],
-      answers:["3; 6; 12; 24 — төрт мән дұрыс (1 ұпай).", "Аудандардың тұрақты қатынасы q = 2; қабырғалардың қатынасы √2 (әр тұжырымға 1 ұпай).", "b₅ = 48; S₅ = 3 + 6 + 12 + 24 + 48 = 93 (әр мәнге 1 ұпай)."]},
-    {id:"group-2", type:"group", title:"2-топ · Қағазды екіге бөлу", minutes:5, max:5,
-      intro:"Алғашқы қағаз бөлігінің ауданы 32 бірлік². Келесі қадамда алдыңғы бөліктің жартысы ғана алынады.",
-      tasks:["Алғашқы төрт қадамдағы бөліктердің суретін салып, аудандарын жазыңдар.", "Еселігін анықтап, неліктен ауданның кемитінін геометриялық тұрғыдан түсіндіріңдер.", "Бесінші бөліктің ауданын және алғашқы бес ауданның қосындысын табыңдар."],
-      answers:["32; 16; 8; 4 — төрт мән дұрыс (1 ұпай).", "q = 1/2 (1 ұпай); әр қадамда алдыңғы бөліктің жартысы қалады, аудан 2-ге бөлінеді (1 ұпай).", "b₅ = 2; S₅ = 32 + 16 + 8 + 4 + 2 = 62 (әр мәнге 1 ұпай)."]},
-    {id:"group-3", type:"group", title:"3-топ · Таңбасы ауысатын қатар", minutes:5, max:5,
-      intro:"b₁ = 4, q = −2. Шаршының ауданы мүшенің модулін көрсетеді; «+» және «−» таңбаларын бөлек жазыңдар.",
-      tasks:["Алғашқы төрт мүшені есептеп, аудандары сәйкес төрт шаршыны белгілеңдер.", "Неліктен таңба кезектеседі? Суреттегі шаршының ауданы теріс бола ала ма? Түсіндіріңдер.", "b₅ пен S₅-ті табыңдар. S₅-тің аудандардың жай қосындысынан айырмасын түсіндіріңдер."],
-      answers:["4; −8; 16; −32 — төрт мән дұрыс (1 ұпай).", "Теріс q-ге көбейткенде таңба ауысады (1 ұпай); аудан теріс емес, ол |bₙ|-ге тең (1 ұпай).", "b₅ = 64 (1 ұпай); S₅ = 4 − 8 + 16 − 32 + 64 = 44, бұл таңбаларды ескеретін қосынды (1 ұпай)."]},
-    {id:"pair-1", type:"pair", title:"1-жұптық тапсырма · Екі заңдылық", minutes:3, max:4,
-      intro:"А оқушысы заңдылықты түсіндіреді, Ә оқушысы есептеуді тексереді. Екінші қатарға көшкенде рөлдеріңді ауыстырыңдар.",
-      tasks:["2; 5; 8; 11; … қатарының түрін, тұрақты айырмасын және келесі мүшесін табыңдар.", "2; 6; 18; 54; … қатарының түрін, еселігін және келесі мүшесін табыңдар.", "Бір сөйлеммен негізгі айырмасын түсіндіріңдер: не тұрақты болып қалады?"],
-      answers:["Біріншісі — арифметикалық, d = 3, келесі мүшесі 14 (1 ұпай).", "Екіншісі — геометриялық, q = 3, келесі мүшесі 162 (1 ұпай).", "Арифметикалықта көршілес мүшелердің айырмасы тұрақты (1 ұпай); геометриялықта қатынасы тұрақты (1 ұпай)."]},
-    {id:"pair-2", type:"pair", title:"2-жұптық тапсырма · Қатені тап", minutes:3, max:4,
-      intro:"b₁ = 5, q = 2. Бір оқушы «b₄ = 5 · 2⁴ = 80» деп жазды. Бірің қатені түсіндіріп, екіншің есептеумен тексеріңдер; кейін рөлдерді ауыстырыңдар.",
-      tasks:["Қатенің себебін түсіндіріп, b₄-ті дұрыс есептеңдер.", "b₅-ті табыңдар. Дәреженің көрсеткіші неге n − 1 болады?", "Салыстырыңдар: арифметикалық прогрессияда a₁ = 5, d = 2 болса, a₄ неге тең?"],
-      answers:["b₁-ден b₄-ке дейін үш рет көбейтеміз; b₄ = 5 · 2³ = 40 (түсіндіруге және мәнге 1 ұпайдан).", "b₅ = 80; бірінші мүшеге жету үшін көбейту қажет емес, n-ші мүшеге n − 1 қадам керек (1 ұпай).", "a₄ = 5 + 3 · 2 = 11 (1 ұпай)."]},
-    {id:"solo-1", type:"solo", title:"Жеке жұмыс · Базалық деңгей", minutes:2, max:2,
-      intro:"Өз бетіңше орында. Жауабыңмен бірге қолданған формулаңды жаз.",
-      tasks:["3; 6; 12; … геометриялық прогрессиясының q еселігін тап.", "Осы прогрессияның бесінші мүшесін тап."],
-      answers:["q = 6/3 = 2 (1 ұпай).", "b₅ = 3 · 2⁴ = 48 (1 ұпай)."]},
-    {id:"solo-2", type:"solo", title:"Жеке жұмыс · Қолдану", minutes:2, max:3,
-      intro:"b₁ = 81, q = 1/3. Бөлшек еселікті қолданғанда мүшелердің қалай өзгеретінін ескер.",
-      tasks:["b₄-ті тап.", "b₅-ті тап.", "Алғашқы төрт мүшенің S₄ қосындысын тап."],
-      answers:["b₄ = 81 · (1/3)³ = 3 (1 ұпай).", "b₅ = 81 · (1/3)⁴ = 1 (1 ұпай).", "S₄ = 81 + 27 + 9 + 3 = 120 (1 ұпай)."]},
-    {id:"solo-3", type:"solo", title:"Жеке жұмыс · Талдау", minutes:2, max:3,
-      intro:"Геометриялық прогрессияда b₂ = 6, b₄ = 24 және q > 0.",
-      tasks:["b₄/b₂ қатынасын қолданып, q-ді тап.", "b₁-ді анықта.", "b₅-ті есепте."],
-      answers:["q² = 24/6 = 4. q > 0 болғандықтан, q = 2 (1 ұпай).", "b₁ = 6/2 = 3 (1 ұпай).", "b₅ = 24 · 2 = 48 (1 ұпай)."]}
-  ];
-  function sequenceChart(values, color, max, label) {
-    var svg = '<svg class="gp-sequence-chart" viewBox="0 0 480 200" role="img" aria-label="'+esc(label + ': ' + values.map(f).join('; '))+'"><path d="M12 100H468" stroke="#b9c6d8" stroke-width="1"/>';
-    values.forEach(function (v, i) {
-      var x = 28 + i * 117, h = Math.abs(v) / max * 65;
-      svg += '<rect x="'+x+'" y="'+(v >= 0 ? 100-h : 100)+'" width="65" height="'+h+'" rx="4" fill="'+color+'" opacity=".85"/><text x="'+(x+32)+'" y="'+(v >= 0 ? 90-h : 122+h)+'" text-anchor="middle" fill="#182944" font-size="18" font-weight="700">'+f(v)+'</text><text x="'+(x+32)+'" y="194" text-anchor="middle" fill="#67758b" font-size="14">'+(i+1)+'-мүше</text>';
-    });
-    return svg + '</svg>';
-  }
-  function comparisonView() {
-    var c = M.comparison(state.b1, state.q), max = Math.max.apply(null, c.ap.concat(c.gp).map(Math.abs));
-    return '<div class="gp-compare-grid"><article class="gp-compare ap"><span class="gp-chip">АРИФМЕТИКАЛЫҚ</span><h3>Бірдей санды қосамыз</h3><div class="gp-operation">Әр қадам: '+(c.d < 0 ? '− '+f(-c.d) : '+ '+f(c.d))+'</div>'+sequenceChart(c.ap,"#348378",max,"Арифметикалық прогрессия")+'<p>aₙ₊₁ − aₙ = d = <strong>'+f(c.d)+'</strong></p></article><article class="gp-compare"><span class="gp-chip">ГЕОМЕТРИЯЛЫҚ</span><h3>Бірдей санға көбейтеміз</h3><div class="gp-operation">Әр қадам: × '+(state.q < 0 ? '('+f(state.q)+')' : f(state.q))+'</div>'+sequenceChart(c.gp,"#496de5",max,"Геометриялық прогрессия")+'<p>bₙ₊₁ / bₙ = q = <strong>'+f(state.q)+'</strong></p></article></div><p class="gp-takeaway">'+(state.q === 1 ? 'q = 1 болғанда барлық мүшелер бірдей. Бұл мысалда d = 0, сондықтан екі қатар да сәйкес келеді.' : 'Алғашқы екі мүшені бірдей алдық. Арифметикалықта айырма, геометриялықта қатынас тұрақты: үшінші мүшеден бастап қатарлар өзгеше болады.')+'</p><p class="small-text">Салыстыру үшін a₁ = b₁ және d = b₁(q − 1) деп алынды. Екі диаграмманың тік масштабы бірдей; бағанның нөл сызығынан төмен түсуі теріс мүшені білдіреді.</p>';
-  }
-  function squaresView() {
-    var terms = M.terms(state.b1, state.q, 4), sides = terms.map(function (v) { return 17 * Math.sqrt(Math.abs(v)); });
-    var widths = sides.map(function (s) { return Math.max(132, s + 36); }), w = widths.reduce(function (a,b) { return a+b; }, 0), base = Math.max.apply(null,sides)+38, x = 0;
-    var svg = '<svg class="gp-squares" viewBox="0 0 '+w+' '+(base+88)+'" role="img" aria-label="Алғашқы төрт мүшеге сәйкес шаршылар. Аудандары: '+esc(terms.map(function(v){return f(Math.abs(v));}).join('; '))+'"><defs><pattern id="gp-area-grid" width="17" height="17" patternUnits="userSpaceOnUse"><path d="M17 0H0V17" fill="none" stroke="white" stroke-opacity=".5" stroke-width="1"/></pattern></defs>';
-    terms.forEach(function (v, i) {
-      var s = sides[i], cx = x + widths[i]/2, left = cx-s/2, top = base-s;
-      svg += '<text x="'+cx+'" y="'+(top-15)+'" text-anchor="middle" font-size="18" font-weight="700" fill="#182944">b'+['₁','₂','₃','₄'][i]+' = '+f(v)+'</text><rect data-gp-area="'+Math.abs(v)+'" x="'+left+'" y="'+top+'" width="'+s+'" height="'+s+'" rx="1" fill="'+(v<0?'#d6634a':'#496de5')+'"/><rect x="'+left+'" y="'+top+'" width="'+s+'" height="'+s+'" fill="url(#gp-area-grid)"/><text x="'+cx+'" y="'+(base+27)+'" text-anchor="middle" font-size="16" fill="#4b5f7d">Аудан: '+f(Math.abs(v))+'</text><text x="'+cx+'" y="'+(base+56)+'" text-anchor="middle" font-size="15" fill="#67758b">'+(i<3?'→ × ('+f(state.q)+')':'4-мүше')+'</text>';
-      x += widths[i];
-    });
-    svg += '</svg>';
-    var signed = state.b1 < 0 || state.q < 0;
-    return '<figure class="gp-area-figure">'+svg+'<figcaption>'+(signed ? 'Аудан теріс болмайды: шаршының ауданы |bₙ|-ге тең. Көк түс — оң мүше, қызғылт түс — теріс мүше; таңба жазуда көрсетілген. Аудандардың қатынасы |q|.' : 'Әр шаршының ауданы bₙ-ге тең. Келесі аудан алдыңғы ауданнан '+f(state.q)+' есе болады; қабырғалардың қатынасы √q = √'+f(state.q)+'.')+' Барлық шаршыға ортақ өлшем қолданылған.</figcaption></figure><div class="gp-values" aria-label="Алғашқы төрт мүше">'+terms.map(function(v,i){return '<span>b<sub>'+(i+1)+'</sub> = <strong>'+f(v)+'</strong></span>';}).join('')+'</div><div class="gp-live-formula"><strong>b₄ = '+f(state.b1)+' · ('+f(state.q)+')³ = '+f(terms[3])+'</strong><span>S₄ = '+terms.map(function(v){return v<0?'('+f(v)+')':f(v);}).join(' + ')+' = '+f(M.sum(state.b1,state.q,4))+'</span></div>'+(signed?'<p class="gp-sign-note">S₄ — таңбаларды ескеретін алгебралық қосынды. Ол шаршылар аудандарының қосындысын білдірмейді.</p>':'');
-  }
-  function inputControl(id, label, value, min, max) {
-    return '<div class="gp-control"><label for="gp-'+id+'">'+label+'</label><input id="gp-'+id+'" data-gp-param="'+id+'" type="number" min="'+min+'" max="'+max+'" step="0.01" value="'+value+'" inputmode="decimal" aria-describedby="gp-input-help gp-input-error"><input aria-label="'+label+' жүгірткісі" data-gp-param="'+id+'" type="range" min="'+min+'" max="'+max+'" step="0.01" value="'+value+'"></div>';
-  }
-  function lesson() {
-    return '<section class="content-card gp-lesson"><span class="overline">01 · АЛДЫМЕН САЛЫСТЫР</span><h2>Қосу ма, көбейту ме?</h2><p>Арифметикалық прогрессияда бірдей сан қосылады. Геометриялық прогрессияда әр келесі мүше алдыңғы мүшені бірдей <strong>q ≠ 0</strong> санына көбейту арқылы алынады.</p><div id="gp-comparison">'+comparisonView()+'</div></section><section class="content-card gp-lesson"><span class="overline">02 · ӨЗГЕРТІП, БАҚЫЛА</span><h2>Сан шаршының ауданына айналады</h2><p>b₁ мен q-ді өзгерт. Шаршылардың өлшемі, мүшелер мен жоғарыдағы салыстыру бірге жаңарады.</p><div class="gp-controls">'+inputControl('b1','Бірінші мүше b₁',state.b1,-9,9)+inputControl('q','Еселік q',state.q,-3,3)+'</div><p id="gp-input-help" class="small-text">b₁: −9…9, q: −3…3; нөлден өзге мәндер. Екі ондық таңбаға дейін енгізуге болады.</p><p id="gp-input-error" class="gp-error" role="status" aria-live="polite" hidden></p><div class="gp-presets" role="group" aria-label="Прогрессия мысалдары"><button class="button secondary" data-gp-action="preset" data-b1="2" data-q="2">Екі есе өсу</button><button class="button secondary" data-gp-action="preset" data-b1="8" data-q="0.5">Екі есе кему</button><button class="button secondary" data-gp-action="preset" data-b1="2" data-q="-2">Таңба ауысуы</button><button class="button secondary" data-gp-action="preset" data-b1="3" data-q="1">Тұрақты қатар</button></div><div id="gp-geometry">'+squaresView()+'</div><p class="gp-question">Байқап көр: b₁-ді 4 есе арттырғанда шаршылардың қабырғалары неше есе өзгереді?</p><details class="gp-reveal"><summary>Түсіндірмесін ашу</summary><p>Аудан 4 есе артса, қабырға √4 = 2 есе артады. Аудан мен қабырғаның өзгерісін ажырат.</p></details></section><section class="content-card gp-lesson"><span class="overline">03 · СУРЕТТЕН ФОРМУЛАҒА</span><h2>Әр қадамда бір q көбейткіші</h2><div class="gp-rule-chain">b₁ → b₁q → b₁q² → b₁q³ → …</div><p>Бірінші мүшеден n-ші мүшеге жету үшін <strong>n − 1 рет</strong> көбейтеміз.</p><div class="math-expression">bₙ = b₁ · qⁿ⁻¹, &nbsp; q = bₙ₊₁ / bₙ</div><p>Алғашқы n мүшенің қосындысы:</p><div class="math-expression">Sₙ = b₁(qⁿ − 1) / (q − 1), &nbsp; q ≠ 1</div><p>q = 1 болса, Sₙ = n · b₁. Ал |q| &lt; 1 кезінде шексіз геометриялық прогрессия мүшелерінің қосындысы бар: <strong>S = b₁ / (1 − q)</strong>.</p></section>';
-  }
-  function promo() {
-    return '<section class="gp-teacher-promo"><div><span class="overline">9-СЫНЫП · ГЕОМЕТРИЯЛЫҚ ПРОГРЕССИЯ</span><h2>Сыныппен бірге жұмыс</h2><p>Үш топқа, жұпқа және жеке орындауға арналған тапсырмалар. Үлкен таймер мен топ ұпайларын экранға шығарыңыз.</p></div><a class="button primary" href="#/teacher/gp">Сыныппен жұмысты ашу</a></section>';
-  }
-  function scoreboard() {
-    return '<section class="gp-scoreboard" aria-label="Үш топтың ұпай тақтасы"><div class="gp-score-heading"><h2>Топ ұпайлары</h2><button class="button ghost" data-gp-action="scores-reset">Ұпайларды нөлдеу</button></div><div class="gp-score-grid">'+state.scores.map(function(n,i){return '<article class="gp-score-team"><h3>'+(i+1)+'-топ</h3><div class="gp-score-controls"><button data-gp-action="score" data-team="'+i+'" data-delta="-1" aria-label="'+(i+1)+'-топ ұпайын азайту">−</button><output id="gp-score-'+i+'" aria-live="polite" aria-label="'+(i+1)+'-топ ұпайы">'+n+'</output><button data-gp-action="score" data-team="'+i+'" data-delta="1" aria-label="'+(i+1)+'-топ ұпайын қосу">+</button></div></article>';}).join('')+'</div><p class="small-text">Ұпайды мұғалім дескрипторға сүйеніп қосады немесе азайтады. Ұпай мен таймер осы браузерде сақталады.</p><div id="gp-score-confirm" class="gp-reset-confirm" hidden><p>Үш топтың ұпайын нөлдейсіз бе?</p><button class="button secondary" data-gp-action="scores-cancel">Бас тарту</button><button class="button primary" data-gp-action="scores-confirm">Иә, нөлдеу</button></div></section>';
-  }
-  function timerMarkup() {
-    var t = state.timer;
-    return '<aside class="gp-timer" aria-label="Сынып таймері"><div class="gp-timer-label">СЫНЫП ТАЙМЕРІ</div><output id="gp-time" role="timer" aria-live="off">'+timeText(M.remaining(t,Date.now()))+'</output><p id="gp-time-state" role="status" aria-live="polite">Дайын</p><div class="gp-timer-actions"><button class="button primary" data-gp-action="timer-toggle">Бастау</button><button class="button secondary" data-gp-action="timer-reset">Қайта</button></div><details><summary>Уақытты өзгерту</summary><form id="gp-timer-form"><label for="gp-minutes">Минут (1–120)</label><div><input id="gp-minutes" type="number" min="1" max="120" step="1" value="'+Math.round(t.durationMs/60000)+'" required><button class="button secondary" type="submit">Орнату</button></div></form><p class="small-text">Орнату таймерді басынан бастауға дайындайды.</p></details></aside>';
-  }
-  function timeText(ms) { var s = Math.ceil(ms/1000); return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0'); }
-  function worksheet(a) {
-    return '<article class="gp-worksheet"><span class="gp-chip">'+(a.type==='group'?'ТОПТЫҚ':a.type==='pair'?'ЖҰПТЫҚ':'ЖЕКЕ')+' ЖҰМЫС · '+a.max+' ҰПАЙ</span><h2>'+a.title+'</h2><p class="gp-task-intro">'+a.intro+'</p><ol>'+a.tasks.map(function(q){return '<li>'+q+'</li>';}).join('')+'</ol></article>';
-  }
-  function card(a) {
-    return '<article class="gp-activity-card"><h3>'+a.title+'</h3><p>'+a.minutes+' минут · '+a.max+' ұпай</p><a class="button secondary" href="#/teacher/gp/'+a.id+'">Тапсырманы ашу</a></article>';
-  }
-  function teacherPage(id) {
-    if (!id) return '<a class="back-link" href="#/teacher">Мұғалімге бөліміне оралу</a><div class="page-heading"><span class="overline">9-СЫНЫП · МҰҒАЛІМГЕ</span><h1>Геометриялық прогрессия: сыныппен жұмыс</h1><p>Тапсырманы ашып, таймерді бастаңыз. Жауаптар бөлек батырмамен көрсетіледі. Экранда үш топқа да ұпай қосуға және азайтуға болады.</p></div>'+scoreboard()+'<section class="gp-activity-section"><div class="section-heading"><div><span class="overline">01 · ТОППЕН ТАЛҚЫЛА</span><h2>Үш топқа үш түрлі есеп</h2></div><a class="button primary" href="#/teacher/gp/group-all">Үш топты бірге көрсету</a></div><p>Сурет салушы, есептеуші және түсіндіруші рөлдерін бөліңіздер. Әр топ — 5 ұпай.</p><div class="gp-activity-grid">'+activities.filter(function(a){return a.type==='group';}).map(card).join('')+'</div></section><section class="gp-activity-section"><span class="overline">02 · ЖҰБЫҢМЕН ТЕКСЕР</span><h2>Жұптық тапсырмалар</h2><div class="gp-activity-grid">'+activities.filter(function(a){return a.type==='pair';}).map(card).join('')+'</div></section><section class="gp-activity-section"><span class="overline">03 · ӨЗІҢ ОРЫНДА</span><h2>Жеке тапсырмалар</h2><div class="gp-activity-grid">'+activities.filter(function(a){return a.type==='solo';}).map(card).join('')+'</div></section>';
-    var all = id === 'group-all', a = activities.find(function(item){return item.id===id;}), chosen = all ? activities.filter(function(item){return item.type==='group';}) : a ? [a] : [];
-    if (!chosen.length) return '<h1>Тапсырма табылмады</h1><a class="button primary" href="#/teacher/gp">Тапсырмаларға оралу</a>';
-    var duration = all ? 5 : a.minutes;
-    if (!state.timer || state.timer.activity !== id) { state.timer = M.freshTimer(id,duration*60); save(); }
-    return '<div class="gp-presenter" data-gp-presenter="'+esc(id)+'"><header class="gp-presenter-heading"><a class="back-link" href="#/teacher/gp">← Барлық сынып тапсырмалары</a><span class="overline">SANDYQUMAR · 9-СЫНЫП · ГЕОМЕТРИЯЛЫҚ ПРОГРЕССИЯ</span><h1>'+(all?'Үш топ · Үш зерттеу':a.title)+'</h1><p>Жауапты негіздеп, сызбамен түсіндіріңіздер.</p></header>'+timerMarkup()+scoreboard()+'<div class="gp-worksheets'+(all?' all':'')+'">'+chosen.map(worksheet).join('')+'</div><section class="gp-answer-section"><button class="button secondary" data-gp-action="answers" aria-expanded="false" aria-controls="gp-answers">Жауаптар мен дескрипторларды көрсету</button><div id="gp-answers" hidden>'+chosen.map(function(item){return '<article class="gp-answer-card"><h2>'+item.title+'</h2><ul>'+item.answers.map(function(v){return '<li>'+v+'</li>';}).join('')+'</ul><strong>Барлығы: '+item.max+' ұпай</strong></article>';}).join('')+'</div></section></div>';
-  }
-  function updateVisuals() {
-    var c = document.getElementById('gp-comparison'), g = document.getElementById('gp-geometry');
-    if (c) c.innerHTML = comparisonView();
-    if (g) g.innerHTML = squaresView();
-  }
-  function parameters(target) {
-    if(target.type === 'range')document.getElementById('gp-'+target.dataset.gpParam).value=target.value;
-    var bInput=document.getElementById('gp-b1'), qInput=document.getElementById('gp-q');
-    var b1=Number(bInput.value),q=Number(qInput.value),ok=bInput.value!==''&&qInput.value!==''&&M.valid(b1,q),error=document.getElementById('gp-input-error');
-    [bInput,qInput].forEach(function(el){var v=Number(el.value),max=el===bInput?9:3;el.setAttribute('aria-invalid',String(el.value===''||!Number.isFinite(v)||v===0||Math.abs(v)>max||Math.abs(v*100-Math.round(v*100))>=1e-8));});
-    if (error) { error.hidden = ok; error.textContent = ok ? '' : 'Нөлден өзге мән енгіз: |b₁| ≤ 9, |q| ≤ 3; ең көбі екі ондық таңба. Сурет соңғы дұрыс мәнді көрсетіп тұр.'; }
-    if (!ok) return;
-    state.b1 = b1; state.q = q; save();
-    document.querySelectorAll('[data-gp-param]').forEach(function(el){if(el!==target){el.value=state[el.dataset.gpParam];el.removeAttribute('aria-invalid');}});
-    updateVisuals();
-  }
-  function paintTimer() {
-    var out = document.getElementById('gp-time');
-    if (!out || !state.timer) return;
-    var ms = M.remaining(state.timer,Date.now()), expired = ms <= 0;
-    if (expired && state.timer.running) { M.pause(state.timer,Date.now()); save(); }
-    var label = expired ? 'Уақыт аяқталды' : state.timer.running ? 'Жұмыс жүріп жатыр' : ms < state.timer.durationMs ? 'Кідіртілді' : 'Дайын';
-    out.textContent = timeText(ms);
-    var status = document.getElementById('gp-time-state');
-    if(status.textContent !== label) status.textContent = label;
-    document.querySelector('.gp-timer').classList.toggle('expired',expired);
-    var button = document.querySelector('[data-gp-action="timer-toggle"]');
-    button.textContent = state.timer.running ? 'Кідірту' : 'Бастау'; button.disabled = expired;
-  }
-  function mount() {
-    clearInterval(tickId); tickId = null;
-    var presenter = !!document.querySelector('[data-gp-presenter]');
-    document.body.classList.toggle('gp-presenting',presenter);
-    if (presenter) { paintTimer(); tickId = setInterval(paintTimer,200); }
-  }
-  document.addEventListener('input',function(e){if(e.target.matches('[data-gp-param]'))parameters(e.target);});
-  document.addEventListener('submit',function(e){
-    if (e.target.id !== 'gp-timer-form') return;
-    e.preventDefault(); var n = Number(document.getElementById('gp-minutes').value);
-    if (!Number.isInteger(n) || n < 1 || n > 120) return;
-    state.timer = M.freshTimer(state.timer.activity,n*60); save(); paintTimer();
-  });
-  document.addEventListener('click',function(e){
-    var button = e.target.closest('[data-gp-action]'); if (!button) return;
-    var action = button.dataset.gpAction;
-    if (action === 'preset') {
-      state.b1 = Number(button.dataset.b1); state.q = Number(button.dataset.q); save();
-      document.querySelectorAll('[data-gp-param]').forEach(function(input){input.value=state[input.dataset.gpParam];input.removeAttribute('aria-invalid');});
-      document.getElementById('gp-input-error').hidden = true; updateVisuals();
-    }
-    if (action === 'score') { var i=Number(button.dataset.team); state.scores[i]=M.score(state.scores[i],Number(button.dataset.delta)); save(); document.getElementById('gp-score-'+i).textContent=state.scores[i]; }
-    if (action === 'scores-reset') { document.getElementById('gp-score-confirm').hidden=false; document.querySelector('[data-gp-action="scores-cancel"]').focus(); }
-    if (action === 'scores-cancel') document.getElementById('gp-score-confirm').hidden=true;
-    if (action === 'scores-confirm') { state.scores=[0,0,0]; save(); state.scores.forEach(function(n,i){document.getElementById('gp-score-'+i).textContent=n;}); document.getElementById('gp-score-confirm').hidden=true; document.querySelector('[data-gp-action="scores-reset"]').focus(); }
-    if (action === 'answers') { var answers=document.getElementById('gp-answers'), show=answers.hidden; answers.hidden=!show; button.setAttribute('aria-expanded',String(show)); button.textContent=show?'Жауаптарды жасыру':'Жауаптар мен дескрипторларды көрсету'; }
-    if (action === 'timer-toggle' && state.timer) { if(state.timer.running)M.pause(state.timer,Date.now());else M.start(state.timer,Date.now()); save(); paintTimer(); }
-    if (action === 'timer-reset' && state.timer) { state.timer=M.freshTimer(state.timer.activity,state.timer.durationMs/1000);save();paintTimer(); }
-  });
-  window.SandyGP = {lesson:lesson, promo:promo, teacherPage:teacherPage, mount:mount};
-})();
-</script>
+
+<script>window.SandyGP={promo:function(){return '<section class="gp-teacher-promo"><div><span class="overline">9-СЫНЫП · ГЕОМЕТРИЯЛЫҚ ПРОГРЕССИЯ</span><h2>Жаңа интерактивті модуль</h2><p>Формула, сипаттамалық қасиет, зертхана және 20 жеке тапсырма. Барлығы тіркелусіз ашылады.</p></div><a class="button primary" href="./geometric.html#/teacher">Жаңа модульді ашу</a></section>';},mount:function(){document.body.classList.remove('gp-presenting');}};</script>
 <script>(function () {
   "use strict";
   var allTopics = window.ALGEBRA_CONTENT.topics;
@@ -2914,7 +2706,7 @@ body.gp-presenting main{max-width:1800px;padding:28px 290px 50px 32px}
     return shell('<div class="page-heading"><span class="overline">МҰҒАЛІМГЕ АРНАЛҒАН</span><h1>Сабаққа дайын материалдар</h1><p>Тақырыпты таңдаңыз, сілтемені оқушыға жіберіңіз немесе тапсырмаларды басып шығарыңыз.</p></div>'+window.SandyGP.promo()+
     '<div class="teacher-intro">'+icon("teacher")+'<div><h3>Түсіндіру, жаттығу, кері байланыс</h3><p>Оқушылар тіркелусіз жұмыс істейді. Нәтиже әр оқушының өз браузерінде сақталады; бұл бетте сыныптың ортақ журналы жүргізілмейді.</p></div></div>'+
     '<section class="teacher-materials">'+topics.map(function(t){return '<article class="teacher-card"><div class="teacher-card-heading">'+topicIcon(t)+'<div><h2>'+esc(t.title)+'</h2><p>'+esc(t.goal)+'</p></div></div><div class="teacher-card-actions">'+buttonLink("Сабақты ашу","#/lesson/"+t.id,"secondary","book")+'<button class="button ghost" data-action="copy" data-topic="'+t.id+'">'+icon("copy")+'Сілтемені көшіру</button><button class="button ghost" data-action="print-lesson" data-topic="'+t.id+'">'+icon("print")+'Басып шығару</button></div><details><summary>Тапсырмалар мен жауаптар</summary><ol class="teacher-answers">'+t.tasks.map(function(task){return '<li><p>'+esc(task.question)+(task.formula?' <span class="inline-math">'+esc(task.formula)+'</span>':"")+'</p><strong>Жауап: '+esc(taskAnswerText(task))+'</strong><p class="small-text">'+esc(task.explanation)+'</p></li>';}).join("")+'</ol></details></article>';}).join("")+'</section>'+
-    '<section class="portable-card"><span class="portable-icon">'+icon("download")+'</span><div><span class="overline">МАТЕМАТИКА ӘРДАЙЫМ ЖАНЫҢДА</span><h2>Бір файлда барлық сабақ</h2><p>7 және 9-сыныптың ережелері, мысалдары мен жаттығуларын бір файлға жүктеп ал. Оны интернетсіз де браузерде ашуға болады.</p><button class="button primary" data-action="download-platform">'+icon("download")+'Платформаны жүктеу</button></div></section>',"teacher","Мұғалімге");
+    '<section class="portable-card"><span class="portable-icon">'+icon("download")+'</span><div><span class="overline">МАТЕМАТИКА ӘРДАЙЫМ ЖАНЫҢДА</span><h2>Екі файлмен офлайн қолдану</h2><p>Негізгі сабақтар үшін index.html, ал жаңа геометриялық прогрессия үшін geometric.html файлын бір бумаға сақтаңыз.</p><button class="button primary" data-action="download-platform">'+icon("download")+'Негізгі файлды жүктеу</button> <a class="button secondary" href="./geometric.html" download="geometric.html">Жаңа модульді жүктеу</a></div></section>',"teacher","Мұғалімге");
   }
   function help() {
     var questions=[
@@ -2925,7 +2717,7 @@ body.gp-presenting main{max-width:1800px;padding:28px 290px 50px 32px}
       ["Нәтиже қайда сақталады?","Нәтиже осы сайтты ашқан браузерде сақталады. Басқа құрылғыда автоматты көрінбейді. «Менің нәтижем» бөлімінен көшірмені жүктеп, кейін қалпына келтіруге болады."],
       ["Бір компьютерді бірнеше оқушы қолданса ше?","Келесі оқушы бастамас бұрын «Менің нәтижем» бөлімінен «Жаңа оқушы» батырмасын басып, алдыңғы нәтижені тазартуды растаңыз. Керек нәтижені алдымен жүктеп алыңыз."],
       ["Мұғалім менің нәтижемді көре ме?","Бұл нұсқада ортақ сынып журналы жоқ. Нәтиже экранын мұғалімге көрсете аласыз немесе жүктелген нәтижені өзіңіз бөлісе аласыз."],
-      ["Интернетсіз қолдануға бола ма?","«Мұғалімге» бөлімінен «Платформаны жүктеу» батырмасын басыңыз. SandyQumar.html файлын браузерде ашыңыз. Бұл файл сабақтар мен жаттығуларды интернетсіз ашады; браузердің жергілікті файлға сақтау рұқсатына қарай нәтиже сақталмауы мүмкін."]
+      ["Интернетсіз қолдануға бола ма?","«Мұғалімге» бөлімінен «Негізгі файлды жүктеу» батырмасын басыңыз. index.html файлын браузерде ашыңыз. Бұл файл сабақтар мен жаттығуларды интернетсіз ашады; браузердің жергілікті файлға сақтау рұқсатына қарай нәтиже сақталмауы мүмкін."]
     ];
     return shell('<div class="page-heading"><span class="overline">ҚАДАМЫҢ ТҮСІНІКТІ БОЛСЫН</span><h1>Көмек және нұсқаулық</h1><p>Оқуды бастауға қажет қысқа жауаптар.</p></div><div class="help-layout"><section class="faq">'+questions.map(function(q,i){return '<details'+(i===0?' open':'')+'><summary>'+q[0]+'</summary><p>'+q[1]+'</p></details>';}).join("")+'</section><aside class="help-aside"><span class="topic-icon blue">∑</span><h2>SandyQumar</h2><p>Жобаның пән мұғалімі:<br><strong>Жұмабеков Расул Арманұлы</strong></p><p>'+topics.length+' тақырып · '+(topics.length*2)+' мысал<br>'+stats().total+' интерактивті тапсырма</p>'+buttonLink("Оқуды бастау","#/topics","primary","book")+'</aside></div>',"help","Көмек");
   }
@@ -2938,6 +2730,12 @@ body.gp-presenting main{max-width:1800px;padding:28px 290px 50px 32px}
     if(ui.route!==hash){ui.route=hash;ui.feedback=null;ui.draft=null;ui.menu=false;}
     var parts=hash.replace(/^#\/?/,"").split("/");
     var section=parts[0];
+    if (((section==="lesson" || section==="practice") && parts[1]==="g9-geometric") || (section==="teacher" && parts[1]==="gp")) {
+      var destination=section==="practice"?"practice":section==="teacher"?"teacher":"lesson";
+      location.replace(new URL("geometric.html",location.href.split("#")[0]).href+"#/"+destination);
+      return;
+    }
+
     if(section==="teacher" && parts[1]==="gp" && activeGrade!==9)selectGrade(9);
     if ((section==="lesson" || section==="practice") && parts[1] && parts[1]!=="all") {
       var linked=topicById(parts[1]);
@@ -3055,7 +2853,7 @@ body.gp-presenting main{max-width:1800px;padding:28px 290px 50px 32px}
       ["#app","#toast","#print-area"].forEach(function(id){var el=clone.querySelector(id);if(el)el.innerHTML="";});
       var blob=new Blob(["<!doctype html>\n"+clone.outerHTML],{type:"text/html;charset=utf-8"});
       var url=URL.createObjectURL(blob),a=document.createElement("a");
-      a.href=url;a.download="SandyQumar.html";a.click();
+      a.href=url;a.download="index.html";a.click();
       setTimeout(function(){URL.revokeObjectURL(url);},1000);toast("SandyQumar көшірмесі жүктелді.");return;
     }
     if(action==="menu"||action==="menu-close"){
